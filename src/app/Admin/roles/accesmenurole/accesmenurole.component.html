@@ -1,0 +1,105 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label >Company</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="CompanyList" (valueChange)="CompanyID_Changed()"
+                                valueField="CompanyID"
+                                textField="CompanyName"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="CompanyID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label >Menu Type</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="MenueTypeList" (valueChange)="MenueTypeID_Changed()"
+                                valueField="MenueTypeID"
+                                textField="MenueTypeName"
+                                [(ngModel)]="SelectedMenueTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label >Module</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="ModuleList" (valueChange)="ModuleID_Changed()"
+                                valueField="ModuleID"
+                                textField="ModuleName"
+                                [(ngModel)]="SelectedModuleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">Role</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="RolesList" (valueChange)="RoleID_Changed()"
+                                valueField="RoleID"
+                                textField="RoleName"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="RoleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>
+            </th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Menue of MenueList">
+            <td>
+              <input type="checkbox" [checked]="Menue.checked" [(ngModel)]="Menue.checked"
+                     (change)="addOrDelete(Menue)">
+            </td>
+            <td>{{Menue.MenuName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

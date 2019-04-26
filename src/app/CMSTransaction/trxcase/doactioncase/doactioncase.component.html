@@ -1,0 +1,335 @@
+<!--action form!-->
+<div class="panel panel-default margin-bottom-0">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="hideThisComponent()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="save()" *ngIf="selectedStatus.CaseStatusID != undefined">
+          <i class="fa fa-plus"></i>Save</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel  panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput7">Action type</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="CMSShared.ActionTypeList" textField="StatusActionTypeName"
+                                valueField="StatusActionTypeID" [(ngModel)]="selectedStatusType"
+              (valueChange)="actionTypeListChange($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput7">Status</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="filterStatusList" textField="CaseStatusname" valueField="CaseStatusID"
+                                [(ngModel)]="selectedStatus"
+              (valueChange)="status_Change()">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row" *ngIf="selectedStatus.IsHasChild">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput7">{{selectedStatus.ChildName}}</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="childStatus" textField="CaseStatusname" [(ngModel)]="selectedChildStatus" valueField="CaseStatusID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-6 col-sm-12" *ngIf="selectedStatus.IsScripting">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput7">Scripting</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="scriptingList" textField="StatusScriptName" valueField="StatusScriptID" [(ngModel)]="selectedScript"
+              (valueChange)="scriptListChange($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12"></div>
+      <div class="clearfix"></div>
+      <div *ngIf="selectedStatus.IsReminder" class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput10">Date</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-datepicker (valueChange)="valueChange()"
+                              [min]="CM10701.MinDateTime"
+                              [max]="CM10701.MaxDateTime"
+                            
+              [(ngModel)]="CM10701.ReminderDateTime"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedStatus.IsPTP" class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="exampleFormControlInput7">Amount</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-numerictextbox [(ngModel)]="CM10701.PTPAMT" [required]="selectedStatus.IsPTPRequired" format="n3"></kendo-numerictextbox>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-md-1-5 col-xs-3 ">
+            <label for="exampleFormControlInput6">Rule condition</label>
+          </div>
+          <div class="col-md-10-5 col-xs-9  ">
+            <textarea class="form-control" rows="5" [(ngModel)]="CM10701.CaseStatusComment"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="" *ngIf="htmlFieldsList.length > 0">
+      <div class="row">
+        <div class="col-md-6">
+          <div *ngFor="let field of htmlFieldsList" [ngSwitch]="field.FieldTypeID">
+            <div *ngIf="field.IsFirstColumn">
+              <div *ngSwitchCase="1">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldCode}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class=" col-md-8 col-xs-8  " id="{{field.FieldCode}}">
+                    <kendo-dropdownlist [data]="getDynamicDropdownSRC(field.FieldCode)" textField="LookupName" valueField="LookupID"
+                      [(ngModel)]="field.DropdownlistFieldValue"
+                                        (valueChange)="DynamicDropdown_Change($event,field)">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="2">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class="col-md-8 col-xs-8  " id="{{field.FieldName}}">
+                    <kendo-datepicker [(ngModel)]="field.FieldDateValue"></kendo-datepicker>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="3">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class="col-md-8 col-xs-8  ">
+                    <input type="text" class="form-control" [(ngModel)]="field.FieldValue"
+                           placeholder="{{ field.FieldName }}">
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="4">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class="col-md-8 col-xs-8  ">
+                    <input [(ngModel)]="field.FieldValue"
+                           type="checkbox">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div *ngFor="let field of htmlFieldsList" [ngSwitch]="field.FieldTypeID">
+            <div *ngIf="!field.IsFirstColumn">
+              <div *ngSwitchCase="1">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class="col-md-8 col-xs-8  ">
+                    <kendo-dropdownlist [data]="getDynamicDropdownSRC(field.FieldCode)" textField="LookupName" valueField="LookupID"
+                                        [(ngModel)]="field.DropdownlistFieldValue"
+                                        (valueChange)="DynamicDropdown_Change($event,field)">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="2">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class=" col-md-8 col-xs-8  ">
+                    <kendo-datepicker [(ngModel)]="field.FieldDateValue"></kendo-datepicker>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase="3">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class=" col-md-8 col-xs-8  ">
+                    <input type="text" class="form-control" [(ngModel)]="field.FieldValue" name="test" placeholder="{{ field.FieldName }}">
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="4">
+                <div class="form-group row">
+                  <div class="col-md-4 col-xs-4 ">
+                    <label for="{{field.FieldName}}">{{ field.FieldName }}</label>
+                  </div>
+                  <div class=" col-md-8 col-xs-8  ">
+                    <input [(ngModel)]="field.FieldValue" type="checkbox">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="selectedStatus.IsTaskList">
+      <div>
+        <div class="">
+          <div class="row">
+            <div class="table-container">
+              <table class="table table-bordered table-hover">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th></th>
+                    <th>Task</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let task of taskList">
+                  <tr>
+                    <th scope="row">
+                      <button type="button" class="btn btn-outline-dark" (click)="task.IsExpanded = !task.IsExpanded">
+                        <i class="fa fa-plus" *ngIf="!task.IsExpanded"></i>
+                        <i class="fa fa-minus" *ngIf="task.IsExpanded"></i>
+                      </button>
+                    </th>
+                    <td>{{ task.TaskTitle }} </td>
+                    <td>
+                      <kendo-datepicker [(ngModel)]="task.TaskStartDate"></kendo-datepicker>
+                    </td>
+                    <td>
+                      <kendo-datepicker [(ngModel)]="task.TaskEndDate"></kendo-datepicker>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success mx-auto d-block">
+                        <i class="fa fa-check"></i> Complete
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger mx-auto d-block">
+                        <i class="fa fa-trash"></i> Delete
+                      </button>
+                    </td>
+                  </tr>
+                  <tr [hidden]="!task.IsExpanded">
+                    <td colspan="6">
+                      <div class="row mab-5">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              Agent
+                            </div>
+                            <div class="col-md-9">
+                              <input type="text" [(ngModel)]="task.AgentID" class="form-control" [disabled]="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              AssignDate
+                            </div>
+                            <div class="col-md-9">
+                              <kendo-datepicker [value]="task.AssignDate"></kendo-datepicker>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mab-5">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              Task Type
+                            </div>
+
+                            <div class="col-md-9">
+                              <kendo-dropdownlist [data]="CMSShared.TypesList" [valuePrimitive]="true" [(ngModel)]="task.TaskTypeID" textField="TaskTypeName"
+                                valueField="TaskTypeID">
+                              </kendo-dropdownlist>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              Task Priorite
+                            </div>
+                            <div class="col-md-9">
+                              <kendo-dropdownlist [data]="CMSShared.PrioritiesList" [valuePrimitive]="true" [(ngModel)]="task.PriorityID" textField="PriorityName"
+                                valueField="PriorityID">
+                              </kendo-dropdownlist>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mab-5">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              task Description
+                            </div>
+
+                            <div class="col-md-9">
+                              <textarea [(ngModel)]="task.TaskDescription"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

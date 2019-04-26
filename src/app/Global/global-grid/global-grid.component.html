@@ -1,0 +1,197 @@
+<div class="panel panel-default nomargin" #aboveGrid1>
+
+  <div class="panel-heading nopadding-x">
+    <!-- right options -->
+    <ul class="options  list-inline header-grid">
+
+      <div class="global-gridBar">
+        <div class="gridBar-item" *ngIf="Setting.dataSourcesTmp.length>1">
+          <kendo-dropdownlist (valueChange)="getViews()" [data]="Setting.dataSourcesTmp" [(ngModel)]="Setting.SelectedTRXTypeID" textField="TrxTypeName"
+            valueField="TRXTypeID">
+          </kendo-dropdownlist>
+        </div>
+        <div class="gridBar-item" *ngIf="Setting.ViewList.length>1">
+          <kendo-dropdownlist (valueChange)="getColumns()" [data]="Setting.ViewList" [(ngModel)]="Setting.SelectedView" textField="ViewName"
+            valueField="ViewID">
+          </kendo-dropdownlist>
+        </div>
+        <div class="gridBar-item grid-search-btn">
+          <a class="btn btn-3d btn-teal btn-sm text-center" style="line-height:15px !important;" (click)="showSearch = !showSearch"
+            [class.red]="Setting.TxtSearch != ''">
+            <i class="fa fa-search nopadding nomargin"></i>
+          </a>
+          <div *ngIf="showSearch" class="grid-searchContainer">
+
+            <div class="input-group">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" [(ngModel)]="Setting.TxtSearch" (keyup.enter)="getGridData()">
+              <div class="input-group-addon">
+                <a href="#" class="btn btn-3d btn-teal btn-sm">Search</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <ng-container *ngTemplateOutlet="extraButtons"></ng-container>
+
+      </div>
+    </ul>
+    <!-- /right options -->
+    <div class="setting-side" style="margin-bottom: 7px; margin-right : 5px">
+      <button kendoButton *ngIf="IsShowGridOptions" (click)="IsShowGridOptions = !IsShowGridOptions" class="setting-menu" [class.red]="outerServerArray.length != 0"
+        [primary]="true" [icon]="'close'"></button>
+      <button kendoButton *ngIf="!IsShowGridOptions" (click)="IsShowGridOptions = !IsShowGridOptions" class="setting-menu" [class.red]="outerServerArray.length != 0"
+        [primary]="true" [icon]="'cog'"></button>
+      <div class="setting-container" *ngIf="IsShowGridOptions" style="margin-bottom: 7px">
+        <button title="Sort Columns" kendoButton [primary]="true" [iconClass]="'fa fa-sort'" (click)="showSort = !showSort"></button>
+        <button title="Edit Columns" kendoButton [primary]="true" [icon]="'lock'" data-target="#tableModal" data-toggle="modal"></button>
+
+        <button title="Advanced Filter" kendoButton [primary]="true" [icon]="'filter'" (click)="showaAdvancedFilter = !showaAdvancedFilter"></button>
+        <!--<button title="Filter" kendoButton (click)="Isfilterable = !Isfilterable" [primary]="true" [icon]="'filter-sm'"></button>-->
+        <button title="Rearrange Columns" kendoButton [primary]="true" [icon]="'sort-asc'" data-target="#columnsModal" data-toggle="modal"></button>
+        <button title="Refresh" kendoButton (click)="getGridData()" [primary]="true" [icon]="'refresh'"></button>
+        <button title="Send Email" kendoButton [primary]="true" [icon]="'email'"></button>
+        <button title="Print" kendoButton routerLink="/Dynamicreport" [primary]="true" [icon]="'print'"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div [hidden]="!showaAdvancedFilter" class="panel panel-default">
+  <div class="panel-body">
+    <app-global-filter #globFilter (FilterOnchanged)="Filter_Changed($event)" (closeFilterEvent)="closeFilter($event)" [columns]="Setting.gridColumns"></app-global-filter>
+  </div>
+</div>
+
+<div [hidden]="!showSort" class="panel panel-default">
+  <div class="panel-body">
+    <app-global-sort #globSort (sortOnChanged)="sortChanged($event)" (closeSortEvent)="closeSort($event)" [columns]="Setting.gridColumns"></app-global-sort>
+  </div>
+</div>
+
+<div *ngIf="Setting.gridColumns.length > 0" (window:resize)="onResize($event)" [class.disabledDiv]="showaAdvancedFilter">
+  <kendo-grid [data]="Setting.gridView" [resizable]="true" [sortable]="{ allowUnsort: false , mode: 'single' }" [sort]="Setting.state.sort"
+    filterable="menu" [filter]="Setting.state.filter" [pageSize]="Setting.state.take" [skip]="Setting.state.skip" [pageable]="{
+                buttonCount: 10,
+                info: true,
+                type: 'input',
+                pageSizes: true,
+                previousNext: true
+              }" [height]="gridheight" (dataStateChange)="dataStateChange($event)">
+
+    <kendo-grid-column *ngFor="let column of Setting.gridColumns" field="{{column.FieldName}}" title="{{column.FieldDisplay}}"
+      [width]="column.FieldWidth" [locked]="column.Islocked" [hidden]="!column.IsActive">
+      <ng-template *ngIf="column.FieldTypeID == 7" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+        {{column.field}}
+      </ng-template>
+      <ng-template *ngIf="column.FieldTypeID == 7" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+        <a style="color: #1932e5" [routerLink]="['/viewTrxCase' , dataItem.CaseRef?.trim(), dataItem.TRXTypeID]" routerLinkActive="current-section">{{ dataItem.CaseRef }}</a>
+      </ng-template>
+
+      <ng-template *ngIf="column.FieldTypeID == 8" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+        <button kendoButton [routerLink]="['/editTrxCase' , dataItem.CaseRef?.trim(), dataItem.TRXTypeID]">
+          {{ dataItem.CaseRef }}</button>
+      </ng-template>
+      <ng-template *ngIf="column.FieldTypeID == 28" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+        <button kendoButton [routerLink]="['/CMSUpdateReceipt' , dataItem.PaymentID?.trim()]">{{ dataItem.PaymentID }}</button>
+      </ng-template>
+
+      <ng-template *ngIf="column.FieldTypeID == 2" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+        {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y' }}
+      </ng-template>
+
+      <ng-template *ngIf="column.FieldTypeID == 13" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+        {{column.field}}
+      </ng-template>
+      <ng-template *ngIf="column.FieldTypeID == 13" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+        {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y, h:mm a' }}
+      </ng-template>
+
+      <ng-template *ngIf="column.FieldTypeID == 41" kendoGridCellTemplate let-dataItem>
+        <a style="color: #1932e5" [routerLink]="['/updatedebtor' , dataItem.DebtorID?.trim(), dataItem.TRXTypeID]" routerLinkActive="current-section">{{ dataItem.DebtorID }}</a>
+      </ng-template>
+
+      <ng-template *ngIf="column.FieldTypeID == 24" kendoGridCellTemplate let-dataItem>
+        <a *ngIf=" dataItem.AgentID !== null" style="color: #1932e5" [routerLink]="['/update_agent' , dataItem.AgentID]" routerLinkActive="current-section">{{ dataItem.AgentID }}</a>
+      </ng-template>
+
+
+    </kendo-grid-column>
+
+
+  </kendo-grid>
+</div>
+<div class="modal fade" id="columnsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="max-width:75%;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-global-order [columns]="Setting.gridColumns"></app-global-order>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="tableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="min-width: 95%;
+  max-width: 95%;">
+    <div class="modal-content">
+      <div class="modal-header" style="height : 40px !important;">
+        <h5 class="modal-title">Customize columns properties</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="overflow: scroll !important;">
+        <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Is Active</th>
+              <th scope="col">Is Filterable</th>
+              <th scope="col">Is Printable</th>
+              <th scope="col">Is Sortable</th>
+              <th scope="col">Is Lockable</th>
+              <th scope="col">Is locked</th>
+              <th scope="col">Field Width</th>
+              <th scope="col">Field Display</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of Setting.gridColumns">
+              <td scope="row">{{ col.FieldDisplay }}</td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsActive"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsFilterable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsPrintable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsSortable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsLockable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.Islocked"></kendo-switch>
+              </td>
+              <td>
+                <input type="number" class="form-control" placeholder="Field Width" [(ngModel)]="col.FieldWidth">
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="Field Display" [(ngModel)]="col.FieldDisplay">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

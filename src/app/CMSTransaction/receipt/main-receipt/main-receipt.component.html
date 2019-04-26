@@ -1,0 +1,30 @@
+<ng-template #extra>
+  <button kendoButton [routerLink]="['/add_PayReceipt']">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+  <button routerLink="/CMSPaymentapprove" [icon]="'check'" kendoButton>Approve</button>
+  <div class="col-md-2  col-sm-6 nopadding padding-col text-center nopadding-left">
+    <kendo-buttongroup [selection]="'single'">
+      <button kendoButton [togglable]="true" (click)="Filte_Change(1)">
+        <span class="k-icon k-i-grid"></span>
+      </button>
+      <button kendoButton [togglable]="true" (click)="Filte_Change(2)">
+        <span class="k-icon k-i-check"></span>
+      </button>
+      <button kendoButton [togglable]="true" (click)="Filte_Change(3)">
+        <span class="k-icon k-i-close"></span>
+      </button>
+    </kendo-buttongroup>
+  </div>
+
+  <div class="col-md-3 col-sm-6 nopadding padding-col nopadding-left">
+    <kendo-datepicker [(ngModel)]="FilterObject.StartDate" format="yyyy-MM-dd" formatPlaceholder="wide"></kendo-datepicker>
+  </div>
+  <div class="col-md-3 col-sm-6 nopadding padding-col nopadding-left">
+    <kendo-datepicker [(ngModel)]="FilterObject.EndDate" format="yyyy-MM-dd" formatPlaceholder="wide">
+    </kendo-datepicker>
+  </div>
+
+</ng-template>
+
+<global-grid #grid [extraButtons]="extra"></global-grid>

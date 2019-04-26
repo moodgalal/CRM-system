@@ -1,0 +1,23 @@
+  <ng-template #extra>
+    
+      <a class="btn btn-success btn-sm white" routerLink="/create_builder">
+        <i class="fa fa-edit"></i> New
+      </a>
+      <a class="btn btn-success btn-sm white" routerLink="/fields_conf">
+        <i class="fa fa-edit"></i> fields_conf
+      </a>
+      <a class="btn btn-success btn-sm white" routerLink="/Cm00039">
+        <i class="fa fa-edit"></i> Cm00039
+      </a>
+      <a class="btn btn-success btn-sm white" routerLink="/sort_conf">
+        <i class="fa fa-edit"></i> sort_conf
+      </a>
+      <a class="btn btn-success btn-sm white" routerLink="/reorder_conf">
+        <i class="fa fa-edit"></i> reorder_conf
+      </a>
+      <a class="btn btn-success btn-sm white" routerLink="/equation_fields">
+        <i class="fa fa-edit"></i> equation_fields
+      </a>
+    
+  </ng-template>
+  <app-main-grid #grid [extraButtons]="extra"></app-main-grid>

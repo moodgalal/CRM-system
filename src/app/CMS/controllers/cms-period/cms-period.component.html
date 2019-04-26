@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+       <div class="row">
+         <div class="col-md-6">
+           <kendo-dropdownlist (valueChange)="getPeriods($event)"
+                               [data]="years"
+                               [(ngModel)]="selectedYear"
+                               textField="YearName"
+                               valueField="YearCode">
+         </kendo-dropdownlist>
+         </div>
+         <div class="col-md-6">
+           <kendo-dropdownlist (valueChange)="emitObject($event)"
+                               [data]="periods"
+                               [(ngModel)]="selectedPeriod"
+                               textField="PeriodName"
+                               valueField="PERIODID">
+         </kendo-dropdownlist>
+         </div>
+       </div>
+    </div>
+</div>

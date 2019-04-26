@@ -1,0 +1,147 @@
+<div class="panel panel-default small-panel">
+
+  <div class="panel-heading">
+    <!-- right options -->
+
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="SaveData()">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput8">Agent Group</label>
+          </div>
+          <div class=" col-md-10 col-xs-9  ">
+            <div class="row">
+              <div class="col-md-6">
+                <kendo-dropdownlist [data]="agentGroupData" [textField]="'AgentGroupName'" [valueField]="'AgentGroup'"
+                                    [valuePrimitive]="true"
+                  [(ngModel)]="CM00105.AgentGroup">
+                </kendo-dropdownlist>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class=" col-md-2 col-xs-3  padding-col  ">
+                    <label for="exampleFormControlInput3">In active</label>
+                  </div>
+                  <div class="col-md-10 col-xs-9  ">
+                    <kendo-switch [onLabel]="'True'" [(ngModel)]="CM00105.Inactive" name="check" [offLabel]="'False'"></kendo-switch>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput9">Suffix </label>
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <div class="row">
+              <div class="col-md-6 col-xs-6">
+                <kendo-dropdownlist [data]="SuffixList" textField="text" valueField="value" [valuePrimitive]="true" [(ngModel)]="CM00105.SuffixID">
+                </kendo-dropdownlist>
+              </div>
+              <div class="col-md-6 col-xs-6">
+                <div class="input-group mb-2 mb-sm-0">
+                  <app-users-lookup (getValue)="User_Change($event)"></app-users-lookup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput10">Gender</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="Sys00011" textField="text" valueField="value" [valuePrimitive]="true" [(ngModel)]="CM00105.GenderID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">First Name</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <input type="text" class="form-control" [(ngModel)]="CM00105.FirstName" placeholder="First Name">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">Middle Name</label>
+          </div>
+
+          <div class=" col-md-10 col-xs-9  ">
+            <input type="text" class="form-control" [(ngModel)]="CM00105.MidName" placeholder="Middle Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">Last Name</label>
+          </div>
+
+          <div class=" col-md-10 col-xs-9  ">
+            <input type="text" class="form-control" [(ngModel)]="CM00105.LastName" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">SuperVisor</label>
+          </div>
+          <div class=" col-md-10 col-xs-9  ">
+            <div class="input-group mb-2 mb-sm-0">
+              <app-agent-lookup (getValue)="setAgentId($event)"></app-agent-lookup>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">Target</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="CalendarsList" textField="CalendarName" valueField="CalendarID" [valuePrimitive]="true" [(ngModel)]="CM00105.CalendarID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,384 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="goBack()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" (click)="Save01()" *ngIf="cusrrentWIndow == 0">
+          <i class="fa fa-plus"></i>Upload
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="UploadDebtor()" *ngIf="cusrrentWIndow == 1">
+          <i class="fa fa-plus"></i>Upload Debtor
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="UploadDebtorAddress()" *ngIf="cusrrentWIndow == 2">
+          <i class="fa fa-plus"></i>Upload Address
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="UploadCaseData()" *ngIf="cusrrentWIndow == 3">
+          <i class="fa fa-plus"></i>Save Cases
+        </a>
+        <!--<a class="btn btn-success btn-sm white" (click)="UploadCaseData()" *ngIf="">
+    <i class="fa fa-plus"></i>Save Do Action
+  </a>-->
+        <a class="btn btn-success btn-sm white" (click)="ValidateCaseOld()" *ngIf="cusrrentWIndow == 4">
+          <i class="fa fa-plus"></i>Next
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="ValidateCaseNew()" *ngIf="cusrrentWIndow == 5">
+          <i class="fa fa-plus"></i>Next
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="PostCase()" *ngIf="cusrrentWIndow == 6">
+          <i class="fa fa-plus"></i>Post Cases
+        </a>
+        <a class="btn btn-success btn-sm white" (click)="PostAsginment()" *ngIf="cusrrentWIndow == 7">
+          <i class="fa fa-plus"></i>assign
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div class="row" *ngIf="cusrrentWIndow == 0">
+        <div class="col-md-6 col-sm-12 nopadding">
+          <div class="col-md-12 col-sm-12  ">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col">
+                <label for="exampleFormControlInput7">Batch No</label>
+              </div>
+              <div class=" col-md-9 col-xs-9">
+                <input kendoTextBox [(ngModel)]="TransiactionNumber" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 nopadding">
+          <div class="col-md-12 col-sm-12  ">
+            <div class="form-group row">
+              <div class=" col-md-3 col-xs-3 padding-col">
+                <label for="exampleFormControlInput7">Data source</label>
+              </div>
+              <div class=" col-md-9 col-xs-9">
+                <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="false"
+                              (success)="successEventHandler($event)"
+                              (error)="errHandler($event)">
+                </kendo-upload>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="cusrrentWIndow == 1">
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-3 col-xs-3 padding-col">
+              <label for="exampleFormControlInput7">Data Source</label>
+            </div>
+            <div class=" col-md-9 col-xs-9">
+              <kendo-dropdownlist [data]="DebtorIDList" (valueChange)="DebtorIDList_Changed()"
+                                  [(ngModel)]="SelectedDebtorIDType"
+                                  textField="TrxTypeName"
+                                  valueField="TRXTypeID">
+              </kendo-dropdownlist>
+            </div>
+          </div>
+        </div>
+        <app-global-field-creator [FieldList]="DebtorFields" [ExcelColumns]="ExcelColumns"></app-global-field-creator>
+
+      </div>
+      <div class="row" *ngIf="cusrrentWIndow == 2">
+        <div class="col-md-12 col-sm-12  ">
+          <div class="form-group row">
+            <div class="col-md-3 col-xs-3 padding-col">
+              <label for="exampleFormControlInput7">Address</label>
+            </div>
+            <div class=" col-md-9 col-xs-9">
+              <kendo-dropdownlist [data]="CMSShared?.AddressList" [valuePrimitive]="true"
+                                  [(ngModel)]="CurrentAddressType"
+                                  textField="AddressName"
+                                  valueField="AddressCode">
+              </kendo-dropdownlist>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-3 col-xs-3 padding-col">
+              <label>Address Data Source</label>
+            </div>
+            <div class=" col-md-9 col-xs-9">
+              <kendo-dropdownlist [data]="DebtorAddressDs" (valueChange)="AddressTypeSelectedTRXTypeID_Changed()"
+                                  [(ngModel)]="AddressTypeSelectedTRXTypeID"
+                                  textField="TrxTypeName"
+                                  valueField="TRXTypeID">
+              </kendo-dropdownlist>
+            </div>
+          </div>
+        </div>
+        <app-global-field-creator [FieldList]="DebtorAddressFields" [ExcelColumns]="ExcelColumns"></app-global-field-creator>
+      </div>
+      <div class="row" *ngIf="cusrrentWIndow == 3">
+        <div class="col-md-6 col-sm-12 nopadding">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col">
+                <label for="exampleFormControlInput7">Data Source</label>
+              </div>
+              <div class=" col-md-9 col-xs-9">
+                <kendo-dropdownlist [data]="setting.dataSourcesTmp" (valueChange)="TRXTypeID_Changed()"
+                                    [(ngModel)]="SelectedTRXTypeID"
+                                    textField="TrxTypeName"
+                                    valueField="TRXTypeID">
+                </kendo-dropdownlist>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col ">
+                <label>Client</label>
+              </div>
+              <div class=" col-md-9 col-xs-9   ">
+                <app-client-lookup (getValue)="Client_Changed($event)"></app-client-lookup>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col ">
+                <label>Contract</label>
+              </div>
+              <div class=" col-md-9 col-xs-9">
+                <app-cmscontract-lookup [ClientID]="UploadedDataModel.ClientID" (getValue)="ClientContract_Changed($event)"></app-cmscontract-lookup>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col ">
+                <label>Book Date</label>
+              </div>
+              <div class=" col-md-9 col-xs-9   ">
+                <kendo-datepicker [(value)]="UploadedDataModel.BookingDate"></kendo-datepicker>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12  ">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col ">
+                <label>Closing Date</label>
+              </div>
+              <div class=" col-md-9 col-xs-9   ">
+                <kendo-datepicker [(value)]="UploadedDataModel.ClosingDate"></kendo-datepicker>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 nopadding">
+          <div class="col-md-12 col-sm-12  ">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col">
+                <label for="exampleFormControlInput7">Address</label>
+              </div>
+              <div class=" col-md-9 col-xs-9">
+                <kendo-dropdownlist [data]="CMSShared?.AddressList" [valuePrimitive]="true"
+                                    [(ngModel)]="CurrentAddressType"
+                                    textField="AddressName"
+                                    valueField="AddressCode">
+                </kendo-dropdownlist>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-3 col-xs-3 padding-col">
+                <label for="exampleFormControlInput7">Currency</label>
+              </div>
+              <div class=" col-md-9 col-xs-9   ">
+                <app-currency-lookup (getValue)="currency_Changed($event)"></app-currency-lookup>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" *ngIf="cusrrentWIndow == 3">
+        <app-global-field-creator [FieldList]="CaseFieldList" [ExcelColumns]="ExcelColumns"></app-global-field-creator>
+      
+      </div>
+      <div class="panel panel-default" *ngIf="cusrrentWIndow == 4 && RepeatedCases.length > 0">
+        <div class="panel-body ">
+          <div class="row">
+            <div class="table-container">
+              System Repeated Cases
+            </div>
+          </div>
+        </div>
+        <div class="panel-body ">
+          <div class="row">
+            <div class="table-container">
+              <table class="table  table-hover table-bordered table-resposive">
+                <thead class="table-inverse">
+                  <tr>
+                    <th>CaseRef</th>
+                    <th>CIFNumber</th>
+                    <th>CIFName</th>
+                    <th>LastActionDate </th>
+                    <th>LastPaymentDate </th>
+                    <th>LastCallactedAMT </th>
+                    <th>ClaimAmount </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let histroy of RepeatedCases">
+                    <td>{{ histroy.CaseRef}}</td>
+                    <td>{{ histroy.CIFNumber}}</td>
+                    <td>{{ histroy.CIFName}}</td>
+                    <td>{{ histroy.LastActionDate | date:"EEEE, MMMM d, yyyy" }}</td>
+                    <td>{{ histroy.LastPaymentDate | date:"EEEE, MMMM d, yyyy" }}</td>
+                    <td class="text-align-center">
+                      <input type="text" class="form-control input-sm" ng-decimal decimal="MY.DecimalDigit" [(ngModel)]="histroy.LastCallactedAMT" readonly
+                             style="width:75px" />
+                    </td>
+                    <td class="text-align-center">
+                      <input type="text" class="form-control input-sm" ng-decimal decimal="MY.DecimalDigit" [(ngModel)]="histroy.ClaimAmount" readonly
+                             style="width:75px" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" *ngIf="cusrrentWIndow == 5 && OldCasesList.length > 0">
+        <div class="panel-body ">
+          <div class="row">
+            <div class="table-container">
+              System Exited Cases(case not included into the sheet)
+            </div>
+          </div>
+        </div>
+        <div class="panel-body ">
+          <div class="row">
+            <div class="table-container">
+              <table class="table  table-hover table-bordered table-resposive">
+                <thead class="table-inverse">
+                  <tr>
+                    <th>CaseRef</th>
+                    <th>CIFNumber</th>
+                    <th>CIFName</th>
+                    <th>LastActionDate </th>
+                    <th>LastPaymentDate </th>
+                    <th>LastCallactedAMT </th>
+                    <th>ClaimAmount </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let histroy of OldCasesList">
+                    <td>{{ histroy.CaseRef}}</td>
+                    <td>{{ histroy.CIFNumber}}</td>
+                    <td>{{ histroy.CIFName}}</td>
+                    <td>{{ histroy.LastActionDate | date:"EEEE, MMMM d, yyyy" }}</td>
+                    <td>{{ histroy.LastPaymentDate | date:"EEEE, MMMM d, yyyy" }}</td>
+                    <td class="text-align-center">
+                      <input type="text" class="form-control input-sm" ng-decimal decimal="MY.DecimalDigit" [(ngModel)]="histroy.LastCallactedAMT" readonly
+                             style="width:75px" />
+                    </td>
+                    <td class="text-align-center">
+                      <input type="text" class="form-control input-sm" ng-decimal decimal="MY.DecimalDigit" [(ngModel)]="histroy.ClaimAmount" readonly
+                             style="width:75px" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" *ngIf="cusrrentWIndow == 6">
+        <div class="panel-body" *ngIf="NewCases.length == 0">
+          <div class="row">
+            <div class="table-container">
+              No New Cases
+            </div>
+          </div>
+        </div>
+        <div class="panel-body" *ngIf="NewCases.length > 0">
+          <div class="row">
+            <div class="table-container">
+              Sheet New Cases
+            </div>
+          </div>
+        </div>
+        <div class="panel-body" *ngIf="NewCases.length > 0">
+          <div class="row">
+            <div class="table-container">
+              <table class="table  table-hover table-bordered table-resposive">
+                <thead class="table-inverse">
+                  <tr>
+                    <th>CaseAccountNo</th>
+                    <th>CIFNumber</th>
+                    <th>CIFName</th>
+                    <th>TransactionDate </th>
+                    <th>ClaimAmount </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let histroy of NewCases">
+                    <td>{{ histroy.CaseAccountNo}}</td>
+                    <td>{{ histroy.CIFNumber}}</td>
+                    <td>{{ histroy.CIFName}}</td>
+                    <td>{{ histroy.TransactionDate | date:"EEEE, MMMM d, yyyy" }}</td>
+                    <td class="text-align-center">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" [(ngModel)]="histroy.ClaimAmount" format="n3" readonly></kendo-numerictextbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="cusrrentWIndow == 7">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-3 col-xs-3 ">
+              <label for="exampleFormControlInput7">Agent</label>
+            </div>
+            <div class="col-md-9 col-xs-9  ">
+              <!--<kendo-dropdownlist [data]="ExcelColumns"
+                      [textField]="'ColumnName'"
+                      [valueField]="'Index'"
+                      [(ngModel)]="CM00205.ToAgentID"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+              <app-agent-lookup (getValue)="AgentTo_Change($event)"></app-agent-lookup>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-3 col-xs-3 ">
+              <label for="exampleFormControlInput7">Assign Date</label>
+            </div>
+            <div class="col-md-9 col-xs-9  ">
+              <kendo-datepicker [min]="CM00205.MinDateTime"
+                                [(ngModel)]="CM00205.AssignHistoryDate"></kendo-datepicker>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-1-5 col-xs-3 ">
+              <label for="exampleFormControlInput6">Description</label>
+            </div>
+            <div class="col-md-10-5 col-xs-9  ">
+              <textarea class="form-control" rows="5" [(ngModel)]="CM00205.Description"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Batch form !-->

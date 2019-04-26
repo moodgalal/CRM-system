@@ -1,0 +1,177 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput7">Item Class</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <kendo-dropdownlist [data]="testData">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput8">Item Id</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <input type="text" class="form-control" id="exampleFormControlInput8" placeholder="customer Id">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput9">Item Name</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Item Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput10"> description</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <input type="text" class="form-control" id="exampleFormControlInput10" placeholder="short description">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput11">Generic </label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <textarea></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput11">Generic </label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <label class="sr-only" for="inlineFormInputGroup">Unit Measure Group</label>
+                    <div class="input-group mb-2 mb-sm-0">
+                      <input type="text" class="form-control" placeholder="Unit Measure Group">
+                      <div class="input-group-addon">
+                        <span class="fa fa-search"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput10">Barcode</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <input type="text" class="form-control" id="exampleFormControlInput10" placeholder="Barcode">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput11">Item description</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <textarea></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="id-info">
+
+              <div class="col-12 col-md-12 col-sm-12 upload-img">
+                <div class="col-md-12 ">
+                  <img class="img-profile-edit" src="../assets/img/product.png" />
+                </div>
+                <div class="col-12 col-md-12 col-sm-12">
+                  <label class="custom-file">
+                    <input type="file" id="file2" class="custom-file-input">
+                    <span class="custom-file-control"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput30"> Item type</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <kendo-dropdownlist [data]="testData">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput30"> Item Group</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <kendo-dropdownlist [data]="testData">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput30"> valuation </label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <kendo-dropdownlist [data]="testData">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+                    <label for="exampleFormControlInput30"> ABC</label>
+                  </div>
+                  <div class="col-9 col-md-10 col-xs-9  ">
+                    <kendo-dropdownlist [data]="testData">
+                    </kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

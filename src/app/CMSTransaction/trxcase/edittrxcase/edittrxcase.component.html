@@ -1,0 +1,1276 @@
+<div class="container-fluid" *ngIf="CM00203">
+  <div class="modal fade search-details-modal viewCasePopup" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="width:70%" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="height : 40px !important;">
+          <h5 class="modal-title">Popup</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="debtorObject">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3 padding-col">
+                        <label> Customer</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <input type="text" class="form-control width-100" placeholder="0303003" readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col  ">
+                        <label>Class</label>
+                      </div>
+                      <div class=" col-md-5 col-xs-4   ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input class="form-control ng-untouched ng-pristine ng-valid" id="inlineFormInputGroup" placeholder="Search" type="text">
+                          <div class="input-group-addon">
+                            <span class="fa fa-search"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" col-md-4 col-xs-4 ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col  ">
+                    <label>Middle Name</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9   ">
+                    <input type="text" class="form-control width-100" placeholder="Middle Name">
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col  ">
+                    <label>Middle Name</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9   ">
+                    <input type="text" class="form-control width-100" placeholder="Middle Name">
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col  ">
+                    <label>Middle Name2</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9   ">
+                    <input type="text" class="form-control width-100" placeholder="Middle Name">
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col  ">
+                    <label>Middle Name3</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9   ">
+                    <input type="text" class="form-control width-100" placeholder="Middle Name">
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col  ">
+                    <label>Arabic Name</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9   ">
+                    <input type="text" class="form-control width-100" placeholder="Arabic Name" [(ngModel)]="debtorObject.EmployerNameArabic">
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-3 col-xs-3  padding-col">
+                    <label>Full Name</label>
+                  </div>
+                  <div class=" col-md-9 col-xs-9">
+                    <input type="text" class="form-control width-100" placeholder="Full Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="  col-md-6 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3 padding-col">
+                        <label>Gender</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-6 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3 padding-col">
+                        <label> Group</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="  col-md-6 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3 padding-col">
+                        <label>Status</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-6 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3 padding-col">
+                        <label> Group</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" ">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Employer NO.</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <input type="text" class="form-control width-100" placeholder="Full Name" [(ngModel)]="debtorObject.EmployerNo1">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" ">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Employer Name</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <input type="text" class="form-control width-100" placeholder="Full Name" [(ngModel)]="debtorObject.EmploymntNamEnglish">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" ">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>CPR</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <input type="text" class="form-control width-100" placeholder="Full Name">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" ">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Employer NO.</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" ">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Birth Date</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9   ">
+                        <kendo-datepicker></kendo-datepicker>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class=" col-md-6  ">
+                <div class=" row">
+                  <div class="col-md-3 col-xs-3 padding-col">
+                    <label>Address</label>
+                  </div>
+                  <div class="col-md-9 col-xs-9">
+                    <input type="text" class="form-control width-100" placeholder="Address">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none">Go Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default bar-options">
+    <div class="panel-heading ">
+      <ul class="options pull-left relative list-unstyled">
+        <li>
+          <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+            <i class="fa fa-arrow-left"></i>Back
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-success btn-sm white" (click)="SaveData()">
+            <i class="fa fa-plus"></i>Save
+          </a>
+        </li>
+      </ul>
+      <!-- /right options -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 padding-6" *ngIf="CM00203.TRXTypeID==37">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default" id="financial">
+
+            <div class="panel-heading">
+              <span class="elipsis">
+                <strong>Financial Details</strong>
+              </span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '1'" class="fin-right" style="color: green;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '2'" class="fin-right" style="color: red;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '3'" class="fin-right" style="color: yellow;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '4'" class="fin-right" style="color: #3f4dff;">{{CM00203.CreditorName}}</span>
+
+              <!-- right options -->
+              <ul class="options pull-right list-inline">
+                <li>
+                  <a class="opt view_more" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="ViewMore" (click)="IsShowFinnaceDetail = !IsShowFinnaceDetail"
+                    id="viewmore-fin">
+                    <i class="fa fa-plus" *ngIf="!IsShowFinnaceDetail"></i>
+                    <i class="fa fa-minus" *ngIf="IsShowFinnaceDetail"></i>
+                  </a>
+                </li>
+                <!-- <li>
+                <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+              </li> -->
+                <li>
+                  <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen"
+                    id="fullscreen-fin">
+                    <i class="fa fa-expand"></i>
+                  </a>
+                </li>
+              </ul>
+              <!-- /right options -->
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Finance AMT</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.PrincipleAmount" format="n3"></kendo-numerictextbox>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Past Due</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.ClaimAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>O/S - Today</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled class="cred form-control" [ngClass]="{'os-today-border': CM00203.PriorityName >=8}"
+                        [value]="CM00203.OutStandingToday" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Wavier</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.WriteOffAMT" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>O/S - Maturity</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.MaturityAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Fees/Expenses</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.FinanceCharge" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Installment</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.InstallmentAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Past Due Days</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="1" [spinners]="false" disabled [value]="CM00203.OverDueDays" format="n0"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Last Bucket</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [spinners]="false" disabled [value]="CM00203.BucketPrev" format="n0"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Bucket</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [spinners]="false" disabled [value]="CM00203.BucketID" format="n0"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hidden items !-->
+              <div *ngIf="IsShowFinnaceDetail">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Yield% </label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT03" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Collateral Type</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.TxtField04" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Total Collection</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.TotalLifeCollactedAMT" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Collateral Value</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT01" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>NPA % </label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.NPA" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Facility Allocation</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT04" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Collateral Coverage</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT05" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Collateral Cov.%</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT02" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Provision</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT06" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Provision %</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false"  [value]="CM00203.AMT08" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Suspended</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT07" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                      <div class="col-md-4 padding-col">
+                        <label>Suspended %</label>
+                      </div>
+                      <div class="col-md-8 padding-col">
+                        <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT09" format="n3"></kendo-numerictextbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hidden items !-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default">
+            <div class="panel-heading">
+              <span class="elipsis">
+                <strong>Case Details</strong>
+              </span>
+              <ul class="options pull-right list-inline">
+                <li>
+                  <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+                </li>
+                <li>
+                  <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+                    <i class="fa fa-expand"></i>
+                  </a>
+                </li>
+              </ul>
+              <!-- /right options -->
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Agent</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group mb-2 mb-sm-0">
+                        <input kendoTextBox [value]="CM00203.AgentID" readonly class="form-control ng-untouched ng-pristine" id="inlineFormInputGroup"
+                          type="text">
+                        <div class="input-group-addon">
+                          <span class="fa fa-search"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Deal No.</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group mb-2 mb-sm-0">
+                        <input kendoTextBox [value]="CM00203.CaseRef" readonly class="form-control ng-untouched ng-pristine ng-valid" id="inlineFormInputGroup"
+                          placeholder="Search" type="text">
+                        <div class="input-group-addon">
+                          <span class="fa fa-search"></span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Assign Date</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-datepicker [value]="CM00203.AssignDate" [disabled]="true"></kendo-datepicker>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Cycle Day</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" readonly [(ngModel)]="CM00203.CYCLEDAY">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Product Class</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly placeholder="Agent ID" [(ngModel)]="CM00203.ContractID">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Grade</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly placeholder="Agent ID" [(ngModel)]="CM00203.PriorityID">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Product Name</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ContractName">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>RM Officer</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField03">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Sub Eco sector</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField02">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>CIF type</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField05">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Eco sector</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField01">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Category Code</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ClientID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Disbursement</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-dateinput [disabled]="true" [value]="CM00203.FirstDisburementDate"></kendo-dateinput>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Category </label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ClientName">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 padding-6" *ngIf="CM00203.TRXTypeID==40">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default" id="financial">
+
+            <div class="panel-heading">
+              <span class="elipsis">
+                <strong>Financial Details</strong>
+              </span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '1'" class="fin-right" style="color: green;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '2'" class="fin-right" style="color: red;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '3'" class="fin-right" style="color: yellow;">{{CM00203.CreditorName}}</span>
+              <span *ngIf="CM00203.CreditorID?.trim() == '4'" class="fin-right" style="color: #3f4dff;">{{CM00203.CreditorName}}</span>
+              <ul class="options pull-right list-inline">
+                <li>
+
+                </li>
+                <li>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Limit</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.PrincipleAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Total Due Amount</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.ClaimAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>O/S Balance</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled class="cred form-control" [value]="CM00203.OutStandingToday"
+                        format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Waiver</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.WriteOffAMT" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Current Due Amount</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.MaturityAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Fees/Expenses</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.FinanceCharge" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Unpaid Amount</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.InstallmentAmount" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Collateral Value</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT01" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Collateral Type</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.TxtField04" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Collateral Cov</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [decimals]="3" [spinners]="false" disabled [value]="CM00203.AMT02" format="n3"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Last Bucket</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [spinners]="false" disabled [value]="CM00203.BucketPrev" format="n0"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Bucket</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-numerictextbox [spinners]="false" disabled [value]="CM00203.BucketID" format="n0"></kendo-numerictextbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default">
+            <div class="panel-heading">
+              <span class="elipsis">
+                <strong>Case Details</strong>
+              </span>
+              <ul class="options pull-right list-inline">
+                <li>
+                  <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+                </li>
+                <li>
+                  <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+                    <i class="fa fa-expand"></i>
+                  </a>
+                </li>
+              </ul>
+              <!-- /right options -->
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Agent</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group mb-2 mb-sm-0">
+                        <input kendoTextBox [value]="CM00203.AgentID" readonly class="form-control ng-untouched ng-pristine" type="text">
+                        <div class="input-group-addon">
+                          <span class="fa fa-search"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Card Number</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group mb-2 mb-sm-0">
+                        <input kendoTextBox [value]="CM00203.CaseAccountNo" readonly class="form-control ng-untouched ng-pristine ng-valid" placeholder="Search"
+                          type="text">
+                        <div class="input-group-addon">
+                          <span class="fa fa-search"></span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Assign Date</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-datepicker [value]="CM00203.AssignDate" [disabled]="true"></kendo-datepicker>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Case Ref</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.CaseRef">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Product Class</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly placeholder="Agent ID" [(ngModel)]="CM00203.ContractID">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>DD Flag</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="checkbox" name="checkbox" ng-model="CM00205.CheckBoxField01" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Product Name</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ContractName">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>RM Officer</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField03">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Maturity</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-dateinput [disabled]="true" [value]="CM00203.MATURITY_DATE"></kendo-dateinput>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>CIF type</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField05">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Card Status</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.TxtField01">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Category Code</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ClientID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Disbursement</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <kendo-dateinput [disabled]="true" [value]="CM00203.FirstDisburementDate"></kendo-dateinput>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Category </label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" kendo-numeric-text-box readonly [(ngModel)]="CM00203.ClientName">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 padding-6">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default">
+            <div class="panel-heading">
+              <span class="elipsis">
+                <!-- panel title -->
+                <strong>Customer Details</strong>
+              </span>
+              <!-- right options -->
+              <ul class="options pull-right list-inline">
+                <li>
+                  <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+                </li>
+              </ul>
+              <!-- /right options -->
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label>Customer Id</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox" aria-label="..." readonly disabled="disabled">
+                        </span>
+                        <input type="text" class="form-control" readonly [(ngModel)]="CM00203.CPRCRNo" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label for="cif"> CIF</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <div class="input-group mb-2 mb-sm-0">
+                        <input type="text" class="form-control" id="cif" [(ngModel)]="CM00203.CIFNumber" readonly />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-2 padding-col">
+                      <label for="CIFName">Name</label>
+                    </div>
+                    <div class="col-md-10 padding-col">
+                      <input type="text" class="form-control" id="CIFName" [(ngModel)]="CM00203.CIFName" readonly />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-2 padding-col">
+                      <label for="caseAddress">Address</label>
+                    </div>
+                    <div class="col-md-10 padding-col">
+                      <input type="text" class="form-control" id="caseAddress" [(ngModel)]="CM00203.CaseAddess" readonly />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label for="nationality">Nationality</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" id="nationality" [(ngModel)]="CM00203.NationalityName" readonly />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+                    <div class="col-md-4 padding-col">
+                      <label for="employer">Employer</label>
+                    </div>
+                    <div class="col-md-8 padding-col">
+                      <input type="text" class="form-control" id="employer" [(ngModel)]="CM00203.EmployerName" readonly />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-customer-contact-details #customerContactDetailsComponent [CurrentAddressType]="CurrentAddressType" [CM00203]="CM00203"></app-customer-contact-details>
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <div class="panel  panel-default">
+            <div class="panel-heading">
+              <span class="elipsis">
+                
+                <strong>Next of contact details</strong>
+              </span>
+             
+              <ul class="options pull-right list-inline">
+                <li>
+                  <a href="#" class="opt panel_colapse plus" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+                </li>
+              </ul>
+             
+
+            </div>
+            <div class="panel-body" style="display:none;">
+              <div class="row" style="padding:5px;">
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label>Contact Type</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9  ">
+                      <kendo-dropdownlist [data]="testData">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label for="exampleFormControlInput8">Contact Person</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9  ">
+                      <input type="text" class="form-control" placeholder="Contact Person">
+                    </div>
+                  </div>
+                </div>
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label for="exampleFormControlInput8">Person Position</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9 ">
+                      <input type="text" class="form-control" placeholder="Person Position">
+                    </div>
+                  </div>
+                </div>
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label for="exampleFormControlInput8">Person Email Address</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9  ">
+                      <input type="email" class="form-control" placeholder="Person Email Address">
+                    </div>
+                  </div>
+                </div>
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label for="exampleFormControlInput8">Phone 01</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9  ">
+                      <input type="phone" class="form-control" placeholder="Phone 01">
+                    </div>
+                  </div>
+                </div>
+                <div class="  col-md-12 col-sm-12">
+                  <div class=" row">
+                    <div class=" col-md-3 col-xs-3  padding-col p-r-0">
+                      <label for="exampleFormControlInput8">Phone 02</label>
+                    </div>
+                    <div class=" col-md-9 col-xs-9  ">
+                      <input type="phone" class="form-control" placeholder="Phone 02">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+     
+    </div>
+  </div>
+</div>

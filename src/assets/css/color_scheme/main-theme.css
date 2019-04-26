@@ -1,0 +1,94 @@
+#aside nav ul li a.dashboard {
+    background-color: #274d5b
+  }
+.main-bg{
+    background-color: #274e5c !important;
+}
+.primary-bg{
+    background-color: #0776af !important;
+}
+#aside nav ul li a{
+    color:#fff;
+}
+#aside nav a i.pull-right,#aside nav ul li ul li a i.fa,#header .dropdown-toggle    {
+    color:#fff;
+}
+#aside nav ul li.active,#aside nav ul li.menu-open,#aside, #asidebg,#aside nav>ul>li>a:hover, #aside nav>ul>li>a:focus{
+    background-color: #0776af ;
+}
+#header form.search {
+    padding: 9px 0;
+}
+#header form.search>input{
+    border: 1px solid rgba(255, 255, 255,.3);
+    height: 32px;
+    padding: 2px 5px;
+    transition: .5s;
+}
+#header form.search>input:focus{
+    border: 1px solid rgba(255, 255, 255,.6);
+    
+}
+#header input[type="text"]::-webkit-input-placeholder{
+    color: rgba(255, 255, 255,.5);
+}
+#header .noti{
+    padding: 14px;
+    font-size: 16px;
+    color: #fff !important;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 6px 13px;
+}
+.box-image{
+    border: 1px solid rgba(0,0,0,.1);
+    transition: .5s;
+    margin: 5px 0;
+}
+.box-image:hover{
+    box-shadow:  0px 1px 1px 1px rgba(0,0,0,.1);
+}
+.box-image h2 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+}
+.box-image .btn.btn-reveal.btn-sm {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    position: relative;
+}
+.pos .form-control {
+    height: 25px;
+    margin: 2px;
+}
+.pos td,th{
+    font-size: 12px;
+}
+#header nav ul li a{
+    color: #fff;
+}
+#header nav .dropdown-menu,.dropdown-submenu .dropdown-menu,.dropdown-menu>li>a {
+    background: #274d5b;
+    color: #fff;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,#header nav ul li a:hover{
+    background-color: #0776af;
+    color: #fff;
+}
+#header nav .dropdown-menu li a {
+    padding: 10px 13px;
+}
+.dropdown-submenu .dropdown-menu{
+    max-height: 450px;
+    overflow: auto !important;
+    width: auto !important;
+}
+.dropdown-submenu .dropdown-menu li:hover a{
+    background-color: #0776af;
+    color: #fff;
+}
+#header nav ul li a,#header nav ul li:hover a{
+    color: #fff;
+}

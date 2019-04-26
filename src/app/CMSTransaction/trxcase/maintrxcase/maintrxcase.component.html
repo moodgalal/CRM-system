@@ -1,0 +1,68 @@
+<ng-template #extra>
+
+  <!--<button routerLink="/add_new_case" kendoButton>
+    <i style="font-weight: bold" class="fa fa-plus" aria-hidden="true"></i>
+  </button>-->
+  <div class="gridBar-item">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-sm">Bulk</button>
+      <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a routerLink="/CaseUpdate">
+            Update
+          </a>
+        </li>
+        <!--<li>
+              <a routerLink="/Casedelete">
+                Delete
+              </a>
+            </li>-->
+        <!--<li>
+              <a routerLink="/BulkArchive">
+                Archive
+              </a>
+            </li>-->
+        <!--<li>
+              <a routerLink="/Assignment">
+                Assign
+              </a>
+            </li>-->
+        <li>
+          <a routerLink="/upload-cases">
+            Upload Cases
+          </a>
+        </li>
+        <!--<li>
+              <a routerLink="/BulkDoactionupload">
+                Upload Action Cases
+              </a>
+            </li>-->
+        <!--<li>
+              <a>
+                payment
+              </a>
+            </li>
+            <li>
+              <a>
+                Fees
+              </a>
+            </li>
+            <li>
+              <a routerLink="/Advancebulkletter">
+                Letter
+              </a>
+            </li>-->
+
+      </ul>
+
+
+    </div>
+  </div>
+
+</ng-template>
+
+<global-grid #grid [extraButtons]="extra"></global-grid>

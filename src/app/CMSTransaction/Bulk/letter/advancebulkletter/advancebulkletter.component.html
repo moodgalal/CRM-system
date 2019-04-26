@@ -1,0 +1,192 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li [disabled]="selectedView" (click)="ApplyShowReport()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+      <li [disabled]="selectedView" (click)="showaAdvancedFilter=!showaAdvancedFilter">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body" [hidden]="ShowReport">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Case type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="dataSourcesTmp" textField="TrxTypeName" valueField="TRXTypeID"
+                                [(ngModel)]="SelectedDataSource"
+                                (valueChange)="getViews($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewType">View</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="viewList" valueField="ViewID"
+                                textField="ViewName" [(ngModel)]="selectedView"
+                                (valueChange)="getDataGrid($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Case type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="TemplateList" textField="TemplateName" valueField="TemplateID"
+                                [(ngModel)]="SelectedTemplate"
+                                >
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewType">View</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="CMSShared.AddressList"
+                                [(ngModel)]="CurrentAddressType"
+                                textField="AddressName"
+                                valueField="AddressCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Action type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="CMSShared.ActionTypeList" textField="StatusActionTypeName" valueField="StatusActionTypeID" [(ngModel)]="selectedStatusType"
+                                (valueChange)="actionTypeListChange($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewType">Agent</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <app-agent-lookup (getValue)="setAgentId($event)"></app-agent-lookup>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Status</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="filterStatusList" textField="CaseStatusname" valueField="CaseStatusID"
+                                [(ngModel)]="selectedStatus"
+                                (valueChange)="status_Change()">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewType">CHild</label>
+          </div>
+          <div class=" col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="childStatus" textField="CaseStatusname" *ngIf="selectedStatus.IsHasChild"
+                                [(ngModel)]="selectedChildStatus" valueField="CaseStatusID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="showaAdvancedFilter" class="panel panel-default">
+        <div class="panel-body">
+          <app-global-filter #globFilter (filterString)="captureStr($event)" [columns]="Setting.gridColumns"></app-global-filter>
+
+          <button type="button" class="btn btn-secondary" (click)="showaAdvancedFilter = !showaAdvancedFilter">Cancel</button>
+          <button [disabled]="Setting.FilterServerArray.length == 0 || globFilter.someWrong" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" (click)="globFilter.emitStr()">Filter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel default small-panel" *ngIf="datatable" [hidden]="ShowReport">
+  <div class="panel-body">
+    <div class="row">
+      <div class="table-container text-center">
+        <table class="table table-bordered table-hover table-responsive">
+          <thead class="thead-inverse">
+            <tr>
+              <th>CIFName</th>
+              <th>Cat</th>
+              <th>Product</th>
+              <th>CaseStatusname</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dtrow of datatable">
+              <td>{{ dtrow.CIFName }}</td>
+              <td>{{ dtrow.ClientName }}</td>
+              <td>{{ dtrow.ContractName }}</td>
+              <td>
+               {{ dtrow.CaseStatusname }}
+              </td>
+              <td>
+                <input [(ngModel)]="dtrow.IsSelected" type="checkbox">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="ShowReport">
+  <tr-viewer #viewer1
+             [containerStyle]="viewerContainerStyle"
+             [serviceUrl]="serviceUrl"
+             [reportSource]="{
+                   report: 'KaizenServer.Reports.DemandLetter, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { }
+                 }"
+             [viewMode]="'INTERACTIVE'"
+             [scaleMode]="'SPECIFIC'"
+             [scale]="1.0"
+             [ready]="ready"
+             [viewerToolTipOpening]="viewerToolTipOpening"
+             [enableAccessibility]="false">
+  </tr-viewer>
+</div>

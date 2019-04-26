@@ -1,0 +1,122 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="options pull-left list-inline">
+      <li>
+        <button [disabled]="currentState !== 4" type="button" class="btn btn-default btn-white btn-sm" (click)="arrayPushConcat('|')">OR</button>
+      </li>
+      <li>
+        <button [disabled]="currentState !== 4" type="button" class="btn btn-default btn-white btn-sm"
+                (click)="arrayPushConcat('&')">
+          AND
+        </button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-default btn-white btn-sm" (click)="arrayPushBrackets('(')">(</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-default btn-white btn-sm" (click)="arrayPushBrackets(')')">)</button>
+      </li>
+    </ul>
+    <ul class="options pull-right list-inline">
+      <li>
+        <button [disabled]="SmartfilterObject.FilterServerArray.length == 0" type="button" class="btn btn-danger btn-sm" (click)="arrayPop()">Delete</button>
+      </li>
+      <li>
+        <button [disabled]="SmartfilterObject.FilterServerArray.length == 0" type="button" class="btn btn-danger btn-sm" (click)="arrayClear()">Clear all</button>
+      </li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-3 padding-col">
+            <label>Field</label>
+          </div>
+          <div class="col-md-9">
+            <kendo-dropdownlist [disabled]="currentState !== 1" style="margin:5px 0;"
+                                (valueChange)="Collumn_Change($event)"
+                                [(ngModel)]="SelectedFilterCol"
+                                [data]="filterableColumns" valueField="FieldName" textField="FieldDisplay"></kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" [ngSwitch]="SelectedFilterCol?.FieldTypeID"
+           [class.disabledDiv]="currentState !== 3">
+
+        <kendo-datepicker ngDefaultControl *ngSwitchCase="2" [format]="'dd-MMM-yyyy'" (valueChange)="arrayPushValue($event)" [(ngModel)]="value"></kendo-datepicker>
+        <kendo-datepicker ngDefaultControl *ngSwitchCase="13" [format]="'dd-MMM-yyyy'" (valueChange)="arrayPushValue($event)" [(ngModel)]="value"></kendo-datepicker>
+        <app-agent-lookup ngDefaultControl *ngSwitchCase="24" style="margin:5px 0; max-width: 100% !important; border-radius: 3px"
+                          (getValue)="arrayPushValue($event)"></app-agent-lookup>
+        <kendo-dropdownlist *ngSwitchCase="51" style="margin:5px 0;" (valueChange)="arrayPushValue($event)" [(ngModel)]="SelectedLookup01"
+                            [data]="CMSLookup01" valueField="Lookup01" textField="Lookup01Name"></kendo-dropdownlist>
+        <kendo-dropdownlist *ngSwitchCase="52" style="margin:5px 0;" (valueChange)="arrayPushValue($event)" [(ngModel)]="SelectedLookup02"
+                            [data]="CMSLookup02" valueField="Lookup02" textField="Lookup02Name"></kendo-dropdownlist>
+        <div *ngIf="IsCaseStatus">
+          <kendo-dropdownlist style="margin:5px 0;" (valueChange)="status_Change()" [(ngModel)]="SelectedCaseStatusID" [data]="CaseStatusList"
+                              valueField="CaseStatusID" textField="CaseStatusname"></kendo-dropdownlist>
+          <kendo-dropdownlist *ngIf="SelectedCaseStatusID.IsHasChild" [data]="childStatus" textField="CaseStatusname" [(ngModel)]="selectedChildStatus"
+                              valueField="CaseStatusID">
+          </kendo-dropdownlist>
+          <button kendoButton (click)="arrayPushValue(SelectedCaseStatusID.CaseStatusID)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div *ngSwitchCase="4">
+          <input style="margin:5px 0; max-width: 100% !important; border-radius: 3px" #val type="number" placeholder="Enter a value"
+                 [(ngModel)]="value">
+          <button kendoButton (click)="arrayPushValue(val.value)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div *ngSwitchDefault>
+          <div *ngIf="!IsCaseStatus">
+            <input style="margin:5px 0; max-width: 100% !important; border-radius: 3px" #val type="text" placeholder="Enter a value"
+                   [(ngModel)]="value">
+            <button kendoButton (click)="arrayPushValue(val.value)">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-3 padding-col">
+            <label>Operator</label>
+          </div>
+          <div class="col-md-9">
+            <kendo-dropdownlist [disabled]="currentState !== 2"
+                                [data]="operators" textField="name" valueField="operator" [valuePrimitive]="true"
+                                [(ngModel)]="SelectedOperator"
+                                (valueChange)="Operator_Changed($event)"></kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <textarea class="operator" style="    margin: 18px 0;padding: 10px;height: 50px;" placeholder="Your Filter Expression ..." [(ngModel)]="displayString" readonly></textarea>
+      </div>
+      <div *ngIf="someWrong" class="error">
+        This expression is not valid
+      </div>
+      <div class="col-md-12">
+        <button type="button" class="btn btn-secondary" (click)="closeFilter()">Cancel</button>
+        <button [disabled]="SmartfilterObject.FilterServerArray.length == 0 || someWrong || currentState !== 4"
+                class="btn btn-primary" style="background-color: #ff6358 !important; border:none"
+                (click)="DoFilter()">
+          Filter
+        </button>
+        <button class="btn btn-primary" style="background-color: #00ff90 !important; border:none"
+                (click)="ClearFilter()">
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+
+
+
+</div>

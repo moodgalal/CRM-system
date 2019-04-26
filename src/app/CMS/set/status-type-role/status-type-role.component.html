@@ -1,0 +1,99 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Company</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="CompanyList" (valueChange)="CompanyID_Changed()"
+                                valueField="CompanyID" textField="CompanyName"
+                                [valuePrimitive]="true" [(ngModel)]="CompanyID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>status type list</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="StatusTypeList " (valueChange)="StatusActionTypeID_Changed($event)"
+                                valueField="StatusActionTypeID" textField="StatusActionTypeName"
+                                [valuePrimitive]="true" [(ngModel)]="CM00054.StatusActionTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Roles</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="companyRoles"
+                                [(ngModel)]="CM00054.RoleID"
+                                [valuePrimitive]="true"
+                                textField="RoleName"
+                                valueField="RoleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 padding-col">
+            <a class="btn btn-primary" (click)="OnAdd()">ADD</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default small-panel" *ngIf="CM00054List.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">StatusActionTypeID</th>
+              <th scope="col">RoleID</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of CM00054List">
+
+              <td>
+                {{col.StatusActionTypeID}}
+              </td>
+              <td>
+                {{col.RoleID}}
+              </td>
+              <td>
+                <button kendoButton (click)="delete(col)">delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

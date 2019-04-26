@@ -1,0 +1,374 @@
+//// .sec-form{text-align: center;}
+//// .row{margin: 0px;}
+//// .login{
+////   position: relative;
+////   top: 40px;
+////   width: 40%;
+////   color: #888;
+////   border:1px solid #888;
+////   border-radius: 3px;
+////   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.33);
+////   background-color: #fff;
+////   margin-bottom: 5%; }
+//
+//// .login .headl{padding:  10px; margin: 0px; color: #eee;
+//// background: #2c3e4f;
+//// h2{
+////   font-size: 15px;
+////   margin: 0;
+//// }
+//// }
+//// .login-form{
+////    padding: 10px;
+////   .input-group{
+////     margin: 5px 0px;
+////   }
+////   img{
+////     border: 2px solid #2c3e4f;
+////     width: 80px;
+////     height: 80px;
+////   }
+////   }
+//// label{position: relative;width: 100%; font-weight: lighter;}
+//// .login .name,.login .password ,.email{
+////   background-color: transparent;
+//
+////    width: 95%;border: 1px solid #ddd;
+//// 	// box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);
+//
+////  padding: 10px 15px;
+////   padding-left: 25px;
+////  margin: 8px;
+////  outline: none;
+////  color: #000; }
+//
+//// .login .user,.lock{
+////   position: absolute;
+////  top: 20.5px;
+////   font-size: 18px;}
+//
+//// .forgt-password{background-color: #999; color: #fff;padding: 3px; border-radius: 50%;position: absolute;
+//
+//// // box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);
+//
+//// 	width: 25px; height: 25px;transition: all 0.4s; }
+//
+//// .forgt-password a,.forgt-password  a:hover{color: #fff; text-decoration: none;}
+//
+//// .forgt-password:hover{background-color: #111;box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);}
+//
+//// .fa-question{font-size: 17px;    right: 5%;
+////     top: 29%; }
+//
+//
+//.submit{background: #1976D2; /* For browsers that do not support gradients */
+//    background: -webkit-linear-gradient(to left top, #39f, #1976D2); /* For Safari 5.1 to 6.0 */
+//    background: -o-linear-gradient(to left top, #39f, #1976D2); /* For Opera 11.1 to 12.0 */
+//    background: -moz-linear-gradient(to left top, #39f, #1976D2); /* For Firefox 3.6 to 15 */
+//    background: linear-gradient(to left top, #39f, #1976D2); /* Standard syntax */
+//
+//border: none;
+//padding: 10px 20px;
+//color: #fff;
+//border-radius: 3px;
+//box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);
+//height: 45px;
+//width:80%;
+//margin: 20px;
+//transition: 0.2s all;
+//}
+//.submit a{text-decoration: none; color: #fff; font-weight: bold;}
+//.submit:hover{box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);
+//}
+// /*---------------------------------------------------------*/
+//// .remember-check{text-align: left;position: relative; font-weight: bold; cursor: pointer;}
+//
+//
+//// .remember-check .checkbox{position: absolute;opacity: 0;}
+////  .remember-check span{border: 1.2px solid #39f;margin: 10px;width: 15px; height: 15px; border-radius: 3px; margin-top: 5px;
+////  display: inline-block; vertical-align: middle;
+////  position: relative;}
+////   .remember-check .checkbox:checked +:after{
+////    content: "✓";
+////    display: block;
+////   position: absolute;
+////   top: -2px;
+////   font-weight: bold;
+////   left: 2px;
+////   width: 9px;
+////   height:9px;
+////    color: #39f;
+////   border-radius: 3px;
+//// }
+////  .remember-check .checkbox:checked + span +b{color: #39f;}
+//
+//
+//// /*----------------------------------------------------------------*/
+//
+//// /*----------------------------------------------------------------*/
+//
+//// @media (min-width:320px)
+//// {
+////   .login .fa-user,.fa-lock{  left:20px !important; }
+//
+////   .fa-question{    right: 5%;
+////     top: 29%;}
+//// }
+//// @media (max-width:320px)
+//// {
+////   .remember-check{margin-left: 10px;}
+//
+//// }
+//
+//// @media (min-width:375px)
+//// {
+////   .login .fa-user,.fa-lock{  left:20px !important; }
+//
+////   .fa-question{    right: 5%;
+////     top: 29%;}
+//// }
+//
+//// @media (min-width:425px)
+//// {
+////   .login .fa-user,.fa-lock{  left:43px; }
+//
+////   .fa-question{    right: 5%;
+////     top: 29%;}
+//// }
+//
+//// @media (min-width:768px)
+//// {
+////   .login .fa-user,.fa-lock{  left:40px; }
+//
+////   .fa-question{    right: 5%;
+////     top: 29%;}
+//// }
+//// @media (max-width:1440px)
+//// {
+////   .login .fa-user,.fa-lock{  left:25px; }
+//
+//// }
+//
+//// @media (min-width:2560px)
+//// {
+////   .login .fa-user,.fa-lock{  left:62px; }
+//
+//// }
+.logoimg{width:127px; height: 25px;}
+///* Reset CSS */
+//html, body, div, span, applet, object, iframe,
+//h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+//a, abbr, acronym, address, big, cite, code,
+//del, dfn, em, font, img, ins, kbd, q, s, samp,
+//small, strike, strong, sub, sup, tt, var,
+//b, u, i, center,
+//dl, dt, dd, ol, ul, li,
+//fieldset, form, label, legend,
+//table, caption, tbody, tfoot, thead, tr, th, td {
+//	margin: 0;
+//	padding: 0;
+//	border: 0;
+//	outline: 0;
+//	font-size: 100%;
+//	vertical-align: middle;
+//	background: transparent;
+//}
+//body {
+//	background: #DCDDDF url('../../../assets/img/login-imgs/login-body.png');
+//	color: #000;
+//	font: 14px Arial;
+//	margin: 0 auto;
+//	padding: 0;
+//	position: relative;
+//}
+//h1{ font-size:28px;}
+//h2{ font-size:26px;}
+//h3{ font-size:18px;}
+//h4{ font-size:16px;}
+//h5{ font-size:14px;}
+//h6{ font-size:12px;}
+//h1,h2,h3,h4,h5,h6{ color:#563D64;}
+//small{ font-size:10px;}
+//b, strong{ font-weight:bold;}
+//a{ text-decoration: none; }
+//a:hover{ text-decoration: underline; }
+//.left { float:left; }
+//.right { float:right; }
+//.alignleft { float: left; margin-right: 15px; }
+//.alignright { float: right; margin-left: 15px; }
+//.clearfix:after,
+//form:after {
+//	content: ".";
+//	display: block;
+//	height: 0;
+//	clear: both;
+//	visibility: hidden;
+//}
+//.container { margin: 25px auto; position: relative; width: 900px; }
+//#content {
+//	background: #f9f9f9;
+//	background: -moz-linear-gradient(to top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
+//	background: -webkit-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: -o-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: -ms-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+//	-webkit-box-shadow: 0 1px 0 #fff inset;
+//	-moz-box-shadow: 0 1px 0 #fff inset;
+//	-ms-box-shadow: 0 1px 0 #fff inset;
+//	-o-box-shadow: 0 1px 0 #fff inset;
+//	box-shadow: 0 1px 0 #fff inset;
+//	border: 1px solid #c4c6ca;
+//	margin: 0 auto;
+//	padding: 25px 0 0;
+//	position: relative;
+//	text-align: center;
+//	text-shadow: 0 1px 0 #fff;
+//  width: 450px;
+//
+//}
+//#content h1 {
+//	color: #7E7E7E;
+//	font: bold 25px Helvetica, Arial, sans-serif;
+//	letter-spacing: -0.05em;
+//	line-height: 20px;
+//	margin: 10px 0 30px;
+//}
+//#content h1:before,
+//#content h1:after {
+//	content: "";
+//	height: 1px;
+//	position: absolute;
+//	top: 10px;
+//	width: 27%;
+//}
+//#content h1:after {
+//	background: rgb(126,126,126);
+//	background: -moz-linear-gradient(to left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
+//	background: -webkit-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: -o-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: -ms-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//    right: 0;
+//}
+//#content h1:before {
+//	background: rgb(126,126,126);
+//	background: -moz-linear-gradient(to right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
+//	background: -webkit-linear-gradient(to right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: -o-linear-gradient(to right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: -ms-linear-gradient(to right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//	background: linear-gradient(to right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+//    left: 0;
+//}
+//#content:after,
+//#content:before {
+//	background: #f9f9f9;
+//	background: -moz-linear-gradient(to top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
+//	background: -webkit-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: -o-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: -ms-linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	background: linear-gradient(to top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+//	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+//	border: 1px solid #c4c6ca;
+//	content: "";
+//	display: block;
+//	height: 100%;
+//	left: -1px;
+//	position: absolute;
+//	width: 100%;
+//}
+//#content:after {
+//	-webkit-transform: rotate(2deg);
+//	-moz-transform: rotate(2deg);
+//	-ms-transform: rotate(2deg);
+//	-o-transform: rotate(2deg);
+//	transform: rotate(2deg);
+//	top: 0;
+//	z-index: -1;
+//}
+//#content:before {
+//	-webkit-transform: rotate(-3deg);
+//	-moz-transform: rotate(-3deg);
+//	-ms-transform: rotate(-3deg);
+//	-o-transform: rotate(-3deg);
+//	transform: rotate(-3deg);
+//	top: 0;
+//	z-index: -2;
+//}
+//#content form { margin: 0 20px; position: relative }
+//#content form input[type="text"],
+//#content form input[type="password"] {
+//	-webkit-border-radius: 3px;
+//	-moz-border-radius: 3px;
+//	-ms-border-radius: 3px;
+//	-o-border-radius: 3px;
+//	border-radius: 3px;
+//	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+//	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+//	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+//	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+//	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+//	-webkit-transition: all 0.5s ease;
+//	-moz-transition: all 0.5s ease;
+//	-ms-transition: all 0.5s ease;
+//	-o-transition: all 0.5s ease;
+//	transition: all 0.5s ease;
+//	background: #eae7e7 url('../../../assets/img/login-imgs/background.png') no-repeat;
+//	border: 1px solid #c8c8c8;
+//	color: #777;
+//	font: 13px Helvetica, Arial, sans-serif;
+//	margin: 0 0 10px;
+//	padding: 15px 10px 15px 40px;
+//	width: 80%;
+//}
+//#content form input[type="text"]:focus,
+//#content form input[type="password"]:focus {
+//	-webkit-box-shadow: 0 0 2px #1976D2 inset;
+//	-moz-box-shadow: 0 0 2px #1976D2 inset;
+//	-ms-box-shadow: 0 0 2px #1976D2 inset;
+//	-o-box-shadow: 0 0 2px #1976D2 inset;
+//	box-shadow: 0 0 2px #1976D2 inset;
+//	background-color: #fff;
+//	border: 1px solid #1976D2;
+//	outline: none;
+//}
+//#username { background-position: 10px 10px !important ; padding-bottom: 22px !important; padding-top: 22px !important; }
+//#password { background-position: 10px -53px !important }
+//#content form input[type="submit"] {background: #1976D2; /* For browsers that do not support gradients */
+//    background: -webkit-linear-gradient(to top,#39f, #1976D2); /* For Safari 5.1 to 6.0 */
+//    background: -o-linear-gradient(to top, #39f, #1976D2); /* For Opera 11.1 to 12.0 */
+//   background: -moz-linear-gradient(to top, #39f, #1976D2); /* For Firefox 3.6 to 15 */
+//  background: linear-gradient(to top, #39f, #1976D2); /* Standard syntax */
+//
+//	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1976D2', endColorstr='#1976D2',GradientType=0 );
+//
+//	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+//	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+//	-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+//	-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+//	box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+//	border: 1px solid #1976D2;
+//	color: #fff;
+//	cursor: pointer;
+//	float: left;
+//	font: bold 15px Helvetica, Arial, sans-serif;
+//	height: 35px;
+//	margin: 20px 0 35px 15px;
+//	position: relative;
+//	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+//	width: 120px;
+//}
+//
+//#content form div a {
+//	color: #004a80;
+//
+//    font-size: 12px;
+//    margin: 30px 15px 0 0;
+//    text-decoration: underline;
+//}
+//.login-nav{padding: 10px 0px;
+//  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.33);}
+//
+//.padding-20 {
+//  padding: 0 !important;
+//}

@@ -1,0 +1,214 @@
+
+#aside nav ul li a{
+    color:#fff;
+}
+#aside nav a i.pull-right,#aside nav ul li ul li a i.fa,#header .dropdown-toggle    {
+    color:#fff;
+}
+
+#header form.search {
+    padding: 9px 0;
+}
+#header form.search>input{
+    border: 1px solid rgba(255, 255, 255,.3);
+    height: 32px;
+    padding: 2px 5px;
+    transition: .5s;
+}
+#header form.search>input:focus{
+    border: 1px solid rgba(255, 255, 255,.6);
+
+}
+#header input[type="text"]::-webkit-input-placeholder{
+    color: rgba(255, 255, 255,.5);
+}
+#header .noti{
+    padding: 14px !important;
+    font-size: 16px;
+    color: #fff !important;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 6px 13px;
+}
+.box-image{
+    border: 1px solid rgba(0,0,0,.1);
+    transition: .5s;
+    margin: 5px 0;
+}
+.box-image:hover{
+    box-shadow:  0px 1px 1px 1px rgba(0,0,0,.1);
+}
+.box-image h2 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+}
+.box-image .btn.btn-reveal.btn-sm {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    position: relative;
+}
+.pos .form-control {
+    height: 25px;
+    margin: 2px;
+}
+.pos td,th{
+    font-size: 12px;
+}
+#header nav  .notification-dropdown{
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    right: 0 !important;
+}
+.notification-dropdown .panel {
+    width: 700px;
+}
+.notification-dropdown  .panel-default>.panel-heading{
+    background: #f5f5f5;
+    font-size: 14px;
+    text-transform: none;
+}
+.notification-dropdown  .panel-body{
+    padding: 0;
+    overflow: auto;
+}
+.notification-dropdown  .panel-body .list-group-item {
+    color: #000;
+}
+.notification-dropdown  .panel-body a.list-group-item{
+    padding: 10px 15px !important;
+}
+.notification-dropdown  .panel-body a.active{
+    color: #fff !important;
+}
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+/* .panel-body
+{
+    overflow-y: scroll;
+    height: 250px;
+} */
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+.chat-box{
+    position: fixed;
+    right: 1%;
+    width: 20%;
+    bottom: -3%;
+    z-index: 99;
+}
+.chat-box .form-group{
+    margin-bottom: 5px;
+}
+.chat-box .form-control {
+    height: 30px;
+}
+.chat-box h3{
+    margin-bottom: 5px;
+}
+.chat-box .btn-primary{
+    font-size: 12px;
+    padding: 4px;
+    display: block;
+    margin: auto;
+    height: 30px;
+}
+#header .btn,#header nav .dropdown-menu li a{
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+#header .dropdown{
+    margin: 0 4px;
+}
+#header nav .dropdown-menu li a{
+    padding: 5px 13px;
+    width: 100%;
+    display: block;
+}
+.btn-default.white{
+    background-color: #000 !important;
+    color: #fff;
+}
+.small-panel{
+    width: 75%;
+    margin: auto;
+}
+.xsmall-panel{
+    width: 60%;
+    margin: auto;
+}
+.panel-body{
+    width: 100%;
+}
+#header nav .dropdown-menu{
+    width: 200px;
+}
+#header nav .dropdown-menu.notification-dropdown{
+    width: auto;
+}
+#reportViewer1{
+    position: relative !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+}
+
+.k-dropdown-wrap.k-state-focused,
+.k-numeric-wrap.k-state-focused,
+.k-picker-wrap.k-state-focused {
+  background-color:initial !important;
+}
+

@@ -1,0 +1,52 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="goBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-default margin-bottom-0 small-panel">
+
+  <div class="panel-heading">
+
+    <ul class="options list-inline row">
+      <div class="col-md-5">
+        <kendo-dropdownlist [data]="templateMenu"
+                            valueField="TemplateID"
+                            textField="TemplateName"
+                            [(ngModel)]="selectedTemplate">
+        </kendo-dropdownlist>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-info btn-sm" id="print" (click)="ApplyShowReport()"> Refresh</button>
+      </div>
+</ul>
+
+</div>
+
+  <div class="panel-body">
+    <div class="row" *ngIf="ShowReport && selectedTemplate">
+      <tr-viewer #viewer1
+                 [containerStyle]="viewerContainerStyle"
+                 [serviceUrl]="serviceUrl"
+                 [reportSource]="{
+                   report: 'KaizenServer.Reports.DemandLetter, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters:  { CaseRef: CaseMain.CaseRef ,TemplateID :selectedTemplate.TemplateID}
+                 }"
+                 [viewMode]="'INTERACTIVE'"
+                 [scaleMode]="'SPECIFIC'"
+                 [scale]="1.0"
+                 [ready]="ready"
+                 [viewerToolTipOpening]="viewerToolTipOpening"
+                 [enableAccessibility]="false">
+      </tr-viewer>
+    </div>
+  </div>
+
+
+</div>

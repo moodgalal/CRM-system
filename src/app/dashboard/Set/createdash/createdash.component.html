@@ -1,0 +1,115 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="onSave()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-save"></i>Save
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Dashroles" class="btn btn-primary btn-sm">
+          Roles
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Dashboarduserrole" class="btn btn-primary btn-sm">
+          Users
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Reportdash" class="btn btn-primary btn-sm">
+          Reports
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Reportroles" class="btn btn-primary btn-sm">
+          Reports Roles
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Reportuserrole" class="btn btn-primary btn-sm">
+          Reports Users
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Company </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+
+            <kendo-dropdownlist [data]="CompanyList" (valueChange)="CompanyID_Changed($event)"
+                                valueField="CompanyID" textField="CompanyName"
+              [valuePrimitive]="true" [(ngModel)]="Kaizen00050.CompanyID">
+            </kendo-dropdownlist>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Dashboard Name</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="DashboardName" [(ngModel)]="Kaizen00050.DashboardName">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th>
+                  DashboardCode
+                </th>
+                <th>
+                  DashboardName
+                </th>
+                <th>
+
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngIf="dashboardList">
+              <tr *ngFor="let dash of dashboardList">
+                <td>
+                  {{dash.DashboardCode}}
+                </td>
+                <td>
+                  {{dash.DashboardName}}
+                </td>
+                <td >
+                  <a (click)="delete(dash);"><i class=" fa fa-remove" ></i></a>
+                  <a (click)="edit(dash);"><i class=" fa fa-edit"></i></a>
+
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+.item {
+  background-color: #bfe7f9;
+  color: #1494d0;
+  border: 1px solid #fff;
+  height: 100px;
+  line-height: 88px;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  cursor: move;
+}
+
+.item:hover,
+.employee:hover {
+  opacity: 0.8;
+}
+
+.item.active,
+.employee.active {
+  background-color: #27aceb;
+  color: #fff;
+  border-color: #27aceb;
+  z-index: 10;
+}
+
+.item.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.team {
+  min-height: 240px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #fff;
+  background-color: #dff3fc;
+}
+
+.team-b {
+  background-color: #fbe0e7;
+}
+
+.employee {
+  background-color: #bfe7f9;
+  color: #1494d0;
+  margin: 1px;
+  padding: 20px;
+  cursor: move;
+  display: block;
+}
+
+.team-b .employee {
+  background-color: #f3b9c9;
+  color: #dd4672;
+}
+
+.team-b .employee.active {
+  background-color: #dd4672;
+  color: #fff;
+}
+
+.empty {
+  font-weight: bold;
+  text-align: center;
+  height: 150px;
+}
+
+md-grid-tile
+{
+  margin-right: 10px;
+  height: 150px;
+   .mat-figure{
+    margin: 0 10px !important;
+  }
+}
+md-card {
+  height: 70%;
+  border-radius: 3px;
+  background: #1a90f7;
+  color: whitesmoke;
+  width: 100%;
+  padding: 30px 20px;
+
+  md-card-content
+  {
+    margin-top: 10px;
+    font-weight: bold;
+
+    h4
+    {
+      padding:5px 10px;
+
+      color: #0d70a6;
+
+    }
+  }
+}
+.k-chart, .k-stockchart{
+  margin-bottom: 5%;
+}
+.main-card{margin: 10px 0;
+  .card{
+    border-radius: 0;
+    border: none;
+    position: relative;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 0px;
+    transition: 1s;
+    .card-body{
+      position: relative;
+    }
+    .card-title{
+      text-align: center;
+      font-size: 15px;
+    }
+    h5{
+    font-size: 40px;
+    margin-bottom: 0;
+    }
+    p{
+      color: #AFB3B6!important;
+      margin-bottom: 0;
+    }
+    .dropdown{
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      .dropdown-menu{
+        top: -30px !important;
+        left: -160px !important;
+        padding: 0.25rem 0;
+          .dropdown-item{
+            padding: 4px 10px;
+          }
+      }
+    .dropdown-toggle::after{
+      display: none;
+    }
+    .dropdown-toggle{
+          color: #868e96;
+      background: transparent;
+      font-size: 20px;
+      border-radius: 50%;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      box-shadow:  none;
+      transition: .5s;
+      cursor: pointer;
+    }
+    .dropdown-toggle:focus{
+          color: #868e96;
+      background: rgba(0,0,0,.1);
+      border: none;
+      font-size: 20px;
+      border-radius: 50%;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+
+    }
+    }
+  }
+  .card:hover{
+    background-color: rgb(252, 250, 250);
+    box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.25);
+  }
+ .last-card{
+  .dropdown{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    .dropdown-menu{
+      top: -30px !important;
+      left: -62px !important;
+      padding: 0.25rem 0;
+        .dropdown-item{
+          padding: 4px 10px;
+        }
+    }
+  .dropdown-toggle::after{
+    display: none;
+  }
+  .dropdown-toggle{
+        color: #868e96;
+    background: transparent;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    box-shadow:  none;
+    transition: .5s;
+    cursor: pointer;
+  }
+  .dropdown-toggle:focus{
+        color: #868e96;
+    background: rgba(0,0,0,.1);
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+
+  }
+  }
+ }
+}
+@media (max-width: 768px){
+  .card{
+    .dropdown{
+  .dropdown-menu{
+      left: 0px !important;
+  }}}
+}
+
+.buttonsHolder {
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+  button {
+    margin: 10px;
+    width: 100%;
+   
+  }
+}

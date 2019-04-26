@@ -1,0 +1,125 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <!--<li (click)="onSave()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add
+        </a>
+      </li>-->
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Account</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="AccountData" [textField]="'SMSAccountName'"
+                                [valueField]="'SMSAccountCode'" [valuePrimitive]="true"
+              [(ngModel)]="MS10100.SMSAccountCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">TemplateName</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="templatesData" [textField]="'TemplateName'" [valueField]="'TemplateID'" [valuePrimitive]="true"
+              [(ngModel)]="MS10100.TemplateID" (selectionChange)="TemplateChange($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Select Group (optional)</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="groupsData" textField="GroupName" [valuePrimitive]="true" valueField="GroupID" [(ngModel)]="MS10100.GroupID"
+              (valueChange)="GroupID_valueChange($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Upload File (optional)</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="false" (success)="successEventHandler($event)" (error)="errHandler($event)">
+            </kendo-upload>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Upload File (optional)</label>
+          </div>
+          <div class=" col-md-9 col-xs-9">
+            <kendo-dropdownlist [data]="ExcelColumns" [textField]="'ColumnName'" [valueField]="'Index'"
+              [valuePrimitive]="true" (valueChange)="ColumnName_valueChange($event)">
+            </kendo-dropdownlist>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">TemplateMessage</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <textarea id="TemplateMessage" class="form-control" placeholder="TemplateMessage" [(ngModel)]="MS10100.MessageContant"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">PhoneNumber</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox (keyup.enter)="PhoneNumber_enter($event)" id="PhoneNumber" placeholder="Phone Number" [(ngModel)]="MS10101.PhoneNumber"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <a class="btn btn-primary btn-sm white" (click)="Send()">
+          <i class="fa fa-plus"></i>Send Individual
+        </a>
+      </div>
+    </div>
+    <table class="table  table-hover table-bordered table-resposive">
+      <thead class="table-inverse">
+        <tr>
+          <th style="width:10%;">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Phone of MS10101List">
+          <td>{{ Phone.PhoneNumber}}</td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

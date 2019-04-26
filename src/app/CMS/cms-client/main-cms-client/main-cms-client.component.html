@@ -1,0 +1,8 @@
+﻿<ng-template #extra>
+  <div class="col-md-8">
+    <button routerLink="/CreateCmsClient" kendoButton [primary]="true">Add</button>
+    
+    <button routerLink="/CmsClientAddress" kendoButton [primary]="true">Client Address</button>
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

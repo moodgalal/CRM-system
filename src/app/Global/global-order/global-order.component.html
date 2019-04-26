@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <kendo-sortable [data]="columns" [navigatable]="true" [animation]="true" class="row" itemClass="item col-xs-6 col-sm-3"
+                  activeItemClass="item col-xs-6 col-sm-3 active">
+    <ng-template let-column="item">
+      {{ column.FieldDisplay }}
+    </ng-template>
+  </kendo-sortable>
+</div>

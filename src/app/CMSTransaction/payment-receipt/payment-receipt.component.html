@@ -1,0 +1,129 @@
+<div class="panel panel-default">
+  <div class="panel-heading"></div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label>Transaction ref</label>
+          </div>
+
+          <div class="col-9 col-md-10 col-xs-9  ">
+            <label class="sr-only" for="inlineFormInputGroup1">Receipt</label>
+            <app-currency-lookup (getValue)="getValue($event)"></app-currency-lookup>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label>check book</label>
+          </div>
+
+          <div class="col-9 col-md-10 col-xs-9  ">
+            <label class="sr-only" for="inlineFormInputGroup2">Receipt</label>
+            <app-check-book (getValue)="getValue($event)"></app-check-book>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label>Browse</label>
+          </div>
+
+
+          <div class="col-9 col-md-10 col-xs-9  ">
+            <label class="sr-only" for="inlineFormInputGroup">Receipt</label>
+            <div class="input-group mb-2 mb-sm-0">
+
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Receipt">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput3">check book</label>
+          </div>
+
+          <div class="col-9 col-md-10 col-xs-9  ">
+
+            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Receipt">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput4">Transaction ref</label>
+          </div>
+
+
+          <div class="col-9 col-md-10 col-xs-9  ">
+
+            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Receipt">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-2 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput5">Fees</label>
+          </div>
+
+          <div class="col-9 col-md-10 col-xs-9">
+            <div class="row">
+
+
+              <div class="col-md-6">
+                <kendo-dropdownlist [data]="testData">
+                </kendo-dropdownlist>
+              </div>
+              <div class="col-md-6">
+                <kendo-dropdownlist [data]="testData">
+                </kendo-dropdownlist>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-3 col-md-1 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput6">Description</label>
+          </div>
+
+          <div class=" col-9 col-md-11 col-xs-9">
+            <textarea class="form-control" rows="5" id="exampleFormControlInput6" placeholder="Lorem Ipsum is simply dummy text."></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

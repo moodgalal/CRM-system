@@ -1,0 +1,325 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="save()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>StatusActionTypeID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-dropdownlist [data]="StatusTypeList" valueField="StatusActionTypeID" textField="StatusActionTypeName" [valuePrimitive]="true"
+              [(ngModel)]="CM00700.StatusActionTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CaseStatusTypeID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-dropdownlist [data]="CaseStatusTypeList" valueField="CaseStatusTypeID" textField="CaseStatusTypeName" [valuePrimitive]="true"
+              [(ngModel)]="CM00700.CaseStatusTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CaseStatusParent</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="CaseStatusParent" [(ngModel)]="CM00700.CaseStatusParent">
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CaseStatusname</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="CaseStatusname" [(ngModel)]="CM00700.CaseStatusname">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>ActionCountPeriod</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="ActionCountPeriod" [(ngModel)]="CM00700.ActionCountPeriod">
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>ActionCountTotal</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="ActionCountTotal" [(ngModel)]="CM00700.ActionCountTotal">
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>RuleCondition</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="RuleCondition" [(ngModel)]="CM00700.RuleCondition">
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>StatusHTML</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="StatusHTML" [(ngModel)]="CM00700.StatusHTML">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>RequiredDays</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="RequiredDays" [(ngModel)]="CM00700.RequiredDays">
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>ChildName</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+
+            <input kendoTextBox placeholder="ChildName" [(ngModel)]="CM00700.ChildName">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsHasChild</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsHasChild"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsArchive</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsArchive"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsPTP</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsPTP"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsPTPRequired</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsPTPRequired"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsPaymentApply</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsPaymentApply"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsCloseReminder</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsCloseReminder"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsReminder</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsReminder"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsTaskList</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsTaskList"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsScripting</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsScripting"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>IsCustomField</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-switch [(ngModel)]="CM00700.IsCustomField"></kendo-switch>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</div>

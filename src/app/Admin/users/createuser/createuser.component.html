@@ -1,0 +1,176 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="create()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i> Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8 ">
+        <div class="row">
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="username">User Name</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="text" class="form-control" id="username" placeholder="User Name" [(ngModel)]="User.UserName">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="User.FirstName">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="lastName">Last Name</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="User.LastName">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="email">Email Address</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="text" class="form-control" id="email" placeholder="Email" [(ngModel)]="User.EmailValidation">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="email">password</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="password" class="form-control" id="email" placeholder="password" [(ngModel)]="User.NewPassword">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-2 col-xs-3 padding-col">
+                <label for="email">Confirm Password</label>
+              </div>
+              <div class="col-md-10 col-xs-9">
+                <input type="password" class="form-control" id="email" placeholder="Confirm Password" [(ngModel)]="User.ConfirmPassword">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-sm-12">
+
+        <div class="form-group row">
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Disabled
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsDisabled"></kendo-switch>
+            </label>
+          </div>
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Customer
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsCustomer"></kendo-switch>
+
+            </label>
+          </div>
+        </div>
+        <div class="form-group row">
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Vendor
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsVendor"></kendo-switch>
+
+            </label>
+          </div>
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Debtor
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsDebtor"></kendo-switch>
+
+            </label>
+          </div>
+        </div>
+        <div class="form-group row">
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Partner
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsPartner"></kendo-switch>
+
+            </label>
+          </div>
+
+
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4 ">
+              Agent
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsAgent"></kendo-switch>
+
+            </label>
+          </div>
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4">
+             Client
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsClient"></kendo-switch>
+
+            </label>
+          </div>
+          <div class="col-md-6 padding-col">
+            <label class="col-md-4">
+              Employee
+            </label>
+            <label class="checkbox col-md-8">
+              <kendo-switch [(ngModel)]="User.IsEmployee"></kendo-switch>
+
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

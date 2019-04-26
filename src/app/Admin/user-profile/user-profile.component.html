@@ -1,0 +1,276 @@
+<!-- profile page -->
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+
+    <span class="elipsis">
+      <!-- panel title -->
+      <strong>User Profile</strong>
+    </span>
+
+    <!-- right options -->
+    <ul class="options pull-right list-inline">
+      <li>
+        <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+      </li>
+      <li>
+        <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+          <i class="fa fa-expand"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+
+
+  </div>
+
+  <!-- panel content -->
+  <div class="panel-body nopadding">
+
+
+    <div class="padding-15">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="offset-md-10 col-md-2  toppad  pull-right ">
+
+            <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="editProfile" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Profile</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Department:</td>
+                          <td>
+                            <kendo-dropdownlist [data]="testData">
+                            </kendo-dropdownlist>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Hire date:</td>
+                          <td>
+                            <kendo-datepicker [value]="value"></kendo-datepicker>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>
+                            <kendo-datepicker [value]="value"></kendo-datepicker>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>
+                            <kendo-dropdownlist [data]="testData">
+                            </kendo-dropdownlist>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Home Address</td>
+                          <td>
+                            <input type="text" class="form-control" placeholder="Address">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td>
+                            <input type="email" class="form-control" placeholder="email">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Phone Number</td>
+                          <td>
+                            <input type="number" class="form-control" placeholder="number">
+
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Change password</td>
+                          <td>
+                            <input type="password" class="form-control" placeholder="password">
+
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Confirm password</td>
+                          <td>
+                            <input type="password" class="form-control" placeholder="confirm password">
+
+                          </td>
+                        </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12  toppad">
+
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Ahmed Samir
+                  <a class="btn btn-primary b-color pull-right" data-toggle="modal" data-target="#editProfile" style="color: whitesmoke !important;    margin: 0;">Edit Profile</a>
+
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3 col-lg-3 " align="center">
+                    <img alt="User Pic" src="../../assets/img/avatar.jpg" class="img-thumbnail">
+                    
+                    <div class="fancy-file-upload">
+                      <input type="file" class="form-control" name="contact[attachment]" onchange="jQuery(this).next('input').val(this.value);">
+                      <input type="text" class="form-control" placeholder="no file selected" readonly="">
+                      <span class="button b-img">
+                        <i class="fa fa-camera-retro"></i> Change Profile Pic</span>
+                    </div>
+                  </div>
+
+                  <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> 
+                                                              <dl>
+                                                                <dt>DEPARTMENT:</dt>
+                                                                <dd>Administrator</dd>
+                                                                <dt>HIRE DATE</dt>
+                                                                <dd>11/12/2013</dd>
+                                                                <dt>DATE OF BIRTH</dt>
+                                                                   <dd>11/12/2013</dd>
+                                                                <dt>GENDER</dt>
+                                                                <dd>Male</dd>
+                                                              </dl>
+                                                            </div>-->
+                  <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Department:</td>
+                          <td>Programming</td>
+                        </tr>
+                        <tr>
+                          <td>Hire date:</td>
+                          <td>06/23/2013</td>
+                        </tr>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>01/24/1988</td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>Male</td>
+                        </tr>
+                        <tr>
+                          <td>Home Address</td>
+                          <td>Giza , Egypt</td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td>
+                            <a href="mailto:info@support.com">info@kazien.com</a>
+                          </td>
+                        </tr>
+                        <td>Phone Number</td>
+                        <td>123-4567-890(Landline)
+                          
+                          555-4567-890(Mobile)
+                        </td>
+
+
+
+                      </tbody>
+                    </table>
+
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mylog">My log</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mylog">My attendace</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mylog">My calls</a>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="mylog" tabindex="-1" role="dialog" aria-labelledby="mylog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">My log</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table table-user-information">
+                        <tbody>
+                          <tr>
+                            <td>Ahmed Samir had been checked the users
+                              <p class="text-muted date-log">27/10/2017 20:55 pm</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Ahmed Samir had been checked the users
+                              <p class="text-muted date-log">27/10/2017 20:55 pm</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Ahmed Samir had been checked the users
+                              <p class="text-muted date-log">27/10/2017 20:55 pm</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Ahmed Samir had been checked the users
+                              <p class="text-muted date-log">27/10/2017 20:55 pm</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Ahmed Samir had been checked the users
+                              <p class="text-muted date-log">27/10/2017 20:55 pm</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="panel-footer">
+                                                    <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">
+                                                      <i class="fa fa-mail"></i>
+                                                    </a>
+                                                    <span class="pull-right">
+                                                      <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">
+                                                        <i class="fa fa-cog"></i>
+                                                      </a>
+                                                      <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger">
+                                                        <i class="fa fa-times"></i>
+                                                      </a>
+                                                    </span>
+                                                  </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /panel content -->
+
+</div>
+<!-- profile page -->
+
+

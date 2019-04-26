@@ -1,0 +1,108 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a href="#" class="btn btn-default btn-sm white" >
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-success btn-sm white">
+          <i class="fa fa-plus"></i>Save</a>
+      </li>
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-sm">History</button>
+          <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item">Do Action</a>
+            <a class="dropdown-item" href="#">Payments</a>
+            <a class="dropdown-item" href="#">Fees</a>
+            <a class="dropdown-item" href="#">Documents</a>
+          </div>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a (click)="GetCaseDoAction()">
+                <i class="fa fa-edit"></i> Do Action</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-question-circle"></i> Payments</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-print"></i> Fees</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-cogs"></i> Documents</a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+      <li>
+        <a href="#" class="btn btn-primary btn-sm white">
+          <i class="fa fa-money"></i>Fees</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" *ngIf="showDoAction" (click)="doActiontRef.save()">
+          <i class="fa fa-check"></i>Save</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" *ngIf="showCaseAttachment" (click)="caseAttachmentRef.save()">
+          <i class="fa fa-check"></i>Save</a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+
+  <div class="panel-body">
+    <div class="row">
+
+      <div class=" col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12 ">
+            <label>Data Source</label>
+          </div>
+
+          <div class=" col-md-9 col-xs-12  ">
+            <kendo-dropdownlist (valueChange)="getViews($event)" [data]="sources" textField="TrxTypeName" valueField="TRXTypeID" [valuePrimitive]="true">
+            </kendo-dropdownlist>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class=" col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12  ">
+            <label>Views</label>
+          </div>
+
+          <div class=" col-md-9 col-xs-12  ">
+            <kendo-dropdownlist (valueChange)="getColumns($event)" [data]="views" textField="ViewName" valueField="ViewID">
+            </kendo-dropdownlist>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="panel panel-default small-panel" *ngIf="columns">
+  <div class="panel-body">
+    <app-global-filter #globFilter [columns]="columns" (filterString)="createFilter($event)"></app-global-filter>
+    <div>
+      <button [disabled]="globFilter.someWrong || globFilter.displayString == null" type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" (click)="globFilter.emitStr()">Filter</button>
+    </div>
+  </div>
+</div>

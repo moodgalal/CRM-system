@@ -1,0 +1,54 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Form_Closing()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="save()">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>Agent To</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <label class="sr-only">Currency</label>
+            <app-agent-lookup (getValue)="AgentTo_Change($event)"></app-agent-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput4">Assign Date</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-datepicker [min]="CM00205.MinDateTime" [(ngModel)]="CM00205.AssignHistoryDate"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-1-5 col-xs-3 ">
+            <label for="exampleFormControlInput6">Description</label>
+          </div>
+          <div class="col-md-10-5 col-xs-9  ">
+            <textarea class="form-control" rows="5" [(ngModel)]="CM00205.Description"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />

@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <div class="row">
+          <span class="title elipsis col-md-6">
+            <strong>Agent by status </strong>
+          </span>
+          <div class="pull-right col-md-6">
+            <div class="row">
+              <div class="col-md-10">
+                <div class="row">
+                  <div class="col-md-4 padding-col">
+                    <label>View</label>
+                  </div>
+                  <div class="col-md-8 padding-col">
+                    <kendo-dropdownlist [data]="CMSShared.MyAgentList" (valueChange)="LoadData()"
+                                        [(ngModel)]="AgentID"
+                                        textField="AgentID"
+                                        valueField="AgentID"
+                                        [valuePrimitive]="true"></kendo-dropdownlist>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button kendobutton="" title="Advanced Filter" class="k-button k-primary k-button-icon" dir="ltr">
+                  <span class="k-icon k-i-filter" role="presentation"></span>
+                </button>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>CaseStatusname</th>
+          <th>Past Due</th>
+          <th>Collection</th>
+          <th>Volum</th>
+          <th>Customers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Obj of CMV00002List">
+          <td>{{ Obj.CaseStatusname }}</td>
+          <td>{{ Obj.ClaimAmount }}</td>
+          <td>{{ Obj.TotalCallactedAMT }}</td>
+          <td>{{ Obj.caseCount }}</td>
+          <td>{{ Obj.DebtorCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

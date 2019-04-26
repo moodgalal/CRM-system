@@ -1,0 +1,31 @@
+<div class="panel panel-default margin-bottom-0 ">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Payment_Closing()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default ">
+  <div class="panel-body">
+    <div  *ngIf="ShowReport">
+      <tr-viewer #viewer1
+                 [containerStyle]="viewerContainerStyle"
+                 [serviceUrl]="serviceUrl"
+                 [reportSource]="{
+                   report: 'KaizenServer.Reports.CaseCycle, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { CaseRef: CaseMain.CaseRef}
+                 }"
+                 [viewMode]="'INTERACTIVE'"
+                 [scaleMode]="'SPECIFIC'"
+                 [scale]="1.0"
+                 [ready]="ready"
+                 [viewerToolTipOpening]="viewerToolTipOpening"
+                 [enableAccessibility]="false">
+      </tr-viewer>
+    </div>
+  </div>
+</div>

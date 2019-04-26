@@ -1,0 +1,73 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="col-md-1  nopadding-y">
+      <kendo-dropdownlist [data]="SharedData.YearsList"
+                          [(ngModel)]="YearCode"
+                          textField="YearCode"
+                          valueField="YearCode" (valueChange)="YearCode_Change($event)"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-2  nopadding-y">
+      <kendo-dropdownlist [data]="SharedData.PeriodList"
+                          [(ngModel)]="PERIODID"
+                          textField="PeriodName"
+                          valueField="PERIODID"
+                          [valuePrimitive]="true"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-2  nopadding-y" *ngIf="!IsSummery">
+      <kendo-dropdownlist [data]="ClientList"
+                          [(ngModel)]="Client"
+                          textField="ClientName"
+                          valueField="ClientID"></kendo-dropdownlist>
+    </div>
+    <div class="pull-right margin-x-5">
+      <a class="btn btn-primary btn-sm white" (click)="ApplyShowReport()">
+        <i class="fa fa-file-pdf-o"></i>Report
+      </a>
+    </div>
+    <div class="pull-right margin-x-5">
+      <a class="btn btn-primary btn-sm white" (click)="ShowSummery()">
+        <i class="fa fa-file-pdf-o"></i>{{ IsSummery ? 'Details' : 'Summery' }}
+      </a>
+    </div>
+    <div class="pull-right margin-x-5">
+      <button routerLink="/Portfolio_Grading/0" class="btn btn-primary btn-sm white">Yearly</button>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row" *ngIf="ShowReport && !IsSummery">
+      <tr-viewer #viewer1
+                 [containerStyle]="viewerContainerStyle"
+                 [serviceUrl]="serviceUrl"
+                 [reportSource]="{
+                   report: 'KaizenServer.Reports.PortfolioGradingByMonth, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { PERIODID: PERIODID, ClientID: Client.ClientID}
+                 }"
+                 [viewMode]="'INTERACTIVE'"
+                 [scaleMode]="'SPECIFIC'"
+                 [scale]="1.0"
+                 [ready]="ready"
+                 [viewerToolTipOpening]="viewerToolTipOpening"
+                 [enableAccessibility]="false">
+      </tr-viewer>
+    </div>
+    <div class="row" *ngIf="ShowReport && IsSummery">
+      <tr-viewer #viewer1
+                 [containerStyle]="viewerContainerStyle"
+                 [serviceUrl]="serviceUrl"
+                 [reportSource]="{
+                   report: 'KaizenServer.Reports.PortfolioGradingByMonthSummery, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { PERIODID: PERIODID}
+                 }"
+                 [viewMode]="'INTERACTIVE'"
+                 [scaleMode]="'SPECIFIC'"
+                 [scale]="1.0"
+                 [ready]="ready"
+                 [viewerToolTipOpening]="viewerToolTipOpening"
+                 [enableAccessibility]="false">
+      </tr-viewer>
+    </div>
+  </div>
+</div>
+

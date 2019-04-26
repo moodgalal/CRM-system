@@ -1,0 +1,199 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+
+      <li [disabled]="selectedView" (click)="addColumn()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add</a>
+      </li>
+      <li [disabled]="selectedView" (click)="updateColumn()">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-check"></i> Update</a>
+      </li>
+      <li (click)="goBack()">
+        <a class="btn btn-danger btn-sm white">
+          <i class="fa fa-times"></i> Cancel</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Case type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9">
+            <kendo-dropdownlist (valueChange)="getViews($event)" [data]="sources"
+                                [(ngModel)]="SelectedTRXType"
+                                textField="TrxTypeName" valueField="TRXTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewType">View type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist id="viewType" [data]="viewTypes" valueField="ViewTypeID" textField="ViewTypeName"
+                                [(ngModel)]="selectedView"
+              [valuePrimitive]="true">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewName">View Name</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="viewName" type="text" class="form-control" placeholder="View Name" [(ngModel)]="selectedView.ViewName">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="viewDesc">View Description</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="viewDesc" type="text" class="form-control" placeholder="View Description" [(ngModel)]="selectedView.ViewDescription">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="whereCondition">where condition</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <textarea class="form-control" rows="5" id="whereCondition" placeholder="Lorem Ipsum is simply dummy text." [(ngModel)]="selectedView.WhereCondition"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="whereCustomCondition">where custom condition</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <textarea [(ngModel)]="selectedView.WhereCustomCondition" class="form-control" rows="5" id="whereCustomCondition" placeholder="Lorem Ipsum is simply dummy text."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="sortCondition">View sort condition</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <textarea [(ngModel)]="selectedView.ViewSortCondition" class="form-control" rows="5" id="sortCondition" placeholder="Lorem Ipsum is simply dummy text."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Table Source</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist id="caseType" [data]="sources" (valueChange)="getViews($event)" textField="TrxTypeName" valueField="TRXTypeID"
+              [valuePrimitive]="true">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Emailable">
+              <input type="checkbox" [checked]="selectedView.IsEmailable" (change)="selectedView.IsEmailable  = !selectedView.IsEmailable"
+                id="Emailable">
+              <i></i> Is Emailable
+            </label>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Printable">
+              <input type="checkbox" value="1" id="Printable" [checked]="selectedView.IsPrintable" (change)="selectedView.IsPrintable  = !selectedView.IsPrintable">
+              <i></i> Is Printable
+            </label>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Default">
+              <input type="checkbox" value="1" id="Default" [checked]="selectedView.IsDefault" (change)="selectedView.IsDefault  = !selectedView.IsDefault">
+              <i></i> Is Default
+            </label>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Emailable">
+              <input type="checkbox" [checked]="selectedView.IsEmailable" (change)="selectedView.IsEmailable  = !selectedView.IsEmailable"
+                id="Emailable">
+              <i></i> Is Emailable
+            </label>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Printable">
+              <input type="checkbox" value="1" id="Printable" [checked]="selectedView.IsPrintable" (change)="selectedView.IsPrintable  = !selectedView.IsPrintable">
+              <i></i> Is Printable
+            </label>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label class="checkbox" for="Default">
+              <input type="checkbox" value="1" id="Default" [checked]="selectedView.IsDefault" (change)="selectedView.IsDefault  = !selectedView.IsDefault">
+              <i></i> Is Default
+            </label>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+<div class="panel panel default" *ngIf="views">
+  <div class="panel-body">
+    <div class="row">
+      <div class="table-container text-center">
+        <table class="table table-bordered table-hover table-responsive">
+          <thead class="thead-inverse">
+            <tr>
+              <th>View Id</th>
+              <th class="width-75">View Name</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let view of views">
+              <td>{{ view.ViewID }}</td>
+              <td>{{ view.ViewName }}</td>
+              <td>
+                <button type="button" class="btn btn-outline-info mx-auto d-block" (click)="editColumn(view)">
+                  <i class="fa fa-edit"></i>
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-outline-danger mx-auto d-block" (click)="deleteColumn(view)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+﻿<ng-template #extra>
+  <div class="col-md-8">
+    <button routerLink="/create_debtor_class" kendoButton [primary]="true">Add</button>
+   
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

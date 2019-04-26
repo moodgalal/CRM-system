@@ -1,0 +1,142 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="save()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-save"></i>Update
+        </a>
+      </li>
+      <li (click)="delete()">
+        <a class="btn btn-danger btn-sm white">
+          <i class="fa fa-remove"></i>Delete
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>TaskTypeID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Lookup02 Name" [(ngModel)]="CM00025.TaskTypeID">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>PriorityID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-dropdownlist [data]="PriorityList"
+                                valueField="PriorityID" textField="PriorityName"
+                                [valuePrimitive]="true" [(ngModel)]="CM00025.PriorityID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+          <div class="form-group row">
+            <div class=" col-md-4 col-xs-3 padding-col">
+              <label>CaseStatusID</label>
+            </div>
+            <div class=" col-md-8 col-xs-9  ">
+              <kendo-dropdownlist [data]="CaseStatusList"
+                                  valueField="CaseStatusID" textField="FieldName"
+                                  [valuePrimitive]="true" [(ngModel)]="CM00025.CaseStatusID">
+              </kendo-dropdownlist>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>TaskTitle</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="TaskTitle"
+                       [(ngModel)]="CM00025.TaskTitle">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>TaskDescription</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="TaskDescription"
+                       [(ngModel)]="CM00025.TaskDescription">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>AgentID</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <app-agent-lookup (getValue)="getAgent($event)"></app-agent-lookup>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>TaskProgress</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="TaskProgress"
+                       [(ngModel)]="CM00025.TaskProgress">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>RequiredDays</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="RequiredDays"
+                       [(ngModel)]="CM00025.RequiredDays">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>CaseStatusIDEffect</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="CaseStatusIDEffect"
+                       [(ngModel)]="CM00025.CaseStatusIDEffect">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-3 padding-col">
+                <label>SqlScript</label>
+              </div>
+              <div class=" col-md-8 col-xs-9  ">
+                <input kendoTextBox placeholder="SqlScript"
+                       [(ngModel)]="CM00025.SqlScript">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

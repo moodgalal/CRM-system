@@ -1,0 +1,8 @@
+<div class="input-group mb-2 mb-sm-0">
+  <input type="text" class="form-control"  [(ngModel)]="CheckbookCode"  style="width:100%;"  placeholder="check book">
+  <div class="input-group-addon" (click)="openDialog()"><span class="fa fa-search"></span></div>
+</div>
+
+<kendo-dialog title="Select" (close)="close()" *ngIf="opened">
+  <lookupgrid (Select_Changed)="Select_Changed($event)"></lookupgrid>
+</kendo-dialog>

@@ -1,0 +1,338 @@
+<!--<div class="buttons-container">-->
+    <!--<button type="button" class="btn btn-dark" (click)="Setting.GoBack()"><i class="fa fa-arrow-left"></i>Back</button>-->
+    <!--<button type="button" class="btn btn-danger" (click)="goBack()"><i class="fa fa-arrow-left"></i>Cancel</button>-->
+    <!--<button type="button" class="btn btn-success" (click)="SaveBulkUpdate()"><i class="fa fa-check"></i> Save</button>-->
+<!--</div>-->
+
+<!--<div class="content-container padding-10">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-6 col-sm-6 p-l-0">-->
+                <!--<div class="col-md-12 ">-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-md-4 col-xs-4 p-l-0">-->
+                            <!--<label for="KaizenID">Transiaction Number</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-8 col-xs-8   ">-->
+                            <!--<input type="text" class="form-control" id="KaizenID"-->
+                                   <!--[(ngModel)]="KaizenID" readonly>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-md-4 col-xs-4 p-l-0 ">-->
+                            <!--<label for="">Date Source</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-8 col-xs-8   ">-->
+                            <!--<kendo-dropdownlist [data]="dataSourcesTmp"-->
+                                                <!--(valueChange)="dataSrcChange($event)"-->
+                                                <!--textField="TrxTypeName"-->
+                                                <!--valueField="TRXTypeID"-->
+                                                <!--[(ngModel)]="TRXTypeID"-->
+                                                <!--[valuePrimitive]="true">-->
+                            <!--</kendo-dropdownlist>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-md-4 col-xs-4 p-l-0">-->
+                            <!--<label for="">Upload</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-8 col-xs-8  ">-->
+                            <!--<div>-->
+                                <!--<kendo-upload [saveUrl]="uploadSaveUrl"-->
+                                              <!--[withCredentials]="false"-->
+                                              <!--(success)="successEventHandler($event)"-->
+                                              <!--(error)="errHandler($event)">-->
+                                <!--</kendo-upload>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-md-4 col-xs-4 p-l-0">-->
+                            <!--<label for="">Type</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-8 col-xs-8  ">-->
+                            <!--<kendo-dropdownlist [data]="ExcelColumns"-->
+                                                <!--[textField]="'ColumnName'"-->
+                                                <!--[valueField]="'Index'"-->
+                                                <!--[(ngModel)]="SelectedCaseAccountNo"-->
+                                                <!--[valuePrimitive]="true">-->
+                            <!--</kendo-dropdownlist>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-6 col-sm-6">-->
+
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div *ngIf="FieldList.length > 0" class="col-md-6">-->
+                    <!--<div *ngFor="let CaseField of FieldList; let i = index">-->
+                        <!--<div *ngIf="i % 2 == 0">-->
+                            <!--<div class="form-group row">-->
+                                <!--<div class="col-md-3 col-xs-3">-->
+                                    <!--<label>{{ CaseField.FieldDisplay }}</label>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-2">-->
+                                    <!--<input class="form-check-input checkbox-o"-->
+                                           <!--type="checkbox"-->
+                                           <!--[(ngModel)]="CaseField.isSelected">-->
+                                <!--</div>-->
+                                <!--<div class="col-md-7">-->
+                                    <!--<kendo-dropdownlist [data]="ExcelColumns"-->
+                                                        <!--[disabled]="!CaseField.isSelected"-->
+                                                        <!--[textField]="'ColumnName'"-->
+                                                        <!--[valueField]="'Index'"-->
+                                                        <!--[(ngModel)]="CaseField.FieldValue"-->
+                                                        <!--[valuePrimitive]="true">-->
+                                    <!--</kendo-dropdownlist>-->
+                                <!--</div>-->
+                                <!--<div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 2">-->
+                                    <!--<div class="form-group row">-->
+                                        <!--<div class="">-->
+                                            <!--<kendo-datepicker [value]="CaseField.FieldDateValue"></kendo-datepicker>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 3">-->
+                                    <!--<div class="form-group row">-->
+                                        <!--<div>-->
+                                            <!--<input type="text" class="form-control" [(ngModel)]="CaseField.FixedValue"-->
+                                                   <!--placeholder="{{ CaseField.FieldDisplay }}">-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div *ngIf="FieldList.length > 0" class="col-md-6">-->
+                    <!--<div *ngFor="let CaseField of FieldList; let i= index">-->
+                        <!--<div *ngIf="i % 2 != 0">-->
+                            <!--<div class="form-group row">-->
+                                <!--<div class="col-md-3 col-xs-3">-->
+                                    <!--<label>{{ CaseField.FieldDisplay }}</label>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-2">-->
+                                    <!--<input class="form-check-input checkbox-o"-->
+                                           <!--type="checkbox"-->
+                                           <!--[(ngModel)]="CaseField.isSelected">-->
+                                <!--</div>-->
+                                <!--<div class="col-md-7">-->
+                                    <!--<kendo-dropdownlist [data]="ExcelColumns"-->
+                                                        <!--[disabled]="!CaseField.isSelected"-->
+                                                        <!--[textField]="'ColumnName'"-->
+                                                        <!--[valueField]="'Index'"-->
+                                                        <!--[(ngModel)]="CaseField.FieldValue"-->
+                                                        <!--[valuePrimitive]="true">-->
+                                    <!--</kendo-dropdownlist>-->
+                                <!--</div>-->
+                                <!--<div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 2">-->
+                                    <!--<div class="form-group row">-->
+                                        <!--<div>-->
+                                            <!--<kendo-datepicker [value]="CaseField.FieldDateValue"></kendo-datepicker>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 3">-->
+                                    <!--<div class="form-group row">-->
+                                        <!--<div>-->
+                                            <!--<input type="text" class="form-control" [(ngModel)]="CaseField.FixedValue"-->
+                                                   <!--placeholder="{{ CaseField.FieldDisplay }}">-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="content-container" *ngIf="fieldDiffrence">-->
+
+    <!--<div class="container-fluid">-->
+        <!--<div class="col-md-12 col-sm-12">-->
+            <!--<span>{{ CuurentField.FieldDisplay }}</span>-->
+        <!--</div>-->
+        <!--<table class="table table-bordered">-->
+            <!--<tr>-->
+                <!--<th>CaseRef</th>-->
+                <!--<th>FieldValue (Old)</th>-->
+                <!--<th>FieldValue (New)</th>-->
+
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>{{ fieldDiffrence.CaseRef }}</td>-->
+                <!--<td>{{ fieldDiffrence.FieldValue }}</td>-->
+                <!--<td>{{ fieldDiffrence.FieldValueNew }}</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+        <!--<button class="btn btn-info" (click)="UpdatedFieldData()">Confirm</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-right list-inline">
+      <li>
+        <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+      </li>
+      <li>
+        <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+          <i class="fa fa-expand"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a href="#" class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-danger btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Cancel</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-success btn-sm white" (click)="SaveBulkUpdate()">
+          <i class="fa fa-plus"></i>save</a>
+      </li>
+
+
+    </ul>
+    <!-- /right options -->
+  </div>
+  <div class="panel-body">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6 col-sm-6 p-l-0">
+          <div class="col-md-12 ">
+            <div class="form-group row">
+              <div class="col-md-4 col-xs-4 p-l-0">
+                <label for="">Transaction Number</label>
+              </div>
+              <div class="col-md-8 col-xs-8   ">
+                <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="{{ KaizenID }}" [(ngModel)]="KaizenID"
+                       readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group row">
+              <div class="col-md-4 col-xs-4 p-l-0 ">
+                <label for="">Date Source</label>
+              </div>
+              <div class="col-md-8 col-xs-8   ">
+                <kendo-dropdownlist [data]="dataSourcesTmp"
+                                    (valueChange)="dataSrcChange($event)"
+                                    textField="TrxTypeName"
+                                    valueField="TRXTypeID"
+                                    [(ngModel)]="TRXTypeID"
+                                    [valuePrimitive]="true">
+                </kendo-dropdownlist>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group row">
+              <div class="col-md-4 col-xs-4 p-l-0">
+                <div class="form-check" style="margin-bottom:0px">
+                  <label> Upload</label>
+
+                </div>
+              </div>
+              <div class=" col-md-8 col-xs-8   ">
+                <kendo-upload [saveUrl]="uploadSaveUrl"
+                              [withCredentials]="false"
+                              (success)="successEventHandler($event)"
+                              (error)="errHandler($event)">
+                </kendo-upload>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-md-12">
+            <div class="form-group row">
+              <div class=" col-md-4 col-xs-4 p-l-0">
+                <label for="">Type</label>
+              </div>
+              <div class=" col-md-8 col-xs-8   ">
+                <kendo-dropdownlist [data]="ExcelColumns"
+                                    [textField]="'ColumnName'"
+                                    [valueField]="'Index'"
+                                    [valuePrimitive]="true">
+                </kendo-dropdownlist>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="">
+        <div class="row">
+          <app-global-field-creator [FieldList]="FieldList" [ExcelColumns]="ExcelColumns"></app-global-field-creator>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<!--<div class="" *ngIf="fieldDiffrence">-->
+
+  <!--<div class="container-fluid">-->
+    <!--<div class="col-md-12 col-sm-12">-->
+      <!--<span>{{ CuurentField.FieldDisplay }}</span>-->
+    <!--</div>-->
+    <!--<table class="table table-bordered">-->
+      <!--<tr>-->
+        <!--<th>CaseRef</th>-->
+        <!--<th>FieldValue (Old)</th>-->
+        <!--<th>FieldValue (New)</th>-->
+
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td>{{ fieldDiffrence.CaseRef }}</td>-->
+        <!--<td>{{ fieldDiffrence.FieldValue }}</td>-->
+        <!--<td>{{ fieldDiffrence.FieldValueNew }}</td>-->
+      <!--</tr>-->
+    <!--</table>-->
+    <!--<button class="btn btn-info" (click)="UpdatedFieldData()">Confirm</button>-->
+  <!--</div>-->
+<!--</div>-->
+

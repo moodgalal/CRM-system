@@ -1,0 +1,237 @@
+<div class="buttons-container width-100">
+  <button type="button" class="btn btn-dark">
+    <i class="fa fa-arrow-left"></i>Back</button>
+  <button type="button" class="btn btn-primary">
+    <i class="fa fa-undo"></i>refresh</button>
+  <button type="button" class="btn btn-secondary">
+    <i class="fa fa-print"></i>print</button>
+  <button type="button" class="btn btn-success">
+    <i class="fa fa-check"></i> Save</button>
+  <button type="button" class="btn btn-danger">
+    <i class="fa fa-ban"></i>Cancel</button>
+</div>
+
+<div class="panel  panel-default">
+
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-right list-inline">
+      <li>
+        <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+      </li>
+      <li>
+        <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+          <i class="fa fa-expand"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a href="#" class="btn btn-default btn-sm white" >
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-success btn-sm white">
+          <i class="fa fa-plus"></i>Save</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-primary btn-sm white" routerLink="/maincasepayment">
+          {{ CM00203.Balance }} {{ CM00203.CurrencyCode }}</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" (click)="showDoActionFun()">
+          <i class="fa fa-edit"></i> Do Action</a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="showCaseAttachmentFun()">
+          <i class="fa fa-times"></i> Case Attachment</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-primary btn-sm white" data-toggle="modal" data-target="#smsModal">
+          <i class="fa fa-envelope"></i>SMS</a>
+      </li>
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-sm">History</button>
+          <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" (click)="GetCaseDoAction()">Do Action</a>
+            <a class="dropdown-item" href="#">Payments</a>
+            <a class="dropdown-item" href="#">Fees</a>
+            <a class="dropdown-item" href="#">Documents</a>
+          </div>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a (click)="GetCaseDoAction()">
+                <i class="fa fa-edit"></i> Do Action</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-question-circle"></i> Payments</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-print"></i> Fees</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-cogs"></i> Documents</a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+      <li>
+        <a href="#" class="btn btn-primary btn-sm white">
+          <i class="fa fa-money"></i>Fees</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" *ngIf="showDoAction" (click)="doActiontRef.save()">
+          <i class="fa fa-check"></i>Save</a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" *ngIf="showCaseAttachment" (click)="caseAttachmentRef.save()">
+          <i class="fa fa-check"></i>Save</a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+  <div class="panel-body">
+    <form>
+      <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="true">
+      </kendo-upload>
+      <h3>Case Assignment</h3>
+      <div class="row">
+        <div class="col-12 col-md-6 col-sm-12">
+          <div class="form-group row">
+            <div class="col-3 col-md-2 col-xs-3">
+              <label for="exampleFormControlInput7">Transiaction ID</label>
+            </div>
+            <div class="col-9 col-md-10 col-xs-9">
+              <input type="text" class="form-control" placeholder=" 0065">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-sm-12"></div>
+
+        <div class="col-12 col-md-6 col-sm-12">
+          <div class="form-group row">
+            <div class="col-3 col-md-2 col-xs-3">
+              <label for="exampleFormControlInput7">Agent ID</label>
+            </div>
+            <div class="col-9 col-md-10 col-xs-9">
+              <div class="input-group mb-2 mb-sm-0">
+                <input type="text" class="form-control col-10 col-xs-10" placeholder="Agent ID">
+                <div class="input-group-addon col-xs-1">
+                  <span class="fa fa-search"></span>
+                </div>
+                <button type="button" class="btn btn-primary br-l-0">
+                  <i class="fa fa-arrows"></i> Assign</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-sm-12">
+          <div class="form-group row">
+            <div class="col-3 col-md-2 col-xs-3">
+              <label for="exampleFormControlInput7">Assign Date</label>
+            </div>
+            <div class="col-9 col-md-10 col-xs-9">
+              <div class="input-group mb-2 mb-sm-0">
+                <input type="datetime " class="form-control-date col-10 col-xs-10" value="2011-08-19" placeholder="">
+
+                <div class="input-group-addon col-xs-1">
+                  <span class="fa fa-calendar"></span>
+                </div>
+                <div class="input-group-addon col-xs-1">
+                  <span class="fa fa-clock-o"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-sm-12">
+          <div class="form-group row">
+            <div class="col-3 col-md-1 col-xs-3 ">
+              <label for="exampleFormControlInput6">Description</label>
+            </div>
+            <div class="col-9 col-md-11 col-xs-9">
+              <textarea class="form-control" rows="5" id="exampleFormControlInput6" placeholder="case Remarks"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 col-md-4 col-xs-4">
+          <select class="form-control" id="exampleFormControlInput7">
+            <option>filter </option>
+          </select>
+        </div>
+        <div class="col-4 col-md-4 col-xs-4">
+          <select class="form-control" id="exampleFormControlInput7">
+            <option>Files </option>
+          </select>
+        </div>
+        <div class="col-4 col-md-4 col-xs-4">
+          <select class="form-control" id="exampleFormControlInput7">
+            <option>Select Files </option>
+          </select>
+        </div>
+
+
+        <div class="table-container">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-inverse">
+              <tr>
+                <th>
+                  <div class="input-group ">
+                    <input type="checkbox" class="form-control">
+                  </div>
+                </th>
+                <th>Case Reference</th>
+                <th>Agent ID</th>
+                <th>Currency Code</th>
+                <th>Debtor ID</th>
+                <th>Case Status ID</th>
+                <th>Reminder Date Time</th>
+                <th>Booking Date</th>
+                <th>Claim Ammount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <button type="button" class="btn btn-outline-dark">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </th>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+                <td>Status selection</td>
+
+              </tr>
+
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+

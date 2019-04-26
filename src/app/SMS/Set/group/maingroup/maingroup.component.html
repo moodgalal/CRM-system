@@ -1,0 +1,12 @@
+﻿<ng-template #extra>
+  <div class="col-md-8">
+
+    <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+      <i class="fa fa-arrow-left"></i>Back
+    </a>
+
+    <a routerLink="/SMSCreatgroup" class="btn btn-primary btn-sm white">
+      <i class="fa fa-check"></i>Add</a>
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

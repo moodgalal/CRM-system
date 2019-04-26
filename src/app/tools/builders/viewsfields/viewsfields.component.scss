@@ -1,0 +1,28 @@
+app-viewsfields
+{
+label.checkbox
+{
+    position: relative;
+    display: block;
+}
+table th .fa
+{
+    float: none;
+}
+
+  .panel
+  {
+      width: 75%;
+      margin: auto;
+      margin-bottom: 5px;
+  }
+.dashboard
+{
+    padding: 5px !important;
+}
+}
+.disabledDiv
+{
+  pointer-events: none;
+  opacity: 0.4;
+}

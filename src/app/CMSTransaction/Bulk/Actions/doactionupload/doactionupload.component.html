@@ -1,0 +1,222 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-right list-inline">
+      <li>
+        <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+      </li>
+      <li>
+        <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+                          <i class="fa fa-expand"></i>
+                        </a>
+      </li>
+    </ul>
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a href="#" class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+                          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-success btn-sm white" (click)="uploadData()">
+                          <i class="fa fa-plus"></i>Save</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-success btn-sm white" (click)="PostUploadBulkAction()">
+                          <i class="fa fa-plus"></i>Confirm</a>
+      </li>
+
+
+    </ul>
+    <!-- /right options -->
+  </div>
+  <div class="panel-body">
+      <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6 p-l-0">
+        <div class="col-md-12 ">
+          <div class="form-group row">
+            <div class="col-md-4 col-xs-4 p-l-0">
+              <label for="">Transiaction Number</label>
+            </div>
+            <div class="col-md-8 col-xs-8   ">
+              <input type="text" class="form-control" id="exampleFormControlInput9"
+                     placeholder="{{ KaizenID }}" [(ngModel)]="KaizenID"
+                readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group row">
+            <div class="col-md-4 col-xs-4 p-l-0 ">
+              <label for="">Date Source</label>
+            </div>
+            <div class=" col-md-8 col-xs-8   ">
+              <kendo-dropdownlist [data]="dataSourcesTmp" textField="TrxTypeName" valueField="TRXTypeID"
+                                  [(ngModel)]="TRXTypeID" [valuePrimitive]="true">
+              </kendo-dropdownlist>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group row">
+            <div class="col-md-4 col-xs-4 p-l-0">
+              <div class="form-check" style="margin-bottom:0px">
+                <label> Upload by case ref</label>
+
+              </div>
+            </div>
+            <div class=" col-md-8 col-xs-8   ">
+              <label class="form-check-label checkb" style="padding-left: 0.5rem;">
+                                                  <input class="form-check-input checkbox-o"
+                                                         type="checkbox"
+                                                         [(ngModel)]="isChecked" name="isChecked">
+                                                  <span></span>
+                                                </label>
+
+
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!isChecked">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <div class="col-md-4 col-xs-4 p-l-0">
+                <label for="">Client</label>
+              </div>
+              <div class="col-md-8 col-xs-8  ">
+
+                <app-client-lookup (getValue)="getValue($event)"></app-client-lookup>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="form-group row">
+            <div class="col-md-4 col-xs-4 p-l-0">
+              <label for="">Upload</label>
+            </div>
+            <div class="col-md-8 col-xs-8  ">
+              <div>
+                <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="false" (success)="successEventHandler($event)" (error)="errHandler($event)">
+                </kendo-upload>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="form-group row">
+            <div class=" col-md-4 col-xs-4 p-l-0">
+              <label for="">Type</label>
+            </div>
+            <div class=" col-md-8 col-xs-8   ">
+              <kendo-dropdownlist [data]="ExcelColumns" [textField]="'ColumnName'" [valueField]="'Index'" [(ngModel)]="SelectedCaseAccountNo"
+                [valuePrimitive]="true">
+              </kendo-dropdownlist>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group row">
+            <div class="col-md-4 col-xs-4 p-l-0 ">
+              <label *ngIf="isChecked">Case ref</label>
+              <label *ngIf="!isChecked">Account number</label>
+            </div>
+            <div class="col-md-8 col-xs-8   ">
+              <kendo-dropdownlist [data]="ExcelColumns" [textField]="'ColumnName'" [valueField]="'Index'" [(ngModel)]="SelectedCaseAccountNo"
+                [valuePrimitive]="true">
+              </kendo-dropdownlist>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-sm-6">
+
+      </div>
+
+
+
+
+    </div>
+    </div>
+  </div>
+
+
+</div>
+ 
+<div class="panel panel-default" *ngIf="CaseList">
+    <div class="panel-heading">
+      <!-- right options -->
+      <ul class="options pull-right list-inline">
+        <li>
+          <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+        </li>
+        <li>
+          <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+                            <i class="fa fa-expand"></i>
+                          </a>
+        </li>
+      </ul> 
+      <!-- /right options -->
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="col-md-12 col-sm-12">
+              <span></span>
+            </div>
+            <table class="table table-bordered">
+              <tr>
+                <th>Case ref</th>
+                <th>Upload Agent</th>
+                <th>System Agent</th>
+              </tr>
+              <tr *ngFor="let task of CaseList">
+                <td>{{ task.CM00203Case }}</td>
+                <td>{{ task.CIFNumber }}</td>
+                <td>{{ task.AgentID }}</td>
+              </tr>
+            </table>
+        
+          </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="content-container" *ngIf="CaseList">
+
+  <div class="container-fluid">
+    <div class="col-md-12 col-sm-12">
+      <span></span>
+    </div>
+    <table class="table table-bordered">
+      <tr>
+        <th>Case ref</th>
+        <th>Upload Agent</th>
+        <th>System Agent</th>
+      </tr>
+      <tr *ngFor="let task of CaseList">
+        <td>{{ task.CM00203Case }}</td>
+        <td>{{ task.CIFNumber }}</td>
+        <td>{{ task.AgentID }}</td>
+      </tr>
+    </table>
+
+  </div>
+</div> -->

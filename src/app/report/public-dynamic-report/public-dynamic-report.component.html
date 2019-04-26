@@ -1,0 +1,16 @@
+<tr-viewer #viewer1
+           [containerStyle]="viewerContainerStyle"
+           [serviceUrl]="'http://80.241.220.137:3030/api/reports'"
+           [reportSource]="{
+       report: 'KaizenServer.Reports.Report1, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+        parameters: {}
+    }"
+           [viewMode]="'INTERACTIVE'"
+           [scaleMode]="'SPECIFIC'"
+           [scale]="1.0"
+           [ready]="ready"
+           [viewerToolTipOpening]="viewerToolTipOpening"
+           [enableAccessibility]="false">
+</tr-viewer>
+<button (click)="viewer1.refreshReport()">Refresh</button>
+<button (click)="viewer1.commands.print.exec()">Print</button>

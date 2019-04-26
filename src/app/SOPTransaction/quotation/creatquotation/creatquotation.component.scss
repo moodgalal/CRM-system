@@ -1,0 +1,35 @@
+table ,  table th , table td{
+    text-align: center !important;
+}
+@media only screen and (min-width:1366px) and (max-width: 1440px) 
+{
+.col-16percent{max-width: 16%;}
+.pad-r-8px{padding-right: 8px;}
+.k-tabstrip > .k-tabstrip-items .k-item .k-link{padding: 4px 10px !important;}
+}
+div.tabs ul.nav-tabs a{
+    padding: 8px;
+    font-size: 12px;
+}
+div.tabs ul.nav-tabs a i.fa{
+    padding: 0;
+}
+div.tabs div.tab-content{
+    padding: 5px 10px;
+}
+.col-md-10-5 {
+    width: 85.5%;
+    position: relative;
+}
+.col-md-1-5 {
+    width: 14.5%;
+    position: relative;
+}
+
+    .total-table .table>tbody>tr>td{
+        padding: 2px 8px;
+    
+}
+div.tabs{
+    margin-bottom: 10px;
+}

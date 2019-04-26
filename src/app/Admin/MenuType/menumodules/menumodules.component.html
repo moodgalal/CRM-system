@@ -1,0 +1,187 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="onSave()">
+          <i class="fa fa-save"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Menu Type  </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="MenuTypeList" (valueChange)="queryParams_Changed()"
+                                valueField="MenueTypeID" textField="MenueTypeName"
+                                [valuePrimitive]="true" [(ngModel)]="Kaizen002.MenueTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Module Name </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="ModuleList" (valueChange)="queryParams_Changed()"
+                                valueField="ModuleID" textField="ModuleName"
+                                [valuePrimitive]="true" [(ngModel)]="Kaizen002.ModuleID">
+            </kendo-dropdownlist>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>MenuName </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="MenuName " [(ngModel)]="Kaizen002.MenuName">
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>ScreenPath </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="ScreenPath " [(ngModel)]="Kaizen002.ScreenPath">
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>MenueOrder </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="MenueOrder " [(ngModel)]="Kaizen002.MenueOrder">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>WindowParm </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="WindowParm " [(ngModel)]="Kaizen002.WindowParm">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>WindowSource </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="WindowParm " [(ngModel)]="Kaizen002.WindowSource">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>TRXTypeID </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="TRXTypeID " [(ngModel)]="Kaizen002.TRXTypeID">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label>IsCustomPage </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-switch [(ngModel)]="Kaizen002.IsCustomPage"></kendo-switch>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default small-panel" *ngIf="List.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">MenuName </th>
+              <th scope="col">ScreenPath </th>
+
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of List">
+              <td>
+                {{item.MenuName}}
+              </td>
+              <td>
+                {{item.ScreenPath}}
+              </td>
+              <td>
+                <button kendoButton (click)="Edit(item)">Edit</button>
+                <button kendoButton (click)="Delete(item)">Delete</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

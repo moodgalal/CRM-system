@@ -1,0 +1,75 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" (click)="save()">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <kendo-dropdownlist (valueChange)="getViews()" [data]="Setting.dataSourcesTmp" [(ngModel)]="SelectedTRXType" textField="TrxTypeName"
+          valueField="TRXTypeID">
+        </kendo-dropdownlist>
+      </div>
+      <div class="col-md-6">
+        <kendo-dropdownlist [data]="viewsList" (valueChange)="getGridData()" valueField="ViewID" textField="ViewName" [(ngModel)]="selectedView">
+        </kendo-dropdownlist>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+
+        <table class="table table-bordered table-hover table-responsive">
+          <thead class="thead-inverse">
+            <tr>
+              <th>CIFName</th>
+              <th>CaseRef</th>
+              <th>Product</th>
+              <th>Status</th>
+              <th>PaymentID</th>
+              <th>PaymentAmount</th>
+              <th><input type="checkbox" (change)="checkValue()"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dtrow of datatable">
+              <td>{{ dtrow.CIFName }}</td>
+              <td>{{ dtrow.CaseRef }}</td>
+              <td>{{ dtrow.ContractName }}</td>
+              <td>
+                {{ dtrow.CaseStatusname }}
+              </td>
+              <td>
+                {{ dtrow.PaymentID }}
+              </td>
+              <td>
+                {{ dtrow.PaymentAmount }}
+              </td>
+              <td>
+                <input [(ngModel)]="dtrow.IsSelected" type="checkbox">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

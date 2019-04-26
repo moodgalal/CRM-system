@@ -1,0 +1,193 @@
+﻿<div class="panel panel-default small-panel">
+
+  <div class="panel-heading">
+    <!-- right options -->
+
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="SaveData()">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput8">Client ID</label>
+          </div>
+          <div class=" col-md-10 col-xs-9  ">
+            <div class="row">
+              <div class="col-md-6">
+                <input kendoTextBox [(ngModel)]="CM00110.ClientID" placeholder="Client ID">
+              </div>
+          
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput8">Client Name</label>
+          </div>
+          <div class=" col-md-10 col-xs-9  ">
+            <div class="row">
+              <div class="col-md-6">
+                <input kendoTextBox [(ngModel)]="CM00110.ClientName" placeholder="Client Name">
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class=" col-md-2 col-xs-3  padding-col  ">
+                    <label for="exampleFormControlInput3">ShortName</label>
+                  </div>
+                  <div class="col-md-10 col-xs-9  ">
+                    <input kendoTextBox [(ngModel)]="CM00110.ShortName" placeholder="ShortName">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput9">ClientDescription </label>
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <div class="row">
+              <div class="col-md-6 col-xs-6">
+                <input kendoTextBox [(ngModel)]="CM00110.ClientDescription" placeholder="ClientDescription">
+
+              </div>
+              <div class="col-md-6 col-xs-6">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput10">NationaltyID</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+          <app-nationality-lookup (getValue)="getNationality($event)"></app-nationality-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class="col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">IsJoint</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-switch  [(ngModel)]="CM00110.IsJoint" name="check" ></kendo-switch>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">ParentClientID</label>
+          </div>
+
+          <div class=" col-md-10 col-xs-9  ">
+            <app-client-lookup (getValue)="getParentClient($event)"></app-client-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">CUSTCLAS</label>
+          </div>
+
+          <div class=" col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="CUSTCLASList" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="CM00110.CUSTCLAS">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">StatusID</label>
+          </div>
+          <div class=" col-md-10 col-xs-9  ">
+              <kendo-dropdownlist [data]="StatusIDList" [textField]="'StatusName'" [valueField]="'StatusID'"
+                                  [valuePrimitive]="true"
+                                  [(ngModel)]="CM00110.StatusID">
+              </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">AddressCode</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="AddressCodeList" [textField]="'AddressTypeName'" [valueField]="'AddressCodeType'"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="CM00110.AddressCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">BillAddressCode</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="AddressCodeList" [textField]="'AddressTypeName'" [valueField]="'AddressCodeType'"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="CM00110.BillAddressCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-2 col-xs-3  padding-col  ">
+            <label for="exampleFormControlInput3">RemitToAddressCode</label>
+          </div>
+          <div class="col-md-10 col-xs-9  ">
+            <kendo-dropdownlist [data]="AddressCodeList" [textField]="'AddressTypeName'" [valueField]="'AddressCodeType'"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="CM00110.RemitToAddressCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

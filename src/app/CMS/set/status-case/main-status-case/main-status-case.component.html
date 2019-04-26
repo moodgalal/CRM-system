@@ -1,0 +1,61 @@
+
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+     
+      
+      <li>
+        <a class="btn btn-primary btn-sm whit" (click)="openStatusType = !openStatusType">
+         {{openStatusType? 'Status Case' : 'Status Type' }} 
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!openStatusType">
+  <ng-template #extra>
+    <div class="col-md-8">
+      <button routerLink="/CreateStatusCase" kendoButton [primary]="true">Add</button>
+
+    </div>
+  </ng-template>
+  <app-main-grid #grid [extraButtons]="extra"></app-main-grid>
+</div>
+<div *ngIf="openStatusType">
+  <div class="panel panel-default small-panel">
+    <div class="panel-heading">
+      Status Type
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+
+          <div class="form-group row">
+            <div class=" col-md-4 col-xs-3 padding-col">
+              <label>CaseStatusname</label>
+            </div>
+            <div class=" col-md-8 col-xs-9  ">
+
+              <input kendoTextBox placeholder="CaseStatusname"
+                     [(ngModel)]="CM00003.StatusActionTypeName">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-8 col-sm-12">
+
+          <div class="form-group row">
+            <div class=" col-md-4 col-xs-3 padding-col">
+             <button kendoButton (click)="addStatusType()">ADD</button>
+            </div>
+           
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

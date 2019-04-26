@@ -1,0 +1,76 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li (click)="Setting.GoBack()">
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li> 
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Role</label>
+          </div>
+          <div class="col-md-4 padding-col">
+            <kendo-dropdownlist [data]="rolesDataSource" (valueChange)="RoleID_Changed($event)" valueField="RoleID" textField="RoleName"
+              [valuePrimitive]="true" [(ngModel)]="agentRole.RoleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Agent</label>
+          </div>
+          <div class="col-md-4 padding-col">
+            <app-agent-lookup (getValue)="GetAgent($event)"></app-agent-lookup>
+          </div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-primary btn-sm dblock-mauto" (click)="Save()">ADD </button>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default small-panel" *ngIf="agentRoleList">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">AgentID</th>
+              <th scope="col">delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of agentRoleList">
+              <td>
+                {{col.AgentID}}
+              </td>
+              <td>
+                <button kendoButton (click)="delete(col)">delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.choose-info{position: relative; top:40px;color: #888; border:1px solid #888;border-radius: 3px;
+box-shadow: 0px 4px 27px 0px rgba(0, 0, 0, 0.3), -0px -4px 27px 0px rgba(0, 0, 0, 0.3); background-color: #fff; }
+.row{margin: 0px;}
+.choose-info .headl {padding: 15px; margin: 0px; color: #eee;
+background: #1976D2; /* For browsers that do not support gradients */
+     background: -webkit-linear-gradient(#1976D2,#39f ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1976D2,#39f )  ; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1976D2,#39f ) ; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1976D2,#39f ) ;  /* Standard syntax */
+
+ 
+}
+.submit{background: #1976D2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#39f, #1976D2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#39f, #1976D2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#39f, #1976D2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#39f, #1976D2); /* Standard syntax */
+
+border: none;
+padding: 10px 20px;
+color: #fff;
+border-radius: 3px;
+box-shadow: 0px 2px 27px 0px rgba(0, 0, 0, 0.3);
+height: 45px;
+width:80%;
+margin: 20px;
+transition: 0.2s all;
+}
+.submit a{text-decoration: none; color: #fff; font-weight: bold;}
+.submit:hover{box-shadow: 0px 3px 27px 0px rgba(0, 0, 0, 0.9);
+}
+ 
+label{position: relative;width: 100%; font-weight: lighter;}
+
+.pa-15{padding: 15px; text-align: center;}
+.width-100{width: 100%;}
+
+.choose-info{
+box-shadow: -20px 20px 47px 0px rgba(0, 0, 0, 0.3) ,20px 20px 47px 0px rgba(0, 0, 0, 0.3) ;
+}
+.info {margin: 0px; padding: 0px;} 
+/*----------------------------------------------------------------*/
+.clientimg{margin: 5px;}
+.clientimg img{  border-radius: 2px; width: 100%;
+  box-shadow: 0px 10px 27px 0px rgba(0, 0, 0, 0.3)   }
+.clientinfo{text-align: left;padding: 10px;}
+.iconinfo {margin: 5px;margin-top: 20px;}
+
+.iconinfo a{background-color: #eee; color:#39f; text-decoration: none;
+ font-size: 25px; padding: 5px 10px;font-weight: lighter; padding-bottom: 4px;
+  margin: 10px 5px; border-radius: 3px; margin-bottom: 0px;
+box-shadow:0px 1px 27px 0px rgba(0, 0, 0, 0.3) ;
+
+}
+.iconinfo a:hover{box-shadow:0px 10px 27px 0px rgba(250, 250, 250, 0.3) ;
+}
+
+.form-l .btn{border-radius: 3px; margin: 5px; width: 100%;
+box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.3);
+border: 1px solid #ccc; 
+
+background: #ccc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient( #eee,#ccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#eee,#ccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#eee,#ccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#eee,#ccc); /* Standard syntax */
+
+
+}
+
+
+.dropdown-menu {width:100%;} 

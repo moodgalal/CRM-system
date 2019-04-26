@@ -1,0 +1,308 @@
+﻿<div class="panel panel-default nomargin" #aboveGrid1>
+  <div class="panel-heading nopadding-x">
+    <div class="col-md-7 padding-6 nopadding-y">
+      <ng-container *ngTemplateOutlet="extraButtons"></ng-container>
+    </div>
+    <div class="setting-side" style="margin-bottom: 7px; margin-right : 5px">
+      <button kendoButton *ngIf="show" (click)="show = !show" class="setting-menu" [primary]="true" [icon]="'close'"></button>
+      <button kendoButton *ngIf="!show" (click)="show = !show" class="setting-menu" [primary]="true" [icon]="'cog'"></button>
+      <div class="setting-container" *ngIf="show" style="margin-bottom: 7px">
+        <button title="Sort Columns" kendoButton [primary]="true" [iconClass]="'fa fa-sort'" data-target="#sortModal" data-toggle="modal"></button>
+        <button title="Edit Columns" kendoButton [primary]="true" [icon]="'lock'" data-target="#tableModal" data-toggle="modal"></button>
+        <button title="Filter Expression" kendoButton [primary]="true" [icon]="'filter'" data-target="#filterModal" data-toggle="modal"></button>
+        <button title="Edit Columns" kendoButton (click)="SmallFilter_Click()" [primary]="true" [icon]="'filter-sm'"></button>
+        <button title="Rearrange Columns" kendoButton [primary]="true" [icon]="'sort-asc'" data-target="#columnsModal" data-toggle="modal"></button>
+        <button title="Refresh" kendoButton (click)="getGridData()" [primary]="true" [icon]="'refresh'"></button>
+        <button title="Send Email" kendoButton (click)="onButtonClick()" [primary]="true" [icon]="'email'"></button>
+        <button title="Print" kendoButton routerLink="/Dynamicreport" [primary]="true" [icon]="'print'"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<kendo-grid (window:resize)="onResize($event)" [data]="Setting.gridView" [resizable]="true" [pageSize]="Setting.state.take"
+  [skip]="Setting.state.skip" [sortable]="{ allowUnsort: true , mode: 'single' }" [sort]="Setting.state.sort" (dataStateChange)="dataStateChange($event)"
+  [pageable]="{buttonCount: 5,info: true,type: 'input',pageSizes: true,previousNext: true}" [selectable]="{ checkboxOnly: false, mode: 'single'}"
+  [height]="gridheight">
+
+  <kendo-grid-column *ngFor="let column of Setting.gridColumns" field="{{column.FieldName}}" title="{{column.FieldDisplay}}"
+                     [width]="column.FieldWidth" [locked]="column.Islocked" [hidden]="!column.IsActive">
+   
+    <ng-template *ngIf="column.FieldTypeID == 420" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateCmsClient' , dataItem.ClientID?.trim()]" routerLinkActive="current-section">{{ dataItem.ClientID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 400" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/updatestatusTask' , dataItem.TaskID]" routerLinkActive="current-section">{{ dataItem.TaskID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 401" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateStatusScript' , dataItem.StatusScriptID]" routerLinkActive="current-section">{{ dataItem.StatusScriptID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 402" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateStatusFields' ,dataItem.CaseStatusID,dataItem.FieldCode?.trim()]" routerLinkActive="current-section">{{ dataItem.CaseStatusID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 403" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateStatusCase' ,dataItem.CaseStatusID]" routerLinkActive="current-section">{{ dataItem.CaseStatusID }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 405" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateCounty' ,dataItem.CountryID?.trim()]" routerLinkActive="current-section">{{ dataItem.CountryID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 406" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateCity' ,dataItem.CityID?.trim()]" routerLinkActive="current-section">{{ dataItem.CityID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 407" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateNationality' ,dataItem.NationalityID?.trim()]" routerLinkActive="current-section">{{ dataItem.NationalityID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 408" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateReligion' ,dataItem.ReligionID?.trim()]" routerLinkActive="current-section">{{ dataItem.ReligionID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 409" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/UpdateCompanyAddress' ,dataItem.CompanyAddressCode?.trim()]" routerLinkActive="current-section">{{ dataItem.CompanyAddressCode }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 410" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/DeleteSession' ,dataItem.UserName?.trim(),dataItem.SequenceName]" routerLinkActive="current-section">{{ dataItem.UserName }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 300" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/updateuser' , dataItem.UserName]" routerLinkActive="current-section">
+        {{ dataItem.UserName }}
+      </a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 120" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00008' , dataItem.SalePersonTypeID]" routerLinkActive="current-section">{{ dataItem.SalePersonTypeID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 121" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00009' , dataItem.AddressTypeCode?.trim()]" routerLinkActive="current-section">{{ dataItem.AddressTypeCode }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 122" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00010' , dataItem.CUSTCLAS?.trim()]" routerLinkActive="current-section">{{ dataItem.CUSTCLAS }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 123" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00014' , dataItem.StatusID]" routerLinkActive="current-section">{{ dataItem.StatusID}}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 124" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00012' , dataItem.PriorityID?.trim()]" routerLinkActive="current-section">{{ dataItem.PriorityID}}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 125" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_sop00011' , dataItem.GroupID?.trim()]" routerLinkActive="current-section">{{ dataItem.GroupID}}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == -1" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/Sys_edit_role' , dataItem.RoleID]" routerLinkActive="current-section">{{ dataItem.RoleID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 101" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_debtor_class' , dataItem.CUSTCLAS?.trim()]" routerLinkActive="current-section">{{ dataItem.CUSTCLAS }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 102" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_debtor_group' , dataItem.GroupID?.trim()]" routerLinkActive="current-section">{{ dataItem.GroupID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 103" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_debtor_status' , dataItem.DebtorStatusID]" routerLinkActive="current-section">{{ dataItem.DebtorStatusID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 104" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_debtor_address' , dataItem.UserName]" routerLinkActive="current-section">{{ dataItem.UserName }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 105" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_lookup01' , dataItem.Lookup01]" routerLinkActive="current-section">{{ dataItem.Lookup01 }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 106" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_lookup02' , dataItem.Lookup02]" routerLinkActive="current-section">{{ dataItem.Lookup02 }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 107" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/update_priority' , dataItem.PriorityID]" routerLinkActive="current-section">{{ dataItem.PriorityID }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 133" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/Editreciever' , dataItem.PhoneNumber.trim()]" routerLinkActive="current-section">{{ dataItem.PhoneNumber }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 131" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/SMSEditgroup' , dataItem.GroupID]" routerLinkActive="current-section">{{ dataItem.GroupID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 132" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/Editsmstemplate' , dataItem.TemplateID]" routerLinkActive="current-section">{{ dataItem.TemplateID}}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 130" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/Editsmsaccount' , dataItem.SMSAccountCode?.trim()]" routerLinkActive="current-section">{{ dataItem.SMSAccountCode }}</a>
+    </ng-template>
+
+
+    <ng-template *ngIf="column.FieldTypeID == 7" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+      {{column.field}}
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 7" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <a style="color: #1932e5" [routerLink]="['/viewTrxCase' , dataItem.CaseRef?.trim(), dataItem.TRXTypeID]" routerLinkActive="current-section">{{ dataItem.CaseRef }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 8" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <button kendoButton [routerLink]="['/editTrxCase' , dataItem.CaseRef?.trim(), dataItem.TRXTypeID]">{{ dataItem.CaseRef }}</button>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 2" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+      {{column.field}}
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 2" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y' }}
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 13" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+      {{column.field}}
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 13" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y, h:mm a' }}
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 41" kendoGridCellTemplate let-dataItem>
+      <a style="color: #1932e5" [routerLink]="['/updatedebtor' , dataItem.DebtorID?.trim(), dataItem.TRXTypeID]" routerLinkActive="current-section">{{ dataItem.DebtorID }}</a>
+    </ng-template>
+
+    <ng-template *ngIf="column.FieldTypeID == 24" kendoGridCellTemplate let-dataItem>
+      <a *ngIf=" dataItem.AgentID !== null" style="color: #1932e5" [routerLink]="['/update_agent' , dataItem.AgentID?.trim()]" routerLinkActive="current-section">{{ dataItem.AgentID }}</a>
+    </ng-template>
+    <ng-template *ngIf="column.FieldTypeID == 25" kendoGridCellTemplate let-dataItem>
+      <a *ngIf=" dataItem.AgentID !== null" style="color: #1932e5" [routerLink]="['/Updateworkqueue' , dataItem.AgentID?.trim()]" routerLinkActive="current-section">{{ dataItem.AgentID }}</a>
+    </ng-template>
+    <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter" let-filterService="filterService">
+      <kendo-multiselect style="width:220px" [data]="categories" textField="CaseStatusname" valueField="CaseStatusID" [valuePrimitive]="true"
+                         [value]="categoryFilters(filter)" (valueChange)="categoryChange($event, filterService)">
+      </kendo-multiselect>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>
+
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" data-backdrop="false" data-keyboard="false" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" style="max-width:75%;">
+    <div class="modal-content">
+      <div class="modal-header" style="height : 40px !important;">
+        <h5 class="modal-title">Create filter expression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-global-filter #globFilter [columns]="Setting.gridColumns" (filterString)="captureStr($event)"></app-global-filter>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button [disabled]="globFilter.someWrong || globFilter.displayString == null" type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none"
+          (click)="globFilter.emitStr()" data-dismiss="modal">Filter</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="columnsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="max-width:75%;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <kendo-sortable [data]="Setting.gridColumns" [navigatable]="true" [animation]="true" class="row" itemClass="item col-xs-6 col-sm-3"
+            activeItemClass="item col-xs-6 col-sm-3 active">
+            <ng-template let-column="item">
+              {{ column.FieldDisplay }}
+            </ng-template>
+          </kendo-sortable>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="tableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="min-width: 95%;
+  max-width: 95%;">
+    <div class="modal-content">
+      <div class="modal-header" style="height : 40px !important;">
+        <h5 class="modal-title">Customize columns properties</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="overflow: scroll !important;">
+        <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Is Active</th>
+              <th scope="col">Is Filterable</th>
+              <th scope="col">Is Printable</th>
+              <th scope="col">Is Sortable</th>
+              <th scope="col">Is Lockable</th>
+              <th scope="col">Is locked</th>
+              <th scope="col">Field Width</th>
+              <th scope="col">Field Display</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of Setting.gridColumns">
+              <td scope="row">{{ col.FieldDisplay }}</td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsActive"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsFilterable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsPrintable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsSortable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsLockable"></kendo-switch>
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.Islocked"></kendo-switch>
+              </td>
+              <td>
+                <input type="number" class="form-control" placeholder="Field Width" [(ngModel)]="col.FieldWidth">
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="Field Display" [(ngModel)]="col.FieldDisplay">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="sortModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="max-width:65%;">
+    <div class="modal-content">
+      <div class="modal-header" style="height : 40px !important;">
+        <h5 class="modal-title">Sort</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <kendo-dropdownlist style="margin:5px 0;" (valueChange)="arrayPushFilterColumn($event)" [data]="Setting.gridColumns"
+              valueField="FieldName" textField="FieldDisplay"></kendo-dropdownlist>
+          </div>
+          <div class="col-md-8">
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('asc')">Asc</button>
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('desc')">Desc</button>
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('&')">&</button>
+            <button type="button" class="btn btn-danger" (click)="sortPop()">Delete</button>
+            <button type="button" class="btn btn-danger" (click)="sortClear()">Clear all</button>
+          </div>
+        </div>
+        <div>
+          <textarea class="operator" placeholder="Your Filter Expression ..." [(ngModel)]="displaySortString" readonly></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" (click)="sortData()">Sort</button>
+      </div>
+    </div>
+  </div>
+</div>

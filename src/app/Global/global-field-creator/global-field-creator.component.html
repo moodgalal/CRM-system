@@ -1,0 +1,78 @@
+<div  *ngIf="FieldList.length > 0"  class="col-md-6">
+  <div *ngFor="let CaseField of FieldList; let i = index">
+    <div *ngIf="i % 2 == 0">
+      <div class="form-group row">
+        <div class="col-md-3 col-xs-3">
+          <label [ngStyle]="{'color': CaseField.IsRequired ? 'red' : 'inherit' }"> {{ CaseField.FieldDisplay }}</label>
+          <!-- IsRequired -->
+        </div>
+        <div class="col-md-2">
+          <input class="form-check-input checkbox-o" type="checkbox" [(ngModel)]="CaseField.isSelected">
+        </div>
+        <div class="col-md-7">
+          <kendo-dropdownlist [data]="ExcelColumns"
+                              [disabled]="!CaseField.isSelected"
+                              [textField]="'ColumnName'"
+                              [valueField]="'Index'"
+                              [(ngModel)]="CaseField.FieldValue"
+                              [valuePrimitive]="true">
+          </kendo-dropdownlist>
+        </div>
+        <div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 2">
+          <div class="form-group row">
+            <div class="">
+              <kendo-datepicker [value]="CaseField.FieldDateValue"></kendo-datepicker>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 3">
+          <div class="form-group row">
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="CaseField.FixedValue" placeholder="{{ CaseField.FieldDisplay }}">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div  *ngIf="FieldList.length > 0"  class="col-md-6">
+  <div *ngFor="let CaseField of FieldList; let i = index">
+    <div *ngIf="i % 2 != 0">
+      <div class="form-group row">
+        <div class="col-md-3 col-xs-3">
+          <label [ngStyle]="{'color': CaseField.IsRequired ? 'red' : 'inherit' }"> {{ CaseField.FieldDisplay }}</label>
+        </div>
+        <div class="col-md-2">
+          <input class="form-check-input checkbox-o" type="checkbox" [(ngModel)]="CaseField.isSelected">
+        </div>
+        <div class="col-md-7">
+          <kendo-dropdownlist [data]="ExcelColumns"
+                              [disabled]="!CaseField.isSelected"
+                              [textField]="'ColumnName'"
+                              [valueField]="'Index'"
+                              [(ngModel)]="CaseField.FieldValue"
+                              [valuePrimitive]="true">
+          </kendo-dropdownlist>
+        </div>
+        <div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 2">
+          <div class="form-group row">
+            <div class="">
+              <kendo-datepicker [value]="CaseField.FieldDateValue"></kendo-datepicker>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="CaseField.FieldValue === 'Fixed' && CaseField.FieldTypeID == 3">
+          <div class="form-group row">
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="CaseField.FixedValue" placeholder="{{ CaseField.FieldDisplay }}">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

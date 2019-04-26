@@ -1,0 +1,70 @@
+﻿<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Company</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="CompanyList" (valueChange)="CompanyID_Changed($event)" valueField="CompanyID" textField="CompanyName"
+                              [valuePrimitive]="true"  ModuleList [(ngModel)]="CompanyID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+     
+  
+  
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="ModuleList.length>0" >
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+              <th scope="col">
+                <i class="fa fa-check"></i>
+              </th>
+              <th scope="col">ModuleID</th>
+              <th scope="col">Module Name</th>
+         
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of ModuleList">
+              <td>
+                <label class="checkbox">
+                  <input type="checkbox" [checked]="col.checked" (change)="addOrDelete(col)">
+                  <i></i>
+                </label>
+              </td>
+              <td>
+               {{col.ModuleID}}
+              </td>
+              <td>
+               {{col.ModuleName}}
+              </td>
+             
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

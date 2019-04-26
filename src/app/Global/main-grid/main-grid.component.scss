@@ -1,0 +1,166 @@
+app-main-grid {
+  .dashboard {
+    padding: 5px !important;
+  }
+  .example-config {
+    margin-top: 15px;
+    display: inline-block;
+  }
+  .navbar-grid {
+    margin-left: 0px;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    .input-wrapper {
+      position: relative;
+      display: inline;
+      .input-icon {
+        padding: 5px;
+        position: absolute;
+        left: 82%;
+        top: 7%;
+        z-index: 9999;
+      }
+      input {
+        width: auto;
+      }
+    }
+  }
+
+  .buttons-container {
+    background: #fff;
+    display: block;
+    width: 80%;
+    padding: 0px 15px;
+    margin: 0px auto;
+    padding-left: 2px;
+  }
+  .content-container {
+    background: #fff;
+    display: block;
+    width: 80%;
+    padding: 10px 15px;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.33);
+    margin: 10px auto;
+  }
+  .ml-0 {
+    margin-left: 0px !important;
+  }
+  .pl-0 {
+    padding-left: 0px !important;
+  }
+  .p-l-r5 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .input-container {
+    width: 49%;
+    display: inline-block;
+    margin: 2px -5px;
+    padding: 1px 20px;
+    span {
+      text-align: left !important;
+      width: 33% !important;
+      display: inline-block;
+    }
+  }
+  .input-container-full {
+    width: 98%;
+    margin: 2px -5px;
+    padding: 1px 20px;
+    label {
+      width: 100%;
+      span {
+        width: 11.5% !important;
+        display: inline-block;
+      }
+      textarea {
+        width: 87.5%;
+      }
+    }
+  }
+  .submit-form {
+    margin: 10px auto;
+    text-align: center;
+  }
+  .submit-form button {
+    margin: auto;
+  }
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    .input-icon {
+      padding: 5px;
+      position: absolute;
+      left: 90%;
+      top: 10%;
+      z-index: 9999;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  .multi-buttons {
+    .input-wrapper {
+      width: 75% !important;
+    }
+  }
+  .buttons-container .k-dropdown {
+    width: 100%;
+  }
+  .width-100 {
+    width: 100% !important;
+  }
+  /*operator model */
+  .operator {
+    outline: none;
+    margin: 18px 0;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 0.1px 0.1px 1px 0.3px #aaa;
+  }
+  .error {
+    background-color: #e62020;
+    color: white;
+    padding: 10px;
+  }
+  .item {
+    background-color: #bfe7f9;
+    color: #1494d0;
+    border: 1px solid #fff;
+    height: 70px;
+    line-height: 68px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    cursor: move;
+  }
+  .item:hover {
+    opacity: 0.8;
+  }
+  .item.active {
+    background-color: #27aceb;
+    color: #fff;
+    border-color: #27aceb;
+    z-index: 10;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid #6b6b6b;
+  }
+  .panel {
+    position: relative;
+  }
+  .modal-dialog {
+    min-width: 85%;
+    max-width: 85%;
+  }
+  #middle div.panel-heading ul.options {
+    margin: 0 -15px 0 0;
+  }
+  #middle div.panel-heading {
+    height: 40px;
+    padding: 5px;
+  }
+}

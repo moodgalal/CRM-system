@@ -1,0 +1,85 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-md-4 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12 ">
+            <label>Data Source</label>
+          </div>
+          <!--(valueChange)="selectTemplate($event)"-->
+          <!--[(ngModel)]="template.Id"-->
+          <!--textField="TrxTypeName"-->
+          <!--valueField="TRXTypeID"-->
+          <!--[valuePrimitive]="true"-->
+          <div class=" col-md-9 col-xs-12  ">
+            <kendo-dropdownlist (valueChange)="getViews($event)" [data]="sources" textField="TrxTypeName" valueField="TRXTypeID" [valuePrimitive]="true">
+            </kendo-dropdownlist>
+          </div>
+
+        </div>
+      </div>
+      <div class=" col-md-4 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12  ">
+            <label>Views</label>
+          </div>
+          <div class=" col-md-9 col-xs-12  ">
+            <kendo-dropdownlist (valueChange)="getColumns($event)" [data]="views" textField="ViewName" valueField="ViewID" [valuePrimitive]="true">
+            </kendo-dropdownlist>
+          </div>
+
+        </div>
+      </div>
+      <div class=" col-md-4 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12">
+            <label>Agent Id</label>
+          </div>
+          <div class=" col-md-9 col-xs-12">
+            <div class="input-group mb-2 mb-sm-0">
+              <app-agent-lookup (getValue)="AgentID_Change($event)"></app-agent-lookup>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-md-4 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12  ">
+            <label>Condition</label>
+          </div>
+          <div class=" col-md-9 col-xs-12  ">
+            {{CM00105.FilterDisplayArray}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="columns && CM00105.AgentID">
+      <br>
+      <br>
+      <div>
+        <app-global-filter #globFilter *ngIf="CM00105.AgentID"
+                           [columns]="columns" [SmartfilterObject]="SmartfilterObject"
+                           (FilterOnchanged)="Filter_Changed($event)"
+                            ></app-global-filter>
+      </div>
+
+
+    </div>
+  </div>
+</div>

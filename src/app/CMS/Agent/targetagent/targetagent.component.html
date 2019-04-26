@@ -1,0 +1,101 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="onSave()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-save"></i>Save
+        </a>
+      </li>
+
+    </ul>
+  </div>    
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Year </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="setting.YearsList" 
+                                valueField="YearCode" textField="YearCode"
+                                (valueChange)="YearCode_Change($event)"
+                                [valuePrimitive]="true" [(ngModel)]="CM00107.YearCode" >
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Target  </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="TargetList"
+                                valueField="TargetID" textField="TargetName"
+                                (valueChange)="TargetID_Change($event)"
+                                [valuePrimitive]="true" [(ngModel)]="CM00107.TargetID_Change">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PriorityColor">Agent  </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <app-agent-lookup (getValue)="onSelectAgent($event)" ></app-agent-lookup>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="panel panel-default small-panel" *ngIf="setting.PeriodList.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">Piroid ID </th>
+              <th scope="col">Piroid Name  </th>
+              
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of setting.PeriodList">
+              <td>
+                {{item.PERIODID}}
+              </td>
+              <td>
+                {{item.PeriodName}}
+              </td>
+              <td>
+                <input kendoTextBox placeholder="MenueOrder " [(ngModel)]="item.TargetClaimAmount">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

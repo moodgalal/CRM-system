@@ -1,0 +1,319 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="save()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-save"></i>Save
+        </a>
+      </li>
+      <li (click)="delete()">
+        <a class="btn btn-danger btn-sm white">
+          <i class="fa fa-remove"></i>Delete
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CountryID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-dropdownlist [data]="countryList"
+                                valueField="CountryID" textField="CountryName"
+                                [valuePrimitive]="true" [(ngModel)]="sys00001.CountryID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CityID</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <kendo-dropdownlist [data]="cityList"
+                                valueField="CityID" textField="CityName"
+                                [valuePrimitive]="true" [(ngModel)]="sys00001.CityID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CompanyAddressCode</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="CompanyAddressCode " [(ngModel)]="sys00001.CompanyAddressCode">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>CompanyAddressName</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="CompanyAddressName " [(ngModel)]="sys00001.CompanyAddressName">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>AddressName</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="AddressName " [(ngModel)]="sys00001.AddressName">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Pnone01</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Pnone01 " [(ngModel)]="sys00001.Pnone01">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Pnone02</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Pnone02 " [(ngModel)]="sys00001.Pnone02">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Pnone03</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Pnone03 " [(ngModel)]="sys00001.Pnone03">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Pnone04</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Pnone04 " [(ngModel)]="sys00001.Pnone04">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>MobileNo1</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="MobileNo1 " [(ngModel)]="sys00001.MobileNo1">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>MobileNo2</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="MobileNo2 " [(ngModel)]="sys00001.MobileNo2">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>MobileNo3</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="MobileNo3 " [(ngModel)]="sys00001.MobileNo3">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>MobileNo4</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="MobileNo4 " [(ngModel)]="sys00001.MobileNo4">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>POBox</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="POBox " [(ngModel)]="sys00001.POBox">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Other01</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Other01 " [(ngModel)]="sys00001.Other01">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Other02</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Other02 " [(ngModel)]="sys00001.Other02">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Other03</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Other03 " [(ngModel)]="sys00001.Other03">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Other04</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Other04 " [(ngModel)]="sys00001.Other04">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Address1</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Address1 " [(ngModel)]="sys00001.Address1">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Address2</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Address2 " [(ngModel)]="sys00001.Address2">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Address3</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Address3 " [(ngModel)]="sys00001.Address3">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Address4</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Address4 " [(ngModel)]="sys00001.Address4">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Email01</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Email01 " [(ngModel)]="sys00001.Email01">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Email02</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Email02 " [(ngModel)]="sys00001.Email02">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Email03</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Email03 " [(ngModel)]="sys00001.Email03">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-4 col-xs-3 padding-col">
+            <label>Email04</label>
+          </div>
+          <div class=" col-md-8 col-xs-9  ">
+            <input kendoTextBox placeholder="Email04 " [(ngModel)]="sys00001.Email04">
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="buttonsHolder row" *ngIf="PublicShared.serverComponents.length == 0">
+  <div *ngIf="PublicShared.myDashboards.length == 0">
+    <h1 class="text-center"> You Don't Have Dashboard </h1>
+  </div>
+  <div *ngFor="let d of PublicShared.myDashboards" class="col-md-4">
+      <button  class="btn btn-info btn-md  btn-3d  btn-reveal" (click)="selectedDashboard(d)">
+          <i class="fa fa-dashboard"></i>
+          <span>
+        {{ d.DashboardName }}
+      </span>
+      </button>
+  </div>
+
+</div>
+
+<div>
+  <div *ngFor="let comp of PublicShared.serverComponents">
+    <div [ngSwitch]="comp.ReportName">
+      <div class="col-md-6 col-sm-6" *ngSwitchCase="'agentbyclient'">
+        <app-agentbyclient></app-agentbyclient>
+      </div>
+      <div class="col-md-6 col-sm-6" *ngSwitchCase="'agentbystatsclnt'">
+        <app-agentbystatsclnt></app-agentbystatsclnt>
+      </div>
+      <div class="col-md-6 col-sm-6" *ngSwitchCase="'agentactivecase'">
+        <app-agentactivecase></app-agentactivecase>
+      </div>
+      <div class="col-md-6 col-sm-6" *ngSwitchCase="'agentbystatus'">
+        <app-agentbystatus></app-agentbystatus>
+      </div>
+      <div class="col-md-6 col-sm-6" *ngSwitchCase="'agentactivecase'">
+        <app-agentactivecases></app-agentactivecases>
+      </div>
+      <div class="row" *ngSwitchCase="'actionsdash'">
+          <app-actionsdash></app-actionsdash>
+      </div>
+
+
+      <!-- <div class="col-md-3 col-sm-6" *ngSwitchCase="'callsdash'">
+        <app-callsdash></app-callsdash>
+      </div> -->
+      <!-- <div class="col-md-3 col-sm-6" *ngSwitchCase="'casesdash'">
+        <app-casesdash></app-casesdash>
+      </div> -->
+      <!-- <div class="col-md-3 col-sm-6" *ngSwitchCase="'collectiondash'">
+        <app-collectiondash></app-collectiondash>
+      </div> -->
+      <div class="col-md-6" *ngSwitchCase="'dashreminder'">
+        <app-dashreminder></app-dashreminder>
+      </div>
+      <!--<div class="col-md-6" *ngSwitchCase="'agentcases'">
+        <app-agentcases></app-agentcases>
+      </div>-->
+    </div>
+  </div>
+</div>
+

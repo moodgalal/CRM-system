@@ -1,0 +1,109 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Form_Closing()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="save()">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="GetDocuments()">
+          <i class="fa fa-plus"></i>history
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel  panel-default small-panel">
+  <div class="panel-body  height-300">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 ">
+            <label for="">Document type</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="DocumentTypeList" textField="DocumentTypeName" valueField="DocumentTypeID" [(ngModel)]="CM00208.DocumentTypeID"
+              [valuePrimitive]="true" (valueChange)="DocumentTypeList_Change($event)">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 ">
+                <label for="">Document Name</label>
+              </div>
+              <div class="col-md-9 col-xs-9  ">
+                <input type="text" class="form-control" placeholder="Document Name" [(ngModel)]="CM00208.DocumentName">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 ">
+                <label for="">Document Description</label>
+              </div>
+              <div class="col-md-9 col-xs-9  ">
+                <textarea placeholder="Document Description" [(ngModel)]="CM00208.DocumentDescription"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-2 col-xs-3 "></div>
+          <div class="col-md-10 col-xs-9">
+            <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="false" (success)="successEventHandler($event)" (error)="errHandler($event)">
+            </kendo-upload>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
+<div class="panel panel-default small-panel" *ngIf="DOcHistoryList.length>0">
+  <div class="panel-body">
+    <div class="table-container">
+      <table class="table  table-hover table-bordered table-resposive">
+        <thead class="table-inverse">
+          <tr>
+            <th>DocumentName</th>
+            <th>DocumentDescription </th>
+            <th>CreatedDate </th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let histroy of DOcHistoryList">
+            <td>{{ histroy.DocumentName}}</td>
+            <td>{{ histroy.DocumentDescription}}</td>
+            <td>{{ histroy.CreatedDate | date:"EEEE, MMMM d, yyyy" }}</td>
+            <td>
+              <button class="btn btn-info btn-sm">View</button>
+              <a class="btn btn-info btn-sm" target="_blank" href="{{ uploadSaveUrl+'/'+  histroy.DocumentName }}" >Download</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

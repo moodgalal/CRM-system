@@ -1,0 +1,124 @@
+<div class="panel panel-default">
+
+  <div class="panel-body">
+    <div class="row">
+
+      <div class=" col-md-4 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-12 ">
+            <label>Data Source</label>
+          </div>
+
+          <div class=" col-md-9 col-xs-12  ">
+            <kendo-dropdownlist (valueChange)="getColumns($event)"
+                                [data]="sources"
+                                textField="TrxTypeName"
+                                valueField="TRXTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="columns">
+      
+      <div>
+        <div class="row">
+          <div class="col-md-3" style="margin: 0!important; padding:0 3px;">
+            <kendo-dropdownlist [disabled]="pressOperator" style="margin:5px 0;" (valueChange)="arrayPushColumn($event)" [(ngModel)]="SelectedFilterCol"
+                                [data]="columns" valueField="FieldTypeID" textField="FieldDisplay"></kendo-dropdownlist>
+          </div>
+          <div class="col-md-3" style="margin: 0!important; padding:0 3px;" [ngSwitch]="SelectedFilterCol">
+
+            <kendo-datepicker *ngSwitchCase="2" [readonly]="pressOperator"  (valueChange)="arrayPushValue($event)"></kendo-datepicker>
+
+            <input *ngSwitchCase="4" [readonly]="pressOperator" title="Press Enter to submit the value" style="margin:5px 0; max-width: 100% !important; border-radius: 3px" #val type="number" placeholder="Enter a value" (keyup.enter)="arrayPushValue(val.value)">
+
+            <kendo-dropdownlist *ngSwitchCase="51"  [disabled]="pressOperator" style="margin:5px 0;" (valueChange)="arrayPushValue($event)" [(ngModel)]="SelectedFilterVal"
+                                [data]="CMSLookup01" valueField="Lookup01" textField="Lookup01Name"></kendo-dropdownlist>
+
+            <kendo-dropdownlist *ngSwitchCase="52"  [disabled]="pressOperator" style="margin:5px 0;" (valueChange)="arrayPushValue($event)" [(ngModel)]="SelectedFilterVal"
+                                [data]="CMSLookup02" valueField="Lookup02" textField="Lookup02Name"></kendo-dropdownlist>
+
+            <input *ngSwitchDefault [readonly]="pressOperator" title="Press Enter to submit the value" style="margin:5px 0; max-width: 100% !important; border-radius: 3px" #val type="text" placeholder="Enter a value" (keyup.enter)="arrayPushValue(val.value)">
+          </div>
+          <div class="col-md-6" style="padding:0">
+
+
+            <button  type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('+')">+</button>
+            <button  type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('-')">-</button>
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('*')">*</button>
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('/')">/</button>
+            <button type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('%')">%</button>
+            <button [disabled]="pressOperator" type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator('(')">(</button>
+            <button [disabled]="pressOperator" type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushOperator(')')">)</button>
+
+
+            <button type="button" class="btn btn-danger" (click)="arrayPop()">Delete</button>
+            <button type="button" class="btn btn-danger" (click)="arrayClear()">Clear all</button>
+          </div>
+        </div>
+        <div>
+          <textarea class="operator" placeholder="Your Filter Expression ..." [(ngModel)]="displayString" readonly></textarea>
+        </div>
+
+        <div *ngIf="someWrong" class="error">
+          This expression is not valid
+        </div>
+      </div>
+      <div>
+        <button [disabled]="someWrong || displayString == null" type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none;float: right"
+                (click)="createFilter()">Filter</button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="prevEq">   
+      <div class="table-container text-center">
+        <table class="table table-bordered table-hover table-responsive">
+          <thead class="thead-inverse">
+          <tr>
+            <th class="width-75">Equation</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let eq of prevEq">
+            <td>{{ eq.FieldEquation }}</td>
+            <td>
+              <button type="button" class="btn btn-outline-info mx-auto d-block" data-target="#eqModal" data-toggle="modal" (click)="selectedEq = eq" >
+                <i class="fa fa-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-outline-danger mx-auto d-block" (click)="deleteEq(eq)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedEq" class="modal fade" id="eqModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="height : 40px !important;">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Equation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="eq">Equation</label>
+        <textarea id="eq" [(ngModel)]="selectedEq.FieldEquation"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" (click)="editEq()">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

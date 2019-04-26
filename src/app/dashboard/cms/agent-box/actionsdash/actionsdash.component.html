@@ -1,0 +1,90 @@
+<div class="col-md-3" >
+  <div class="box success">
+    <div class="box-title">
+      <h2 class="box-title-line">
+        Target
+      </h2>
+      <h4 class="border-top-wt">Rank 01</h4>
+      <h5>Target 00%</h5>
+      <i class="fa fa-globe"></i>
+    </div>
+    <div class="box-body text-center">
+      <span class="sparkline">
+        Monthly rank 0
+      </span>
+    </div>
+  </div>
+</div>
+<div class="col-md-3" >
+  <div class="box warning">
+    <!-- default, danger, warning, info, success -->
+    <div class="box-title">
+      <!-- add .noborder class if box-body is removed -->
+      <h2 class="box-title-line">
+          Calls
+        </h2>
+      <h4 class="border-top-wt">InBound Calls: 000</h4>
+      <h4>Outgoing Calls: 000</h4>
+      <i class="fa fa-bar-chart-o"></i>
+    </div>
+    <div class="box-body text-center">
+      <span class="sparkline">
+        Total Calls : 000
+      </span>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="box default">
+    <div class="box-title">
+        <h2 class="box-title-line">
+            Cases
+          </h2>
+      <div class="row border-top-wt">
+        <div class="col-md-6">
+          <h4>Cases: {{AgentBoxSharedData.CMV00005.CaseCount}}</h4>
+          <h4>debtors: {{AgentBoxSharedData.CMV00005.DebtorCount}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h4>PTP: {{AgentBoxSharedData.CMV00005.PTPCount}}</h4>
+          <h4>Rework: {{AgentBoxSharedData.CMV00005.ReworkCount}}</h4>
+        </div>
+      </div>
+      <i class="fa fa-users"></i>
+    </div>
+    <div class="box-body text-center">
+      <span class="sparkline">
+        <div class="row">
+          <div class="col-md-6">
+            Past Due: {{AgentBoxSharedData.CMV00005.TotalCallactedAMT}}
+          </div>
+          <div class="col-md-6">
+            Action Count: {{AgentBoxSharedData.CMV00005.TotalCallactedAMT}}
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="box danger">
+    <div class="box-title">
+        <h2 class="box-title-line">
+            Collection
+          </h2>
+      <h4 class="border-top-wt">
+        <a>PTP Collection: {{AgentBoxSharedData.CMV00005.TotalCollPTPAMT}}</a>
+      </h4>
+      <h5>
+        <a>Direct Collection : {{AgentBoxSharedData.CMV00005.TotalCallactedAMT}}</a>
+      </h5>
+      <i class="fa fa-comments"></i>
+    </div>
+    <div class="box-body text-center">
+      <span class="sparkline">
+        Total Collection ({{AgentBoxSharedData.CMV00005.PeriodName}}) :
+        {{AgentBoxSharedData.CMV00005.TotalCallactedAMT}}
+      </span>
+    </div>
+  </div>
+</div>

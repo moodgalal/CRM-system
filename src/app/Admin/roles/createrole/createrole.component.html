@@ -1,0 +1,34 @@
+<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="SaveData()">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 pad-r-5px">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3  ">
+                <label for="exampleFormControlInput3">Role Name</label>
+              </div>
+              <div class="col-md-9 col-xs-9  ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" [(ngModel)]="Kaizen00030.RoleName" placeholder="Role Name">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

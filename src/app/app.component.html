@@ -1,0 +1,401 @@
+<spinner [backgroundColor]="'#ff0000'" [spinner]="customSpinner"></spinner>
+
+
+<!--   New App Component   -->
+
+
+<!-- WRAPPER -->
+<div id="wrapper" class="clearfix">
+
+  <aside id="aside">
+    <!--
+                  Always open:
+                  <li class="active alays-open">
+
+                  LABELS:
+                      <span class="label label-danger pull-right">1</span>
+                      <span class="label label-default pull-right">1</span>
+                      <span class="label label-warning pull-right">1</span>
+                      <span class="label label-success pull-right">1</span>
+                      <span class="label label-info pull-right">1</span>
+              -->
+    <nav id="sideNav">
+      <!-- MAIN MENU -->
+      <ul class="nav nav-list">
+        <li routerLinkActive="active">
+          <a class="dashboard" (click)="PublicShared.serverComponents = []" routerLink="/dashboard">
+            <i class="main-icon fa fa-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li *ngFor="let d of PublicShared.myDashboards">
+          <a class="dashboard" (click)="selectedDashboard(d)" routerLink="/dashboard">
+            <i class="main-icon fa fa-dashboard"></i>
+            <span>{{ d.DashboardName }}</span>
+          </a>
+        </li>
+
+      </ul>
+
+
+
+    </nav>
+
+    <span id="asidebg" class="main-bg">
+      <!-- aside fixed background -->
+    </span>
+  </aside>
+  <!-- /ASIDE -->
+
+
+  <!-- HEADER -->
+  <header id="header" class="main-bg">
+
+    <!-- Mobile Button -->
+    <button id="mobileMenuBtn"></button>
+
+    <!-- Logo -->
+    <span class="logo pull-left">
+      <img src="assets/images/logo_light.png" alt="admin panel" height="25" />
+    </span>
+
+
+
+    <nav>
+
+      <ul class="navbar-nav">
+        <li [hidden]="listMenu?.length <= 0" *ngFor="let list of filterTypes(listTypes)" style=" display: inline;" class="nav-item dropdown">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ list.MenueTypeName }}
+            </button>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+              <!-- second level -->
+
+              <ul *ngIf="filterModules(list , listModules).length == 1" class="list-unstyled">
+
+                <li style="margin-bottom: 5px;" *ngFor="let menu of listMenu" [hidden]="menu.ModuleID != filterModules(list , listModules)[0].ModuleID || menu.MenueTypeID != list.MenueTypeID">
+                  <a *ngIf="!menu.IsCustomPage" class="dropdown-item" tabindex="-1" (click)="navigateTo(menu.ScreenPath.trim(), menu.WindowSource, menu)"
+                    routerLinkActive="current-section">
+                    {{ menu.MenuName }}
+                  </a>
+
+                  <a *ngIf="menu.IsCustomPage" class="dropdown-item" tabindex="-1" [routerLink]="['/customerComponent']" [queryParams]="{ url: menu.ScreenPath.trim()}"
+                    routerLinkActive="current-section">
+                    {{ menu.MenuName }}
+                  </a>
+                </li>
+
+
+              </ul>
+
+              <span *ngIf="filterModules(list , listModules).length > 1">
+                <li *ngFor="let module of filterModules(list , listModules)" class="dropdown-submenu">
+
+                  <a class="dropdown-item" tabindex="-1" > {{ module.ModuleName }}</a>
+
+                  <ul class="dropdown-menu">
+                    <!-- third level -->
+                    <li *ngFor="let menu of listMenu" [hidden]="menu.ModuleID != module.ModuleID || menu.MenueTypeID != list.MenueTypeID" class="dropdown-item">
+
+                      <!--<a *ngIf="!menu.IsCustomPage" class="dropdown-item" tabindex="-1" [routerLink]="['/'+menu.ScreenPath.trim() , menu.WindowSource]"-->
+                      <!--routerLinkActive="current-section">-->
+                      <!--{{ menu.MenuName }}-->
+                      <!--</a>-->
+                      <a *ngIf="!menu.IsCustomPage" class="dropdown-item" tabindex="-1" (click)="navigateTo(menu.ScreenPath.trim(), menu.WindowSource, menu)"
+                        routerLinkActive="current-section">
+                        {{ menu.MenuName }}
+                      </a>
+
+                      <a *ngIf="menu.IsCustomPage" class="dropdown-item" tabindex="-1" [routerLink]="['/customerComponent']" [queryParams]="{ url: menu.ScreenPath.trim()}"
+                        routerLinkActive="current-section">
+                        {{ menu.MenuName }}
+                      </a>
+
+                    </li>
+                  </ul>
+                </li>
+              </span>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+
+
+      <!-- OPTIONS LIST -->
+      <ul class="nav pull-right notification-dashboard">
+
+        <li class="dropdown pull-left">
+          <a  class="noti dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <i class="fa fa-search"></i>
+          </a>
+          <ul class="dropdown-menu notification-dropdown hold-on-click" id="hold-on-click">
+            <div class="panel panel-default">
+
+              <div class="panel-body slimscroll height-300">
+                <div class="search-box">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-5 col-md-6 col-sm-12  ">
+
+                        <div class="input-group mb-2 mb-sm-0 row">
+                          <input type="text" class="form-control" [(ngModel)]="PublicSearchValue" placeholder="Search" (keyup.enter)="getSearchData()">
+                          <div class="input-group-addon" (click)="getSearchData()">
+                            <span class="fa fa-search"></span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <!-- <div class="col-5 col-md-3 col-sm-12  ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                      <div class="col-5 col-md-3 col-sm-12">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div> -->
+                    </div>
+                    <hr>
+                    <div class="search-content row" *ngIf="searchedData">
+                      <div class="col-12 col-md-12 padding-0" *ngFor="let data of searchedData">
+                        <div class="result-container">
+                          <h5>
+                            <a [routerLink]="['/viewTrxCase' , data.CaseRef , data.TRXTypeID]">{{data.CaseRef}}</a>
+                          </h5>
+                          <p class="mb-0">
+                            {{data.NationalityName}} // {{data.CaseAccountNo}} &#45;&#45; {{data.InvoiceNumber}} >> {{data.ClientName}}
+                          </p>
+
+                          <p [ngSwitch]="selectedListModule">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#editTrxCaseModal" *ngSwitchCase="1" (click)="dynamicComponent().GetCase(data.TRXTypeID , data.CaseRef)">details</button>
+                            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#editTrxCaseModal" *ngSwitchCase="2" (click)="dynamicComponent().testEmp()">details 2</button>
+                          </p>
+                          <h5 class="pink clearfix">{{data.CIFNumber}} >> {{data.CIFName}} ({{data.Balance}})</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ul>
+        </li>
+        <!--<li class="dropdown pull-left">-->
+        <!--<a href="#" class="noti dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-close-others="true">-->
+        <!--<i class="fa fa-weixin "></i>-->
+        <!--</a>-->
+        <!--<ul class="dropdown-menu chat-list notification-dropdown hold-on-click">-->
+        <!--<div class="panel panel-default width-300">-->
+        <!--<div class="panel-heading">-->
+        <!--<span class="elipsis">-->
+        <!--&lt;!&ndash; panel title &ndash;&gt;-->
+        <!--<strong>Kaizen users</strong>-->
+        <!--</span>-->
+        <!--</div>-->
+        <!--<div class="panel-body slimscroll height-300">-->
+        <!--<div class="list-group">-->
+        <!--<a href="#" class="list-group-item active">-->
+        <!--<img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">-->
+        <!--<span> ahmed samir</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+        <!--<img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">-->
+        <!--<span> ahmed samir</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+        <!--<img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">-->
+        <!--<span> ahmed samir</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+        <!--<img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">-->
+        <!--<span> ahmed samir</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+        <!--<img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">-->
+        <!--<span> ahmed samir</span>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <!--</ul>-->
+        <!--</li>-->
+
+        <li class="dropdown pull-left">
+          <a href="#" class="noti dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <i class="fa fa-weixin "></i>
+          </a>
+          <ul class="dropdown-menu chat-list notification-dropdown hold-on-click">
+            <div class="panel panel-default width-300">
+              <div class="panel-heading">
+                <span class="elipsis">
+                  <!-- panel title -->
+                  <strong>Kaizen users</strong>
+                </span>
+              </div>
+              <div class="panel-body slimscroll height-300">
+                <div class="list-group">
+                  <div (click)="openBox(chatUsers[oUser])" *ngFor="let oUser of Object.keys(chatUsers)">
+                    <a class="list-group-item active" [ngClass]="{'hideMeHere': chatUsers[oUser].status == 'incognito'}">
+                      <img src="assets/images/noavatar.jpg" class="img-circle img-chat-avatar">
+                      <span>{{chatUsers[oUser].name}}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ul>
+        </li>
+
+
+        <!-- USER OPTIONS -->
+        <li class="dropdown pull-left">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <img class="user-avatar" alt="" src="assets/images/noavatar.jpg" height="34" />
+            <span class="user-name">
+              <span class="hidden-xs" *ngIf="UserData">
+                {{ UserData.UserName }}
+                <i class="fa fa-angle-down"></i>
+              </span>
+            </span>
+          </a>
+          <ul class="dropdown-menu hold-on-click">
+            <li>
+              <!-- my calendar -->
+              <a>
+                <i class="fa fa-calendar"></i> Calendar</a>
+            </li>
+            <li>
+              <!-- my inbox -->
+              <a>
+                <i class="fa fa-envelope"></i> Inbox
+                <span class="pull-right label label-default">0</span>
+              </a>
+            </li>
+            <li>
+              <!-- settings -->
+              <a>
+                <i class="fa fa-cogs"></i> Settings</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li data-target="#goOutModal" data-toggle="modal">
+              <!-- lockscreen -->
+              <a>
+                <i class="fa fa-lock"></i>Check Out</a>
+            </li>
+            <li>
+              <!-- logout -->
+              <a (click)="userLogOut()">
+                <i class="fa fa-power-off"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+        <!-- /USER OPTIONS -->
+      </ul>
+      <!-- /OPTIONS LIST -->
+
+    </nav>
+
+
+  </header>
+  <!-- /HEADER -->
+
+
+  <!--
+              MIDDLE
+          -->
+  <section id="middle" style="margin-left: 0px;">
+    <div class="breadcrumb-container">
+      <ol class="breadcrumb ">
+        <li [hidden]="Setting.breabcrumbTitle == null" class="breadcrumb-item" [class.active]="Setting.breabcrumbTitle !== null" [innerHTML]="Setting.breabcrumbTitle"></li>
+      </ol>
+      <div class="buttons-bar">
+        <!-- <div class="dropdown screen-option hidden-xs hidden-sm" data-placement="top" data-toggle="tooltip" title="screen-options"
+          data-original-title="screen-options">
+          <button class="btn  dropdown-toggle btn-info" type="button" id="screenOptions" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fa fa-cog fa-spin"></i>
+          </button>
+
+        </div> -->
+        <button (click)="refreshPage()" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Refresh">
+          <i class="fa fa-refresh"></i>
+        </button>
+        <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Close" (click)="closePage()">
+          <i class="fa fa-times"></i>
+        </button>
+        <button toggleFullscreen class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Full Screen">
+          <i class="fa fa-arrows"></i>
+        </button>
+        <button class="btn btn-info" data-placement="top" title="Go out" type="button" data-toggle="modal" data-target="#goOutModal">
+          <img src="../assets/img/icon-run.png" class="img-icon">
+        </button>
+
+      </div>
+    </div>
+    <!-- goOutModal Modal -->
+    <div class="modal fade" id="goOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="height : 40px !important;">
+            <h5 class="modal-title" id="exampleModalLabel">Give a reason please</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="exampleSelect1">Example select</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Reason 1</option>
+                <option>Reason 2</option>
+                <option>Reason 3</option>
+                <option>Reason 4</option>
+              </select>
+            </div>
+
+            <label for="desc">Description</label>
+            <textarea id="desc"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none">Go Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard padding-10" id="content">
+      <router-outlet></router-outlet>
+      <div class="modal fade search-details-modal" id="editTrxCaseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="height : 40px !important;">
+              <h5 class="modal-title">View Trx Case</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div [ngSwitch]="selectedListModule">
+                <app-viewtrxcase #ViewHolder *ngSwitchCase="1"></app-viewtrxcase>
+                <app-edit-employee #ViewHolder *ngSwitchCase="2"></app-edit-employee>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+  <!-- /MIDDLE -->
+</div>
+

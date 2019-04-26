@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <kendo-dropdownlist [disabled]="pressSort" style="margin:5px 0;" (valueChange)="arrayPushFilterColumn($event)" [data]="columns"
+                            valueField="FieldName" textField="FieldDisplay"></kendo-dropdownlist>
+      </div>
+      <div class="col-md-8">
+        <button [disabled]="pressColumn" type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('asc')">Asc</button>
+        <button [disabled]="pressColumn" type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('desc')">Desc</button>
+        <button [disabled]="pressAnd" type="button" class="btn btn-default" style="margin:2px 0;" (click)="arrayPushSort('&')">&</button>
+        <button type="button" class="btn btn-danger" (click)="sortPop()">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="ClearFilter()">Clear all</button>
+      </div>
+    </div>
+    <div>
+      <textarea class="operator" rows="3" placeholder="Your Filter Expression ..." [(ngModel)]="displaySortString" readonly></textarea>
+    </div>
+
+    <div class="row">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeFilter()">Cancel</button>
+      <button type="button" class="btn btn-primary" style="background-color: #ff6358 !important; border:none" (click)="DoFilter()">Sort</button>
+    </div>
+  </div>
+</div>

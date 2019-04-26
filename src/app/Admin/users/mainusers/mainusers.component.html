@@ -1,0 +1,29 @@
+<ng-template #extra>
+  <button routerLink="/createuser" kendoButton [primary]="true">Add</button>
+  <button routerLink="/ChangePassword" kendoButton [primary]="true">password reset user</button>
+  <button routerLink="/Audit" kendoButton [primary]="true">Audit</button>
+  <button routerLink="/Userlog" kendoButton [primary]="true">User log</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default btn-sm">Access Level</button>
+    <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li>
+        <a routerLink="/UserCompanyaccesssecurity">
+          User Company Access
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Roleuser">
+          Roles
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+
+
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

@@ -1,0 +1,108 @@
+﻿<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="onSave()">
+          <i class="fa fa-save"></i>Save
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Data source</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist (valueChange)="CM00029List_Change($event)"
+                                [data]="CM00029List" [(ngModel)]="SelectedTRXType" textField="TrxTypeName"
+                                valueField="TRXTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>FieldName</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox placeholder="FieldName" [(ngModel)]="CM00039.FieldName" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>FieldDisplay</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox placeholder="FieldDisplay" [(ngModel)]="CM00039.FieldDisplay" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>IsRequired</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-switch [(ngModel)]="CM00039.IsRequired "></kendo-switch>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="CM00039List.length>0" >
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+             
+              <th scope="col">FieldName</th>
+              <th scope="col">FieldDisplay</th>
+              <th scope="col">IsRequired</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of CM00039List">
+              
+              <td>
+               {{col.FieldName}}
+              </td>
+              <td>
+                {{col.FieldDisplay}}
+              </td>
+              <td>
+                <kendo-switch [(ngModel)]="col.IsRequired "></kendo-switch>
+              </td>
+             
+              <td>
+                <button kendoButton (click)="Edit(col)">Edit</button>
+                <button kendoButton (click)="Delete(col)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

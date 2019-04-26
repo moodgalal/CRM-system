@@ -1,0 +1,1277 @@
+<div class="panel panel-default margin-bottom-0 ">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12 col-md-12 col-sm-12  ">
+        <div class="tabs nomargin-top">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item active">
+              <a id="customer-tab" data-toggle="tab" href="#customer" role="tab" aria-controls="customer" aria-expanded="true">Customer</a>
+            </li>
+            <li class="nav-item">
+              <a id="shipping-tab" data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping">shipping</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " id="Billing-tab" data-toggle="tab" href="#Billing" role="tab" aria-controls="Billing" aria-expanded="true">Billing</a>
+            </li>
+            <li class="nav-item">
+              <a id="statment-tab" data-toggle="tab" href="#statment" role="tab" aria-controls="statment">statment</a>
+            </li>
+            <li class="nav-item">
+              <a id="refrence-tab" data-toggle="tab" href="#refrence" role="tab" aria-controls="refrence">refrence</a>
+            </li>
+            <li class="nav-item">
+              <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact">contact</a>
+            </li>
+          </ul>
+          <div class="tab-content padding-10  " id="myTabContent">
+            <div class="tab-pane fade in active" id="customer" role="tabpanel" aria-labelledby="customer-tab">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">DS</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Customer</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <div class="input-group mb-2 mb-sm-0">
+                            <input type="text" class="form-control" placeholder="Agent ID">
+                            <div class="input-group-addon">
+                              <span class="fa fa-search"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Name</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Agent ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Short Name</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Agent ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Long Name</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Agent ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">CPRCRNO</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Agent ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">EmployerName</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Agent ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Nationality</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <div class="input-group mb-2 mb-sm-0">
+                            <input type="text" class="form-control" placeholder="Agent ID">
+                            <div class="input-group-addon">
+                              <span class="fa fa-search"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">PeriorityID</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">CASTCLAS</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">StatusID</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Parent</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Status</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   k-form">
+
+                          <input class="k-checkbox " id="ch22" type="checkbox">
+                          <label class="k-checkbox-label" for="ch22">Is active</label>
+                          <input class="k-checkbox " id="ch32" type="checkbox">
+                          <label class="k-checkbox-label" for="ch32">Is hold</label>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <img src="../assets/img/avatar.jpg" class="d-block mx-auto" style="width:auto;height:200px;margin-bottom:5px;">
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Address</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9   ">
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <kendo-tabstrip>
+                        <kendo-tabstrip-tab [title]="'Mobile'" [selected]="true">
+                          <ng-template kendoTabContent>
+                            <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Mobile</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Mobile</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Mobile</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Mobile</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+                            </div>
+                          </ng-template>
+                        </kendo-tabstrip-tab>
+                        <kendo-tabstrip-tab [title]="'Phone'">
+                          <ng-template kendoTabContent>
+                            <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">phone</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">phone</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">phone</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">phone</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+                            </div>
+                          </ng-template>
+                        </kendo-tabstrip-tab>
+                        <kendo-tabstrip-tab [title]="'Address'">
+                          <ng-template kendoTabContent>
+                            <div class="container-fluid">
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Address</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Address</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Address</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">Address</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                            </div>
+                          </ng-template>
+                        </kendo-tabstrip-tab>
+                        <kendo-tabstrip-tab [title]="'other'">
+                          <ng-template kendoTabContent>
+                            <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">EmployerName</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">EmployerName</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-2 col-xs-3 padding-col">
+                                  <label for="exampleFormControlInput7">EmployerName</label>
+                                </div>
+                                <div class="col-md-9 col-xs-9   ">
+                                  <input type="text" class="form-control" placeholder="Agent ID">
+                                </div>
+                              </div>
+                            </div>
+
+                          </ng-template>
+                        </kendo-tabstrip-tab>
+                      </kendo-tabstrip>
+                    </div>
+                    <button class="btn btn-secondry btn-sm d-block mx-auto">save</button>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="col-12 col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class=" col-md-1-5 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput6">Description</label>
+                        </div>
+                        <div class="col-md-10-5 col-xs-9  ">
+                          <textarea class="form-control" id="exampleFormControlInput6" placeholder="Lorem Ipsum is simply dummy text." rows="5"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 col-md-12  col-sm-12">
+                    <div class="row">
+                      <div class="col-3 col-md-2 col-xs-3 padding-col">
+                        <label for="exampleFormControlInput7">Address</label>
+                      </div>
+                      <div class="col-9 col-md-10 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-12  col-sm-12">
+                    <kendo-tabstrip>
+                      <kendo-tabstrip-tab [title]="'Mobile'" [selected]="true">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Phone'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Address'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'other'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                    </kendo-tabstrip>
+                    <button class="btn btn-secondry btn-sm d-block mx-auto">save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="Billing" role="tabpanel" aria-labelledby="Billing-tab">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 col-md-12 col-sm-12">
+                    <div class="row">
+                      <div class="col-3 col-md-2 col-xs-3 padding-col">
+                        <label for="exampleFormControlInput7">Address</label>
+                      </div>
+                      <div class="col-9 col-md-10 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-sm-12">
+                    <kendo-tabstrip>
+                      <kendo-tabstrip-tab [title]="'Mobile'" [selected]="true">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Phone'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Address'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'other'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                    </kendo-tabstrip>
+                    <button class="btn btn-secondry btn-sm d-block mx-auto">save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="statment" role="tabpanel" aria-labelledby="statment-tab">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 col-md-12 col-sm-12">
+                    <div class="row">
+                      <div class="col-3 col-md-2 col-xs-3 padding-col">
+                        <label for="exampleFormControlInput7">Address</label>
+                      </div>
+                      <div class="col-9 col-md-10 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-sm-12">
+                    <kendo-tabstrip>
+                      <kendo-tabstrip-tab [title]="'Mobile'" [selected]="true">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Phone'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Address'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'other'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                    </kendo-tabstrip>
+                    <button class="btn btn-secondry btn-sm d-block mx-auto">save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="refrence" role="tabpanel" aria-labelledby="refrence-tab">
+              <form>
+
+                <div class="container-fluid">
+                  <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-4 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput10">Customer</label>
+                        </div>
+                        <div class="col-9 col-md-8 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Customer Name">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-4 col-xs-3 padding-col ">
+                          <label for="exampleFormControlInput10">Name</label>
+                        </div>
+                        <div class="col-9 col-md-8 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder=" Name">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class=" col-md-4 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Source</label>
+                        </div>
+                        <div class=" col-md-8 col-xs-9  ">
+
+                          <kendo-dropdownlist [data]="testData">
+                          </kendo-dropdownlist>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-4 col-xs-3 ">
+                          <label for="exampleFormControlInput10">Employee </label>
+                        </div>
+                        <div class="col-9 col-md-8 col-xs-9   ">
+                          <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class=" col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput7">Land Mark</label>
+                        </div>
+                        <div class=" col-md-10 col-xs-9  ">
+
+                          <input type="text" class="form-control" placeholder="Land Mark">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput6">Cust Address</label>
+                        </div>
+
+                        <div class="col-md-10 col-xs-9  ">
+                          <input type="text" class="form-control" placeholder="Address">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput6">Is Email</label>
+                        </div>
+
+                        <div class="col-md-10 col-xs-9   row">
+                          <div class="col-md-1">
+                            <input class="k-checkbox " id="ch0b" type="checkbox">
+                            <label class="k-checkbox-label" for="ch0b"></label>
+                          </div>
+                          <div class="col-md-11  ">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput6">Is SMS</label>
+                        </div>
+
+                        <div class="col-md-10 col-xs-9   row">
+                          <div class="col-md-1">
+                            <input class="k-checkbox " id="ch1b" type="checkbox">
+                            <label class="k-checkbox-label" for="ch1b"></label>
+                          </div>
+                          <div class="col-md-11  ">
+
+                            <input type="text" class="form-control" placeholder="Address">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <label class="form-check-label checkb">
+                                                    <input class="form-check-input checkbox-o" type="checkbox">
+                                                    <span></span>
+                                               </label> -->
+
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+                        <div class="col-md-2 col-xs-3 padding-col">
+                          <label for="exampleFormControlInput6">Extra Note</label>
+                        </div>
+
+                        <div class="col-md-10 col-xs-9  ">
+                          <textarea class="form-control" rows="5" id="exampleFormControlInput6" placeholder="Extra note"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 col-md-4 col-sm-12">
+                    <div class="row">
+                      <div class="col-md-2 col-xs-3 padding-col">
+                        <label for="exampleFormControlInput7">Address</label>
+                      </div>
+                      <div class="col-md-9 col-xs-9   ">
+                        <kendo-dropdownlist [data]="testData">
+                        </kendo-dropdownlist>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-8 col-sm-12">
+                    <kendo-tabstrip>
+                      <kendo-tabstrip-tab [title]="'Mobile'" [selected]="true">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Mobile</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Phone'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">phone</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Address'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">Address</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                          </div>
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'other'">
+                        <ng-template kendoTabContent>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2 col-xs-3 padding-col">
+                                <label for="exampleFormControlInput7">EmployerName</label>
+                              </div>
+                              <div class="col-md-9 col-xs-9   ">
+                                <input type="text" class="form-control" placeholder="Agent ID">
+                              </div>
+                            </div>
+                          </div>
+
+                        </ng-template>
+                      </kendo-tabstrip-tab>
+                    </kendo-tabstrip>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

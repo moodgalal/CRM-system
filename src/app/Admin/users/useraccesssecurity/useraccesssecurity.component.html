@@ -1,0 +1,84 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <!--<li>
+        <a class="btn btn-primary btn-sm white" (click)="save()">
+          <i class="fa fa-check"></i>Save
+        </a>
+      </li>-->
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">Company</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="companyList" [textField]="'CompanyName'"
+                                [valueField]="'CompanyID'"
+                                [valuePrimitive]="true"
+                                [(ngModel)]="companyAccess.CompanyID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">User </label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <app-users-lookup (getValue)="onUserChange($event)"></app-users-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+         
+          <div class="col-md-9 col-xs-9  ">
+           <button kendoButton (click)="save()">Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel" *ngIf="userCompanyAccess.length > 0">
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>CompanyID
+            </th>
+            <th>CurrencyCode</th>
+            <th>DecimalDigit</th>
+            <th>Delete ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userCompanyAccess">
+            <td>
+              {{item.CompanyID}}
+            </td>
+            <td>{{item.CurrencyCode}}</td>
+            <td>{{item.DecimalDigit}}</td>
+            <td>
+              <button kendoButton (click)="delete(item)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

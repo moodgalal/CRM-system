@@ -1,0 +1,106 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" >
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+
+      <li  (click)="saveAgentGroup()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add</a>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+    
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="AgentGroup">Agent Group</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="AgentGroup" type="text" class="form-control" placeholder="Agent Group" [(ngModel)]="agentGroup.AgentGroup">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="AgentGroupName">Agent Group Name</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="AgentGroupName" type="text" class="form-control" placeholder="Agent Group Name" [(ngModel)]="agentGroup.AgentGroupName">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="whereCondition">Next Document Num</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input type="text" class="form-control" rows="5" id="NextDocumentNumber" placeholder="Lorem Ipsum is simply dummy text." [(ngModel)]="agentGroup.NextDocumentNumber" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="NextNumberPrefix">Next Number Prefix</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <input type="text" [(ngModel)]="agentGroup.NextNumberPrefix" class="form-control"  id="NextNumberPrefix" placeholder="Next Number Prefix.">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="sortCondition">View sort condition</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType">Table Source</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+
+          </div>
+          <div class="col-md-4 col-sm-12">
+
+          </div>
+          <div class="col-md-4 col-sm-12">
+            </div>
+          <div class="col-md-4 col-sm-12">
+
+          </div>
+          <div class="col-md-4 col-sm-12">
+
+          </div>
+          <div class="col-md-4 col-sm-12">
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

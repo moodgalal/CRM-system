@@ -1,0 +1,109 @@
+<div class="panel panel-default margin-bottom-0 xsmall-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="goBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm white" (click)="goBack()">
+          <i class="fa fa-check"></i>Send
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-danger btn-sm white" (click)="goBack()">
+          <i class="fa fa-times"></i>Clear
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default xsmall-panel">
+  <div class="panel-body">
+    <h3 style="text-align: center; color: #292929">Call The administrator please</h3>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class=" row">
+          <div class="col-md-3 col-xs-3  padding-col ">
+            <label>Sender</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="testData">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class=" row">
+          <div class="col-md-3 col-xs-3  padding-col ">
+            <label>Template</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="testData">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 col-sm-12">
+        <div class=" row">
+          <div class="col-md-3 col-xs-3  padding-col ">
+            <label>Type</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <kendo-dropdownlist [data]="testData">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class=" row">
+          <div class="col-md-1-5 col-xs-3  padding-col ">
+            <label>Message</label>
+          </div>
+          <div class=" col-md-10-5 col-xs-9  ">
+            <div class="fancy-form">
+              <textarea rows="5" class="form-control word-count" data-maxlength="200" data-info="textarea-words-info" placeholder="Write your message here..."></textarea>
+
+              <i class="fa fa-comments">
+                <!-- icon -->
+              </i>
+
+              <span class="fancy-hint size-11 text-muted">
+                <strong>Hint:</strong> 200 words allowed!
+                <span class="pull-right">
+                  <span id="textarea-words-info">0/200</span> Words
+                </span>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+     
+      <div class="col-md-3 col-md-offset-2 col-sm-12">
+        <label class="checkbox">
+          <input type="checkbox" value="1">
+          <i></i> Schedule Message
+        </label>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class=" col-md-3 col-xs-3  padding-col ">
+            <label>Schedule Date</label>
+          </div>
+          <div class=" col-md-9 col-xs-9   ">
+            <kendo-datepicker ></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

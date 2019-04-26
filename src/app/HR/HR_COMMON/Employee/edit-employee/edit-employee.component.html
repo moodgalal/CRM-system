@@ -1,0 +1,147 @@
+<!-- Employee Basics Details-->
+<div class="buttons-container width-100">
+  <button type="button" class="btn btn-dark"><i class="fa fa-arrow-left"></i>Back</button>
+  <button type="button" class="btn btn-primary"><i class="fa fa-undo"></i>refresh</button>
+  <button type="button" class="btn btn-secondary"><i class="fa fa-print"></i>print</button>
+  <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+  <button type="button" class="btn btn-danger"><i class="fa fa-ban"></i>Cancel</button>
+  <button type="button" class="btn btn-info"><i class="fa fa-user"></i> Basics Details</button>
+  <button type="button" class="btn btn-info"><i class="fa fa-briefcase"></i> Work Details</button>
+  <button type="button" class="btn btn-info"><i class="fa fa-bookmark"></i> Payroll Details</button>
+</div>
+<div class="content-container width-100">
+  <form>
+    <div class="container-fluid">
+      <h3>Employee Basics Details</h3>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput7">Perfix</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <kendo-dropdownlist [data]="testData">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput7">Suffix</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <kendo-dropdownlist [data]="testData">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput9">First Name</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="First Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput9">Middle Name</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Middle Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput9">Last Name</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput9">CPRCR Number</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="CPRCR Number">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput11">Birth Date</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <kendo-datepicker [value]="value"></kendo-datepicker>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput11"> Nationality</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <label class="sr-only" for="inlineFormInputGroup">Nationality</label>
+                  <div class="input-group mb-2 mb-sm-0">
+                    <input type="text" class="form-control" placeholder="Nationality">
+                    <div class="input-group-addon"><span class="fa fa-search"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="id-info">
+
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class="col-3 col-md-2 col-xs-3  ">
+                  <label for="exampleFormControlInput30"> Employee ID</label>
+                </div>
+                <div class="col-9 col-md-10 col-xs-9  ">
+                  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder=" Employee ID">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-sm-12 upload-img">
+              <div class="col-md-12 ">
+                <img class="img-profile-edit" src="../assets/img/avatar.jpg" />
+              </div>
+              <div class="col-12 col-md-12 col-sm-12">
+                <label class="custom-file">
+                  <input type="file" id="file2" class="custom-file-input">
+                  <span class="custom-file-control"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Employee Basics Details-->

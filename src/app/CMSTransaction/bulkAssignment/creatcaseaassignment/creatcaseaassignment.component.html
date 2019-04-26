@@ -1,0 +1,215 @@
+<!--Bulk Actions !-->
+<!-- <div class="buttons-container">
+    <button type="button" class="btn btn-dark"><i class="fa fa-arrow-left"></i>Back</button>
+    <button type="button" class="btn btn-primary"><i class="fa fa-undo"></i>refresh</button>
+    <button type="button" class="btn btn-secondary"><i class="fa fa-print"></i>print</button>
+    <button type="button" class="btn btn-success" (click)="uploadData()"><i class="fa fa-check"></i> Save</button>
+    <button type="button" class="btn btn-danger"><i class="fa fa-ban"></i>Cancel</button>
+</div>
+<div class="content-container">
+    <form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-md-12 col-sm-12">
+                    <span>Transiaction Number</span> : <span>{{ TransiactionNumber }}</span>
+                </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-check">
+                  <label> Upload by case ref</label>
+                  <label class="form-check-label checkb">
+                    <input class="form-check-input checkbox-o"
+                           type="checkbox"
+                           [(ngModel)]="isChecked" name="isChecked">
+                    <span></span>
+                  </label>
+                </div>
+                </div>
+              <div class="col-md-6 col-sm-6">
+                <app-client-lookup *ngIf="!isChecked" (getValue)="getValue($event)"></app-client-lookup>
+              </div>
+              <div class="clearfix"></div>
+                <div class=" col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="fancy-file-upload offset-md-3 col-md-9  ">
+                            <kendo-upload [saveUrl]="uploadSaveUrl"
+                                          [withCredentials]="false"
+                                          (success)="successEventHandler($event)"
+                                          (error)="errHandler($event)">
+                            </kendo-upload>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-6 col-sm-12">
+                    <div class="form-group row">
+                        <div class=" col-md-3 col-xs-3">
+                            <label for="exampleFormControlInput7">Data Source</label>
+                        </div>
+                        <div class=" col-md-9 col-xs-9  ">
+                            <!--<select class="form-control" id="exampleFormControlInput7">-->
+<!--<option>Data Source </option>-->
+<!--</select>-->
+<!-- <kendo-dropdownlist [data]="dataSourcesTmp" textField="TrxTypeName" valueField="TRXTypeID" (valueChange)="dataSrcChange($event)">
+</kendo-dropdownlist>
+</div>
+</div>
+</div>
+</div> -->
+
+<!--
+<div class="container">
+
+    <div class="row">
+        <div class="table-container" style="text-align:-webkit-center;">
+            <table class="table table-bordered table-hover" style="width:50%;">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th style="width:15%;">Field</th>
+                        <th style="width:15%;">Map Field</th>
+                        <th style="width:15%;"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" *ngIf="isChecked">Case ref</th>
+                        <th scope="row" *ngIf="!isChecked">Account number</th>
+                        <td>
+                            <kendo-dropdownlist [data]="Caseref" [textField]="'ColumnName'" [valueField]="'Index'" (valueChange)="CaserefChange($event)">
+                            </kendo-dropdownlist>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+<!-- </div>
+
+</form>
+</div>  -->
+<!-- Bulk Actions !-->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+
+        <!-- right options -->
+        <ul class="options pull-right list-inline">
+            <li>
+                <a href="#" class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+            </li>
+            <li>
+                <a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+                                            <i class="fa fa-expand"></i>
+                                          </a>
+            </li>
+        </ul>
+        <ul class="options pull-left relative list-unstyled">
+            <li>
+                <a href="#" class="btn btn-default btn-sm white">
+                                            <i class="fa fa-arrow-left"></i>Back</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default btn-sm white">
+                            <i class="fa fa-undo"></i>refresh</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default btn-sm white">
+                            <i class="fa fa-print"></i>print</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-danger btn-sm white" >
+                                <i class="fa fa-arrow-left"></i>Cancel</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-success btn-sm white">
+                                            <i class="fa fa-plus"></i>save</a>
+            </li>
+
+
+        </ul>
+        <!-- /right options -->
+    </div>
+    <div class="panel-body">
+        <form>
+
+                <div class="row">
+                    <div class=" col-md-12 col-sm-12">
+                        <span>Transiaction Number</span> : <span>{{ TransiactionNumber }}</span>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-check">
+                            <label> Upload by case ref</label>
+                            <label class="form-check-label checkb">
+                                    <input class="form-check-input checkbox-o"
+                                           type="checkbox"
+                                           [(ngModel)]="isChecked" name="isChecked">
+                                    <span></span>
+                                  </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <app-client-lookup *ngIf="!isChecked" (getValue)="getValue($event)"></app-client-lookup>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class=" col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="fancy-file-upload offset-md-3 col-md-9  ">
+                                <kendo-upload [saveUrl]="uploadSaveUrl" [withCredentials]="false" (success)="successEventHandler($event)" (error)="errHandler($event)">
+                                </kendo-upload>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-6 col-sm-12">
+                        <div class="form-group row">
+                            <div class=" col-md-3 col-xs-3">
+                                <label for="exampleFormControlInput7">Data Source</label>
+                            </div>
+                            <div class=" col-md-9 col-xs-9  ">
+                                <!--<select class="form-control" id="exampleFormControlInput7">-->
+                                <!--<option>Data Source </option>-->
+                                <!--</select>-->
+                                <kendo-dropdownlist [data]="dataSourcesTmp" textField="TrxTypeName" valueField="TRXTypeID" (valueChange)="dataSrcChange($event)">
+                                </kendo-dropdownlist>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="table-container" style="text-align:-webkit-center;">
+                            <table class="table table-bordered table-hover" style="width:50%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th style="width:15%;">Field</th>
+                                        <th style="width:15%;">Map Field</th>
+                                        <th style="width:15%;"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" *ngIf="isChecked">Case ref</th>
+                                        <th scope="row" *ngIf="!isChecked">Account number</th>
+                                        <td>
+                                            <kendo-dropdownlist [data]="Caseref" [textField]="'ColumnName'" [valueField]="'Index'" (valueChange)="CaserefChange($event)">
+                                            </kendo-dropdownlist>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+        </form>
+    </div>
+</div>

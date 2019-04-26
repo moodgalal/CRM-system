@@ -1,0 +1,365 @@
+<div class="panel panel-default margin-bottom-0 ">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 ">
+  <div class="panel-body">
+    <div class=" row">
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label for="exampleFormControlInput7">transaction id /year</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9">
+            <div class="row">
+              <div class="col-md-6 col-xs-6 p-r-0">
+                <kendo-dropdownlist [data]="testData">
+                </kendo-dropdownlist>
+              </div>
+              <div class="col-md-6 col-xs-6 p-l-0">
+                <input type="text" class="form-control " placeholder=" 1111">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label for="exampleFormControlInput7">transaction date</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9">
+            <kendo-datepicker [value]="value"></kendo-datepicker>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col ">
+            <label for="exampleFormControlInput7">Batch</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9  ">
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control" placeholder="Agent ID">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col ">
+            <label for="exampleFormControlInput7">Source Line</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9  ">
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control" placeholder="Agent ID">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col ">
+            <label for="exampleFormControlInput7">Batch</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9 ">
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control" placeholder="Agent ID">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col ">
+            <label for="exampleFormControlInput7">Source Line</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9  ">
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control " placeholder="Agent ID">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+              <div class="input-group-addon">
+                <span style="font-size: 12px;">Default</span>
+              </div>
+              <div class="input-group-addon">
+                <span style="font-size: 12px;">5</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="col-12 col-md-12 col-sm-12">
+          <div class="form-group row">
+
+            <div class=" col-md-1-5 col-xs-3 ">
+              <label for="exampleFormControlInput6">Description</label>
+            </div>
+
+            <div class="col-md-10-5 col-xs-9 ">
+              <textarea class="form-control" id="exampleFormControlInput6" placeholder="Lorem Ipsum is simply dummy text." rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="table-container">
+        <table class="table  table-hover table-bordered table-resposive " style="text-align:center;">
+          <thead class="table-inverse">
+
+            <tr>
+              <th></th>
+              <th>Account</th>
+              <th>Debit </th>
+              <th>Credit</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <!-- hide button -->
+                <button (click)="hideRow()" class="btn btn-primary btn-sm white">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </td>
+              <td>
+                <span>Ahmed samir hanafy</span>
+              </td>
+              <td>
+                <span>225122$</span>
+
+              </td>
+              <td>
+                <span>225122$</span>
+
+              </td>
+
+            </tr>
+            <!-- hidden row -->
+            <tr [hidden]="isHiddenRow" class="hidden-row">
+              <td colspan=4>
+                <div class="width-100 hidden-row">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-6 col-xs-12">
+                        <div class="form-group row">
+
+                          <div class=" col-md-3 col-xs-3 ">
+                            <label for="exampleFormControlInput6">AccountNo</label>
+                          </div>
+
+                          <div class="col-md-9 col-xs-9 ">
+                            <span>21254665</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xs-12">
+                        <div class="form-group row">
+
+                          <div class=" col-md-3 col-xs-3 ">
+                            <label for="exampleFormControlInput6">AccountName</label>
+                          </div>
+
+                          <div class="col-md-9 col-xs-9 ">
+                            <span>Ahmed Samir hanafy</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xs-12">
+                        <div class="form-group row">
+
+                          <div class=" col-md-3 col-xs-3 ">
+                            <label for="exampleFormControlInput6">Amount</label>
+                          </div>
+
+                          <div class="col-md-9 col-xs-9 ">
+                            <span>21254665</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xs-12">
+                        <div class="form-group row">
+
+                          <div class=" col-md-3 col-xs-3 ">
+                            <label for="exampleFormControlInput6">Refrence</label>
+                          </div>
+
+                          <div class="col-md-9 col-xs-9 ">
+                            <span>test test </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <button class="btn btn-primary btn-sm white">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </td>
+              <td>
+                <span>Ahmed samir hanafy</span>
+              </td>
+              <td>
+                <span>225122$</span>
+
+              </td>
+              <td>
+                <span>225122$</span>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr>
+    <div class=" row">
+
+      <div class="col-6 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col ">
+            <label for="exampleFormControlInput7">Account no</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9  ">
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control col-10 col-md-12 col-xs-10" placeholder="Agent ID">
+              <div class="input-group-addon">
+                <span class="fa fa-search"></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-group row ">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label for="exampleFormControlInput7">amount D/C</label>
+          </div>
+          <div class="col-9 col-md-9 col-xs-9">
+
+            <!-- desimal inputs -->
+            <kendo-numerictextbox [decimals]="digitNum" format="n3"></kendo-numerictextbox>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-sm-12">
+        <button (click)="makeThree()" class="btn btn-primary btn-sm white">make 3</button>
+        <button (click)="makeZero()" class="btn btn-primary btn-sm white">make 0</button>
+        <button (click)="makeOne()" class="btn btn-primary btn-sm white">make 1</button>
+        <button (click)="makeTwo()" class="btn btn-primary btn-sm white">make 2</button>
+      </div>
+    </div>
+
+
+    <div class="col-6 col-md-6 col-sm-12">
+      <div class="form-group row">
+        <div class="col-3 col-md-3 col-xs-3 padding-col ">
+          <label for="exampleFormControlInput7">Account no</label>
+        </div>
+        <div class="col-9 col-md-9 col-xs-9  ">
+          <div class="input-group mb-2 mb-sm-0">
+            <input type="text" class="form-control" placeholder="Agent ID">
+            <div class="input-group-addon">
+              <span class="fa fa-search"></span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-6 col-sm-12">
+      <div class="form-group row">
+        <div class="col-3 col-md-3 col-xs-3 padding-col">
+          <label for="exampleFormControlInput7">Original D/C</label>
+        </div>
+        <div class="col-9 col-md-9 col-xs-9">
+          <div class="row">
+            <input type="number" class="form-control col-6 col-xs-6" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-sm-12">
+      <div class="form-group row">
+        <div class=" col-md-3 col-xs-3 padding-col">
+          <label for="exampleFormControlInput7">refrence</label>
+        </div>
+        <div class=" col-md-9 col-xs-9 ">
+          <input type="text" class="form-control" placeholder="Agent ID">
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-12 col-md-6 col-sm-12">
+      <div class="form-group row">
+
+        <div class=" col-md-3 col-xs-3 padding-col">
+          <label for="exampleFormControlInput6">Description</label>
+        </div>
+
+        <div class="col-md-9 col-xs-9 ">
+          <textarea class="form-control" id="exampleFormControlInput6" placeholder="Lorem Ipsum is simply dummy text." rows="5"></textarea>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

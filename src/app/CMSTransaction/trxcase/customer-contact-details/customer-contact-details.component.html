@@ -1,0 +1,330 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel  panel-default">
+      <div class="panel-heading">
+        <span class="elipsis">
+          <strong>Customer Contact Details</strong>
+        </span>
+        <ul class="options pull-right list-inline">
+          <li>
+            <a href="#" class="opt panel_colapse " data-toggle="tooltip" title="" data-placement="bottom"
+               data-original-title="Colapse"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-9">
+          <kendo-dropdownlist (valueChange)="AddressList_Change()" [data]="CMSShared?.AddressList" [(ngModel)]="CurrentAddressType"
+            textField="AddressName" valueField="AddressCode">
+          </kendo-dropdownlist>
+        </div>
+        <div class="col-md-3">
+          <button *ngIf="!CurrentAddressType.IsReadOnlyData" type="button" (click)="SaveDebtorAddress()"
+                  class="btn btn-success btn-sm">Save</button>
+        </div>
+        <div class="col-md-12 nopadding">
+          <div class="tabs nomargin-top">
+            <!-- tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#phone" data-toggle="tab" aria-expanded="true">
+                  <i class="fa fa-phone"></i> Phone
+                </a>
+              </li>
+              <li class="">
+                <a href="#address" data-toggle="tab" aria-expanded="false">
+                  <i class="fa fa-map"></i> Address
+                </a>
+              </li>
+              <li class="">
+                <a href="#email" data-toggle="tab" aria-expanded="false">
+                  <i class="fa fa-envelope"></i> Mail
+                </a>
+              </li>
+              <li class="">
+                <a href="#other" data-toggle="tab" aria-expanded="false">
+                  <i class="fa fa-cog"></i> Other
+                </a>
+              </li>
+            </ul>
+            <!-- tabs content -->
+            <div class="tab-content">
+              <div id="phone" class="tab-pane active">
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                      <div class="col-md-3 col-xs-3  padding-col">
+                        <label>SMS</label>
+                      </div>
+                      <div class="col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.MobileNo1" placeholder="SMS"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-6 col-sm-12">
+                    <div class=" row">
+                      <div class="  col-md-3 col-xs-3  padding-col ">
+                        <label>Tel</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.MobileNo2" placeholder="Tel"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                      <div class="col-md-3 col-xs-3  padding-col ">
+                        <label>Mobile</label>
+                      </div>
+                      <div class="col-md-9 col-xs-9">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.MobileNo3" id="inlineFormInputGroup2"
+                            placeholder="Mobile" />
+                          <div class="input-group-addon">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                      <div class="col-md-3 col-xs-3  padding-col">
+                        <label>Home Tel</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.MobileNo4" id="inlineFormInputGroup2"
+                            placeholder="Home Tel" />
+                          <div class="input-group-addon">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="address" class="tab-pane">
+                <div class="row" style="padding:5px;">
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>address 1</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [(ngModel)]="CM00104.Address1" [disabled]="CurrentAddressType.IsReadOnlyData" placeholder="Address 1"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-home"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>address 2</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Address2" placeholder="Address 2"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-home"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>address 3</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Address3" placeholder="Address 3"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-home"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>address 4</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Address4" placeholder="Address 4"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-home"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="email" class="tab-pane">
+                <div class="row" style="padding:5px;">
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>Email 1</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Email01" placeholder="Email0 1"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Email 2</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Email02" placeholder="Email0 2"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Email 3</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Email03" placeholder="Email0 3"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col ">
+                        <label>Email 4</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Email04" placeholder="Email0 4"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="other" class="tab-pane">
+                <div class="row" style="padding:5px;">
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>Phone 1</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Phone01" placeholder="Phone 1"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>Phone 2 </label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Phone02" placeholder="Phone 2"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-home"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>Phone 3</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Phone03" placeholder="Phone 3"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="  col-md-12 col-sm-12">
+                    <div class=" row">
+                      <div class=" col-md-3 col-xs-3  padding-col">
+                        <label>Phone 4</label>
+                      </div>
+                      <div class=" col-md-9 col-xs-9  ">
+                        <div class="input-group mb-2 mb-sm-0">
+                          <input type="text" class="form-control" [disabled]="CurrentAddressType.IsReadOnlyData" [(ngModel)]="CM00104.Phone04" placeholder="Phone 4"
+                          />
+                          <div class="input-group-addon">
+                            <span class="fa fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

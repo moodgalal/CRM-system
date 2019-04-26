@@ -1,0 +1,10 @@
+﻿<ng-template #extra>
+  <div class="col-md-8">
+
+    <button (click)="Setting.GoBack()" kendoButton [primary]="true">Back</button>
+
+    <button routerLink="/create_Sop00009" kendoButton [primary]="true">Add</button>
+
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

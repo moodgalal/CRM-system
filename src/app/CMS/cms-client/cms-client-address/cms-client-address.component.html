@@ -1,0 +1,416 @@
+﻿<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-success btn-sm " (click)="save()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Client</label>
+          </div>
+          <div class="col-md-10">
+            <app-client-lookup (getValue)="getClient($event)"></app-client-lookup>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Address Type Code</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="AddressTypeList" (valueChange)="AddressCodeType_Changed($event)"
+                                valueField="AddressCodeType" textField="AddressTypeName" [valuePrimitive]="true"
+                                [(ngModel)]="CM000111.AddressCode">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>AddressName</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.AddressName" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>IsReadOnlyData</label>
+          </div>
+          <div class="col-md-10">
+            <<kendo-switch [(ngModel)]="CM000111.IsReadOnlyData"></kendo-switch>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>WebSite</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.WebSite" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Pnone01</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Pnone01" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Pnone02</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Pnone02" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Pnone03</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Pnone03" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Pnone04</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Pnone04" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>MobileNo1</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.MobileNo1" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>MobileNo2</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.MobileNo2" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>MobileNo3</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.MobileNo3" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>MobileNo4</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.MobileNo4" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>POBox</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.POBox" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Other01</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Other01" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Other02</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Other02" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Other03</label>
+          </div>
+          <div class="col-md-10">
+            <input kendoTextBox [(ngModel)]="CM000111.Other03" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Other04</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Other04" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Address1</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Address1" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Address2</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Address2" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Address3</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Address3" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Address4</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Address4" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Email01</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Email01" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 padding-col">
+              <label>Email02</label>
+            </div>
+            <div class="col-md-10">
+              <input kendoTextBox [(ngModel)]="CM000111.Email02" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Email03</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Email03" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Email04</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Email04" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Ext1</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Ext1" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Ext2</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Ext2" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Ext3</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Ext3" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-2 padding-col">
+                <label>Ext4</label>
+              </div>
+              <div class="col-md-10">
+                <input kendoTextBox [(ngModel)]="CM000111.Ext4" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="ClientAddressList.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">AddressCode</th>
+              <th scope="col">ClientID</th>
+              <th scope="col">AddressName</th>
+              <th scope="col">IsReadOnlyData</th>
+              <th scope="col">Pnone01</th>
+              <th scope="col">MobileNo1</th>
+              <th scope="col">POBox</th>
+              <th scope="col">Other01</th>
+              <th scope="col">Address1</th>
+
+              <th scope="col">save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of ClientAddressList">
+              <td>
+                {{col.AddressCode}}
+              </td>
+              <td>
+                {{col.ClientID}}
+              </td>
+              <td>
+                {{col.AddressName}}
+
+
+              </td>
+              <td>
+                {{col.IsReadOnlyData}}
+
+
+              </td>
+              <td>
+                {{col.Pnone01}}
+
+
+              </td>
+              <td>
+                {{col.MobileNo1}}
+
+
+              </td>
+              <td>
+                {{col.POBox}}
+
+
+              </td>
+              <td>
+                {{col.Other01}}
+
+
+              </td>
+              <td>
+                {{col.Address1}}
+              </td>
+              <td>
+                <button kendoButton (click)="delete(col)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

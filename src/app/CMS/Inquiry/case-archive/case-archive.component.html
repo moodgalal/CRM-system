@@ -1,0 +1,23 @@
+<ng-template #extra>
+   <!-- <label>Archive(AD)/Booking Date(BD)</label> <kendo-switch [(ngModel)]="checked"
+    [onLabel]="'AD'"
+    [offLabel]="'BD'"></kendo-switch> -->
+    <div class="row">
+    <div class="switch-container col-md-4">
+        
+        <div class="switch">
+          <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+          <label for="cmn-toggle-7" data-on="Archive Date" data-off="Booking Date"></label>
+        </div>
+        </div>
+        <div class="col-md-4">
+    <kendo-datepicker [value]="value"></kendo-datepicker>
+</div>
+<div class="col-md-4">
+    <kendo-datepicker [value]="value"></kendo-datepicker>
+    </div>
+</div>
+</ng-template>
+
+<global-grid [extraButtons]="extra"></global-grid>
+

@@ -1,0 +1,45 @@
+<ng-template #extra>
+  
+    <div class="gridBar-item">
+      <kendo-dropdownlist (valueChange)="FilterType_Change(FilterType,true)"
+                          [data]="MyAgentList"
+                          [(ngModel)]="AgentID"
+                          textField="AgentID"
+                          valueField="AgentID"
+                          [valuePrimitive]="true"></kendo-dropdownlist>
+    </div>
+    <div class="gridBar-item text-center">
+      <kendo-buttongroup [selection]="'single'">
+        <button kendoButton [togglable]="true" selected="true"  (click)="FilterType_Change(1,true)">
+          <span class="k-icon k-i-filter-add-expression"></span>
+        </button>
+        <button kendoButton [togglable]="true" (click)="FilterType_Change(2,true)">
+          <span class="k-icon k-i-window"></span>
+        </button>
+        <button kendoButton [togglable]="true" (click)="FilterType_Change(3,true)">
+          <span class="k-icon k-i-calendar"></span>
+        </button>
+        <button kendoButton [togglable]="true" (click)="FilterType_Change(4,true)" *ngIf="FilterType==3 || FilterType==4">
+          <span class="k-icon k-i-clock"></span>
+        </button>
+      </kendo-buttongroup>
+
+    </div>
+    <div class="gridBar-item">
+      <kendo-datepicker id="fromDate" *ngIf="FilterType==3 || FilterType==4"
+                        [(ngModel)]="FilterObject.StartDate"
+                        format="yyyy-MM-dd"
+                        formatPlaceholder="wide"></kendo-datepicker>
+    </div>
+    <div class="gridBar-item">
+      <kendo-datepicker id="toDate" *ngIf="FilterType==3"
+                        [(ngModel)]="FilterObject.EndDate"
+                        format="yyyy-MM-dd"
+                        formatPlaceholder="wide">
+
+      </kendo-datepicker>
+    </div>
+  
+</ng-template>
+
+<global-grid #grid [extraButtons]="extra"></global-grid>

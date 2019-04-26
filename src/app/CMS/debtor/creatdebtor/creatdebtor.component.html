@@ -1,0 +1,651 @@
+<div class="panel panel-default middle-panel">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li (click)="setting.GoBack();">
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+   
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+
+<div class="panel  panel-default middle-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-sm-12  " style="padding-left:5px;padding-right:5px;">
+        <div class="tabs nomargin">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="active">
+              <a id="personal-info-tab" data-toggle="tab" href="#personal-info" role="tab" aria-controls="personal-info">personal-info</a>
+            </li>
+
+            <li>
+              <a id="id-info-tab" data-toggle="tab" href="#id-info" role="tab" aria-controls="id-info" aria-expanded="true"> Identification information</a>
+            </li>
+
+          </ul>
+          <div class="tab-content transparent" id="myTabContent">
+            <div class="tab-pane active " id="personal-info" role="tabpanel" aria-labelledby="personal-info-tab">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col  col-xs-3  ">
+                      <label for="exampleFormControlInput7">Type</label>
+                    </div>
+                    <div class="col-md-9 padding-col col-xs-9  ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-offset-3 col-md-4 ">
+                      <label class="checkbox">
+                        <input type="checkbox" value="1">
+                        <i></i> IsActive
+                      </label>
+                    </div>
+                    <div class="col-md-4 ">
+                      <label class="checkbox">
+                        <input type="checkbox" value="1">
+                        <i></i> IsHold
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">Customer ID</label>
+                    </div>
+                    <div class="col-md-6 padding-col">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" name="DebtorID0" [(ngModel)]="newDebtor.DebtorID" placeholder="debtor Id">
+                    </div>
+                    <div class="col-md-3 ">
+                      <label class="checkbox">
+                        <input type="checkbox" value="1">
+                        <i></i> IsJoint
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3 ">
+                      <label for="exampleFormControlInput10">Gender</label>
+                    </div>
+                    <div class="col-md-3 padding-col  ">
+                      <kendo-dropdownlist [data]="Sys00011" [textField]="'text'" [valueField]="'value'" [valuePrimitive]="true" name="detorclass"
+                        [(ngModel)]="newDebtor.GenderID">
+                      </kendo-dropdownlist>
+                    </div>
+                    <div class="col-md-3 padding-col col-xs-3 ">
+                      <label for="exampleFormControlInput10">Matrial</label>
+                    </div>
+                    <div class="col-md-3 padding-col ">
+                      <kendo-dropdownlist [data]="Sys00011" [textField]="'text'" [valueField]="'value'" [valuePrimitive]="true" name="detorclass"
+                        [(ngModel)]="newDebtor.GenderID">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">Full name en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">CustClass</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">FullName ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">GroupID</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">FirstName en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">PriorityID</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">FirsName ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">DebtorStatus</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">ShortName en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">Religion ID</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-dropdownlist [data]="custClassData" [textField]="'CUSTCLASNAME'" [valueField]="'CUSTCLAS'" [valuePrimitive]="true"
+                        name="detorclass" [(ngModel)]="newDebtor.CUSTCLAS">
+                      </kendo-dropdownlist>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">ShortName ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">National ID</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName1 en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">BirthDate</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName2 en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">Birth Place</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName3 en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">Birth Country</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName4 en</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">Sallary</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName1 ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput7">Dependancies</label>
+                    </div>
+                    <div class="col-md-9 padding-col    ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName2 ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">Created Date</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">MiddleName3 ar</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">Mother FirstName</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" row">
+                    <div class="col-md-3 padding-col col-xs-3   ">
+                      <label for="exampleFormControlInput8">Mother LastName</label>
+                    </div>
+                    <div class="col-md-9 padding-col  ">
+                      <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class=" row">
+                    <div class="col-md-1-5 padding-col col-xs-3  ">
+                      <label for="exampleFormControlInput8">Description</label>
+                    </div>
+                    <div class="col-md-10-5 col-xs-9 padding-col  ">
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-pane " id="id-info" role="tabpanel" aria-labelledby="id-info-tab">
+              <!--<form>-->
+              <div class="row">
+                <div class="col-md-6 padding-col">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="elipsis">
+                        <!-- panel title -->
+                        <strong>CPR Details</strong>
+                      </span>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Id Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">CPRCR Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Serial Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">CPR Issue Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">CPR Expiry Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 padding-col">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="elipsis">
+                        <!-- panel title -->
+                        <strong>Passport Details</strong>
+                      </span>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Passport Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Passport type</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Sequnce Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Issue Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Expiry Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 padding-col">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="elipsis">
+                        <!-- panel title -->
+                        <strong>Visa Details</strong>
+                      </span>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Visa No</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Visa Type</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Visa Expiry Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 padding-col">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="elipsis">
+                        <!-- panel title -->
+                        <strong>Resident Permit Details</strong>
+                      </span>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Resident Number</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Resident type</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <input type="text" class="form-control" id="exampleFormControlInput8" [(ngModel)]="debtor.DebtorID" name="debtorId" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 ">
+                        <div class=" row">
+                          <div class="col-md-3 padding-col   ">
+                            <label for="exampleFormControlInput8">Expiry Date</label>
+                          </div>
+                          <div class="col-md-9 padding-col   ">
+                            <kendo-datepicker [(value)]="newDebtor.BirthDate"></kendo-datepicker>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--</form>-->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+﻿<div class="col-md-4">
+  <div class="input-group mb-2 mb-sm-0">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" (keyup.enter)="search()">
+    <div class="input-group-addon" (click)="search()">
+      <span class="fa fa-search"></span>
+    </div>
+  </div>
+</div>
+<div class="col-md-8">
+  <button routerLink="/create_company" kendoButton [primary]="true">Add</button>
+  <button routerLink="/update_company" kendoButton [primary]="true">update</button>
+  <button routerLink="/CompanyModules" kendoButton [primary]="true">Company Modules</button>
+
+</div>
+
+<kendo-grid [data]="gridView"></kendo-grid>
+

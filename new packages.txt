@@ -1,0 +1,37 @@
+npm install --save screenfull
+
+npm install --save @progress/kendo-angular-layout @progress/kendo-angular-l10n @angular/animations
+
+
+npm install --save @progress/telerik-angular-report-viewer  => 21/10/2017
+npm install --save jquery  => 21/10/2017
+
+
+// Start -> 30-10-2017
+
+npm install ngx-toastr --save
+npm install ng2-ckeditor --save
+
+// End -> 30-10-2017
+
+
+// start 5-11-2017
+
+npm install ng-socket-io --save
+
+// 8-11-2017
+npm install angular-froala-wysiwyg
+npm update froala-editor --save
+npm uninstall ng2-ckeditor --save
+
+
+
+npm run build-prod
+
+
+// 5-2-2018
+npm install --save @progress/kendo-angular-dialog
+
+// 20-2-2018
+
+npm install --save @ng-idle/core@2.0.0-beta.12 @ng-idle/keepalive@2.0.0-beta.12

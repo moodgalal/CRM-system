@@ -1,0 +1,156 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li [disabled]="selectedView">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add</a>
+      </li>
+      <li [disabled]="selectedView">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-check"></i> Update</a>
+      </li>
+      <li (click)="goBack()">
+        <a class="btn btn-danger btn-sm white">
+          <i class="fa fa-times"></i> Cancel</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4 padding-col">
+            <label>Data Source</label>
+          </div>
+          <div class="col-md-8">
+            <kendo-dropdownlist (valueChange)="getViews($event)" [data]="sources"
+                                [(ngModel)]="selectedSource"
+                                textField="TrxTypeName" valueField="TRXTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-4 padding-col">
+              <label>Views</label>
+            </div>
+            <div class="col-md-8">
+              <kendo-dropdownlist (valueChange)="getColumns($event)" [data]="views" textField="ViewName"
+                                  valueField="ViewID"  [(ngModel)]="selectedView">
+              </kendo-dropdownlist>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4 padding-col">
+            <label>Tranaction ID</label>
+          </div>
+          <div class="col-md-8">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4 padding-col">
+            <label>Agent</label>
+          </div>
+          <div  class="col-md-8">
+            <div  class="input-group mb-2 mb-sm-0">
+             <app-agent-lookup (getValue)="capture($event)"></app-agent-lookup>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4 padding-col">
+            <label>Replaced Agent</label>
+          </div>
+          <div  class="col-md-8">
+            <div  class="input-group mb-2 mb-sm-0">
+              <app-agent-lookup (getValue)="capture($event)"></app-agent-lookup>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+        <div class="col-md-4 padding-col">
+          <label>Start Date</label>
+        </div>
+        <div class="col-md-8">
+          <kendo-datepicker [value]="value"></kendo-datepicker>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+        <div class="col-md-4 padding-col">
+          <label>End Date</label>
+        </div>
+        <div class="col-md-8">
+          <kendo-datepicker [value]="value"></kendo-datepicker>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4 padding-col">
+            <label>Comments</label>
+          </div>
+          <div class="col-md-8">
+            <textarea rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="table-container text-center">
+        <table class="table table-bordered table-hover table-responsive">
+          <thead class="thead-inverse">
+          <tr>
+            <th>View Id</th>
+            <th class="width-75">Case Ref</th>
+            <th>Checked</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let d of data">
+            <td>{{ d?.ViewID }}</td>
+            <td>{{ d?.CaseRef}}</td>
+            <td>
+              <input type="checkbox">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

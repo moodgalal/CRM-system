@@ -1,0 +1,149 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Payment_Closing()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="save()" *ngIf="CM10207.PaymentAmount >0">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>Transaction ref</label>
+          </div>
+          <div class="col-md-3 col-xs-9 padding-right-5 ">
+            <label class="sr-only" for="PaymentID">PaymentID</label>
+            <input kendoTextBox type="text" id="PaymentID" [(ngModel)]="CM10207.PaymentID" disabled />
+          </div>
+          <div class="col-md-6 col-xs-12 padding-left-5">
+            <label class="radio">
+              <input type="radio" name="radio-btn" [value]="1" [checked]="CM10207.PaymentID===1" [(ngModel)]="CM10207.PaymentMethodID">
+              <i></i> Cash
+            </label>
+            <label class="radio">
+              <input type="radio" name="radio-btn" [value]="2" [checked]="CM10207.PaymentID===2" [(ngModel)]="CM10207.PaymentMethodID">
+              <i></i> Check
+            </label>
+            <label class="radio">
+              <input type="radio" name="radio-btn" [value]="3" [checked]="CM10207.PaymentID===3" [(ngModel)]="CM10207.PaymentMethodID">
+              <i></i> Credit
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>check book</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <label class="sr-only">Currency</label>
+            <app-check-book (getValue)="CheckBook_Change($event)" [CurrencyCode]="CM10207.CurrencyCode" [CheckbookCode]="CM10207.CheckbookCode"></app-check-book>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label for="exampleFormControlInput3">Amount</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-numerictextbox [decimals]="3" [spinners]="false" [(ngModel)]="CM10207.PaymentAmount" format="n3"></kendo-numerictextbox>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>Payment Number</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <label class="sr-only">Payment Number</label>
+            <input kendoTextBox type="text" id="PaymentID" [(ngModel)]="CM10207.PaymentNumber" />
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput4">Payment Date</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-datepicker [(ngModel)]="CM10207.PaymentDate"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12" *ngIf="CM10207.PaymentMethodID == 2 || CM10207.PaymentMethodID == 3">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>Bank</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <app-banklookup (getValue)="Bank_Change($event)"></app-banklookup>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-6 col-sm-12" *ngIf="CM10207.PaymentMethodID == 2 || CM10207.PaymentMethodID == 3">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label>Bank Name</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <input type="text" class="form-control" [(ngModel)]="CM10207.BankName" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12" *ngIf="CM10207.PaymentMethodID == 2">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col">
+            <label *ngIf="CM10207.PaymentMethodID == 2">Chequ Number</label>
+            <label *ngIf="CM10207.PaymentMethodID == 3">Bank Account</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <input type="text" class="form-control" readonly [(ngModel)]="CM10207.BankAccount" />
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12" *ngIf="CM10207.PaymentMethodID == 2">
+        <div class="form-group row">
+          <div class="col-3 col-md-3 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput4">Check Date</label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+            <kendo-datepicker [(ngModel)]="CM10207.BankCheckDate"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-sm-12">
+        <div class="form-group row">
+          <div class="col-md-1-5 col-xs-3 padding-col  ">
+            <label for="exampleFormControlInput6">Description</label>
+          </div>
+          <div class="col-md-10-5 col-xs-9">
+            <textarea class="form-control" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

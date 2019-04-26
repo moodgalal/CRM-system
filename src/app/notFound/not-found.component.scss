@@ -1,0 +1,250 @@
+@media only screen and (min-width: 1100px)
+{
+.col-lg-10-5 {
+    max-width: 87.5%;
+    position: relative;
+    flex: 0 0 87.5%;
+}
+.col-lg-1-5 {
+    max-width: 12.5%;
+    position: relative;
+    flex: 0 0 12.5%;
+}
+}
+.input-group-addon{
+    padding:5px 10px;
+    font-size: 12px;
+}
+.pd-10-15{
+    padding: 10px 20px;
+}
+form h3{
+    margin-top: 0px;
+}
+.content-container{
+    margin:5px 0px;
+}
+
+
+//missing page
+
+.missing-page{
+    width: 100%;
+}
+
+
+//view entry
+
+.form-check {
+    label{
+        font-size: 14px !important;
+    }
+}
+
+
+//bulk actions
+
+.fancy-file-upload {
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 3px;
+}
+.fancy-file-upload>i {
+    position: absolute;
+    top: -1px;
+    width: 42px;
+    height: 42px;
+    color: inherit;
+    line-height: 42px;
+    position: absolute;
+    text-align: center;
+    color: #888;
+    z-index: 10;
+}
+.fancy-file-upload>input[type=file] {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 8px 10px;
+    position: absolute;
+    -moz-opacity: 0;
+    opacity: 0;
+    z-index: 11;
+    bottom: 0;
+    right: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.fancy-file-upload>span.button {
+    color: #fff;
+    background-color: #333;
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    top: 4px;
+    bottom: 4px;
+    line-height: 34px;
+    padding: 0 16px;
+    z-index: 10;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.fancy-file-upload>input{
+    height: 40px;
+}
+.fancy-file-upload>input[type=text]{
+    padding-left: 36px;
+}
+
+
+  /*-----------------------------------------------------------------------*/
+  
+.hidden-icon{
+    button{
+            min-width: 77px;
+            
+    i{
+        display: none;
+        transition: .4s;
+    }
+        }
+        button:hover{
+            i{
+                display: inline-block;
+            }
+        }
+}
+.float-icon{
+    button{
+            overflow: hidden;
+            position: relative;
+            padding: 4px 20px;
+            
+    i{
+       
+        position: absolute;
+        left: -20px;
+        top: 7px;
+        bottom: 0;
+        
+        transition: left 0.3s ease, right 0.3s ease;
+    }
+    span{
+    display: inline-block;
+    position: relative;
+    left: 0;
+    transition: left 0.3s ease, right 0.3s ease;
+    }
+        }
+        button:hover{
+            i{
+                left: 7px;
+            }
+            span{
+                left: 10px;
+            }
+        }
+}
+
+
+.form-check{
+    label{
+        vertical-align: middle;
+    }
+}
+
+kendo-dropdownlist,kendo-datepicker{
+    width: 100%;
+    border-radius: .25rem;
+}
+
+.switch-container{
+    position: relative;
+input.cmn-toggle-yes-no + label {
+    padding: 2px;
+    width: 120px;
+    height: 60px;
+    cursor: pointer;
+  }
+  input.cmn-toggle-yes-no + label:before,
+  input.cmn-toggle-yes-no + label:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+  }
+  input.cmn-toggle-yes-no + label:before {
+    background-color: #dddddd;
+    content: attr(data-off);
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+  }
+  input.cmn-toggle-yes-no + label:after {
+    background-color: #8ce196;
+    content: attr(data-on);
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+  input.cmn-toggle-yes-no:checked + label:before {
+    transform: rotateY(180deg);
+  }
+  input.cmn-toggle-yes-no:checked + label:after {
+    transform: rotateY(0);
+  }
+  
+}
+#accordion{
+ margin: 0 -15px;
+}
+
+
+.tab-content{
+    padding: 10px 0px;
+}
+
+
+
+
+// gallery
+
+.img-gallery{
+    position: relative;
+    border: 1px solid rgba(0, 0,0, .33);
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px 0;
+    img{
+        border-radius: 5px;
+        width: 100%;
+        height: 200px;
+    }
+    .hover-img{
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        z-index: 9999;
+        width: 90%;
+        height: 90%;
+        display: none;
+        margin: auto;
+        background-color: rgba(0,0,0,.4);
+        .fa {
+            color:#fff;
+            font-size: 22px;
+            display: block;
+            margin: auto;
+        }
+    }
+}

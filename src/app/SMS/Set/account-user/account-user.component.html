@@ -1,0 +1,93 @@
+﻿<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+    <div class="row">
+   
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>View</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="AccountList" (valueChange)="SMSAccountNamevalueChange_valueChange($event)" valueField="SMSAccountCode"
+                                textField="SMSAccountName" [(ngModel)]="SelectedAccount">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>User </label>
+          </div>
+          <div class="col-md-10">
+            <app-users-lookup (getValue)="GetUser($event)"></app-users-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+
+          <div class="col-md-10">
+            <button kendoButton (click)="Add()">Add</button>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="MS00101List.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">SMS Account Code</th>
+              <th scope="col">User Name</th>
+              <th scope="col">AccountPrice</th>
+              <th scope="col">Delete</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of MS00101List">
+              <td>
+                {{col.SMSAccountCode}}
+              </td>
+              <td>
+                {{col.UserName}}
+              </td>
+              <td>
+             {{col.AccountPrice}}
+              </td>
+
+              <td>
+                <button kendoButton (click)="delete(col)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

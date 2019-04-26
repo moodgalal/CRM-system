@@ -1,0 +1,82 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white" (click)="ApplyShowReport()">
+          <i class="fa fa-check"></i>Refresh
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">Date From</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-datepicker [(value)]="DateFrom"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">Date To</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+            <kendo-datepicker [(value)]="DateTo"></kendo-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for="">User</label>
+          </div>
+          <div class="col-md-9 col-xs-9  ">
+           <app-users-lookup  (getValue)="User_Change($event)"></app-users-lookup>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-3 col-xs-3 padding-col">
+            <label for=""></label>
+          </div>
+          <div class="col-md-9 col-xs-9">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <div class="row" *ngIf="ShowReport">
+      <tr-viewer #viewer1
+                 [containerStyle]="viewerContainerStyle"
+                 [serviceUrl]="serviceUrl"
+                 [reportSource]="{
+                   report: 'KaizenServer.Reports.AuditTrail, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { KaizenUSER: UserName , DateFrom : DateFrom ,DateTo : DateTo}
+                 }"
+                 [viewMode]="'INTERACTIVE'"
+                 [scaleMode]="'SPECIFIC'"
+                 [scale]="1.0"
+                 [ready]="ready"
+                 [viewerToolTipOpening]="viewerToolTipOpening"
+                 [enableAccessibility]="false">
+      </tr-viewer>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<ng-template #extra>
+  <div class="col-md-8">
+    <button routerLink="/create_agent_group" kendoButton [primary]="true">Add</button>
+    <button [routerLink]="['/update_agent' , 1]" kendoButton [primary]="true">update</button>
+    <button [routerLink]="['/where_condition']" kendoButton [primary]="true">Case Distributions</button>
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>

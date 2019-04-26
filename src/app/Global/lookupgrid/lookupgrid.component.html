@@ -1,0 +1,80 @@
+<div style="overflow:hidden">
+<div *ngIf="IsSmartFilter">
+  <app-global-filter #globFilter *ngIf="IsSmartFilter" [columns]="LookUpSetting.gridColumns" [SmartfilterObject]="SmartfilterObject"
+    (FilterOnchanged)="Filter_Changed($event)" (closeFilterEvent)="closeFilter($event)"></app-global-filter>
+</div>
+<div [hidden]="IsSmartFilter">
+  <div class="dropDowns row margin-top-10">
+    <div class="col-md-3 col-sm-12">
+      <div class="form-group row">
+        <div class="col-md-2 col-xs-3 ">
+          <label>Field</label>
+        </div>
+        <div class="col-md-8 col-xs-9">
+          <kendo-dropdownlist [data]="LookUpSetting.gridColumns" [(ngModel)]="LookUpSetting.FieldID" textField="FieldDisplay" valueField="FieldName"
+            [valuePrimitive]="true">
+          </kendo-dropdownlist>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <div class="form-group row">
+        <div class="col-md-2 col-xs-3 ">
+          <label>Operator</label>
+        </div>
+        <div class="col-md-8 col-xs-9">
+          <kendo-dropdownlist [data]="operators" textField="operator" valueField="name" [valuePrimitive]="true" [(ngModel)]="LookUpSetting.FltrOperator">
+          </kendo-dropdownlist>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group mb-2 mb-sm-0">
+        <input class="form-control " [(ngModel)]="LookUpSetting.TxtSearch" (keyup.enter)="getGridData()" placeholder="Search for..." aria-label="Search for..."
+          type="text">
+        <div class="input-group-addon" (click)="getGridData()">
+          <span class="fa fa-search"></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-1">
+      <button (click)="IsSmartFilter=true" class="btn btn-primary btn-sm ">
+        <span class="k-i-filter k-icon"></span>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="LookUpSetting.gridColumns">
+    <kendo-grid [data]="LookUpSetting.gridView" [sortable]="{ allowUnsort: true , mode: 'single' }" [sort]="LookUpSetting.state.sort"
+      filterable="menu" [filter]="LookUpSetting.state.filter" [pageSize]="LookUpSetting.state.take" [skip]="LookUpSetting.state.skip"
+      [pageable]="{ buttonCount: 10, info: true,type: 'input',pageSizes: true, previousNext: true}" [height]="gridheight" [selectable]="{ checkboxOnly: false, mode: 'single'}"
+      (dataStateChange)="dataStateChange($event)">
+
+      <kendo-grid-column *ngFor="let column of LookUpSetting.gridColumns" field="{{column.FieldName}}" title="{{column.FieldDisplay}}"
+        [width]="column.FieldWidth" [locked]="column.Islocked">
+        <ng-template *ngIf="column.FieldTypeID == 2" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+          {{column.field}}
+        </ng-template>
+        <ng-template *ngIf="column.FieldTypeID == 2" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y' }}
+        </ng-template>
+
+        <ng-template *ngIf="column.FieldTypeID == 13" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+          {{column.field}}
+        </ng-template>
+        <ng-template *ngIf="column.FieldTypeID == 13" kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          {{ dataItem[column.FieldName?.trim()] | date:'MMM d, y, h:mm a' }}
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column field="select" title="select" [width]="25">
+
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <button (click)="FireEvent(dataItem)" class="btn btn-primary btn-sm"> Select </button>
+        </ng-template>
+      </kendo-grid-column>
+
+    </kendo-grid>
+  </div>
+</div>
+</div>

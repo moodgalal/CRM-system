@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+    <!-- right options -->
+    <ul class="options pull-right list-inline">
+      <li>
+        <a  class="opt panel_colapse" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Colapse"></a>
+      </li>
+      <li>
+        <a  class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen">
+          <i class="fa fa-expand"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="options pull-left relative list-unstyled">
+      <li >
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+      <li (click)="saveData()">
+        <a class="btn btn-success btn-sm white">
+          <i class="fa fa-check"></i>Save</a>
+      </li>
+    </ul>
+
+    <!-- /right options -->
+  </div>
+
+  <div class="panel-body">
+    <form>
+
+      <div class="row">
+
+        <div class=" col-md-6 col-sm-12">
+          <div class="form-group row">
+
+            <div class=" col-md-3 col-xs-12  ">
+              <label for="exampleFormControlInput3">Site Fra</label>
+            </div>
+
+            <div class=" col-md-9 col-xs-12  ">
+
+              <div class="input-group mb-2 mb-sm-0">
+
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Receipt">
+                <div class="input-group-addon"><span class="fa fa-search"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-md-6 col-sm-12">
+          <div class="form-group row">
+
+            <div class=" col-md-3 col-xs-12  ">
+              <label for="exampleFormControlInput3">To Site</label>
+            </div>
+
+            <div class=" col-md-9 col-xs-12  ">
+
+              <div class="input-group mb-2 mb-sm-0">
+
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Receipt">
+                <div class="input-group-addon"><span class="fa fa-search"></span></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

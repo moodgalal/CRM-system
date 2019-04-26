@@ -1,0 +1,112 @@
+<!--<section class="sec-form">-->
+
+
+  <!--<div class="row">-->
+
+    <!--<div class="col-lg-3 col-md-2 col-xs-12"></div>-->
+
+    <!--<div class="col-lg-6 col-md-8 col-xs-12">-->
+
+      <!--<div class="choose-info">-->
+
+
+        <!--<div class="headl row" *ngIf="userData">-->
+          <!--<div class=" col col-md-4 info">-->
+            <!--<div class="clientimg">-->
+              <!--<img src="{{userData.UserName.trim()}}.{{userData.PhotoExtension}}">-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class=" col col-md-8 clientinfo">-->
+
+            <!--<h4>{{ userData.FullName }}</h4>-->
+            <!--<h5><span class="fa fa-clock-o"> </span> last Log in {{ userData.LastLogin }}</h5>-->
+            <!--<div class="iconinfo">-->
+              <!--<a title="change photo"> <span class="fa fa-camera"></span></a>-->
+              <!--<a title="your Profile"> <span class="fa fa-user"></span></a>-->
+              <!--<a title="Log in "> <span class="fa fa-sign-in"></span></a>-->
+            <!--</div>-->
+
+          <!--</div>-->
+
+        <!--</div>-->
+
+
+        <!--<div class="form-l pa-15">-->
+
+          <!--<div class="row">-->
+
+            <!--<div class=" col col-sm-4 info">-->
+              <!--<h4>Company</h4>-->
+            <!--</div>-->
+            <!--<div class=" col col-sm-8 ">-->
+              <!--<kendo-dropdownlist [data]="comapnyData"-->
+                                  <!--valueField="CompanyID"-->
+                                  <!--textField="CompanyName"-->
+                                  <!--[(ngModel)]="selectedCompany">-->
+              <!--</kendo-dropdownlist>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<button (click)="selectComapny()" class="submit wow fadeInUp" style="animation-duration: 1.8s">Log In</button>-->
+
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col-lg-3 col-md-2"></div>-->
+
+  <!--</div>-->
+
+
+<!--</section>-->
+
+
+<div class="padding-15">
+
+  <div class="login-box">
+
+    <!-- login form -->
+    <div class="sky-form boxed" *ngIf="userData">
+      <header>
+        <span class="pull-left">{{ userData.FullName }} </span>
+        <span class="pull-right">
+          <img src="{{userData.UserName.trim()}}.{{userData.PhotoExtension}}" class="logoimg " alt="">
+        </span>
+        <div class="clearfix"></div>
+      </header>
+
+      <fieldset>
+
+        <section>
+        <label class="label">Last Login</label>
+        <label class="input">
+          <input type="text" disabled [value]="userData.LastLogin" readonly>
+        </label>
+        </section>
+
+        <section>
+          <label class="label">Company</label>
+          <label class="input">
+            <kendo-dropdownlist [data]="comapnyData"
+                                valueField="CompanyID"
+                                textField="CompanyName"
+                                [(ngModel)]="selectedCompany">
+            </kendo-dropdownlist>
+          </label>
+        </section>
+
+
+      </fieldset>
+
+      <footer>
+        <button type="submit" class="btn btn-primary btn-block" style="margin: 0;" (click)="selectComapny()">Sign In</button>
+      </footer>
+    </div>
+    <!-- /login form -->
+
+
+  </div>
+
+</div>

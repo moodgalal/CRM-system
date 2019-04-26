@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="col-md-1  nopadding-y">
+      <kendo-dropdownlist [data]="SharedData.YearsList"
+                          [(ngModel)]="YearCode"
+                          textField="YearCode"
+                          valueField="YearCode" (valueChange)="YearCode_Change($event)"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-2  nopadding-y">
+      <kendo-dropdownlist [data]="SharedData.PeriodList"
+                          [(ngModel)]="PERIODID"
+                          textField="PeriodName"
+                          valueField="PERIODID"
+                          [valuePrimitive]="true"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-4  nopadding-y">
+      <kendo-dropdownlist [data]="Lookup01List"
+                          [(ngModel)]="Lookup01"
+                          textField="Lookup01Name"
+                          valueField="Lookup01" [valuePrimitive]="true"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-2  nopadding-y">
+      <a class="btn btn-primary btn-sm white" (click)="ApplyShowReport()">
+        <i class="fa fa-file-pdf-o"></i>Report
+      </a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row" *ngIf="ShowReport">
+        <tr-viewer #viewer1
+                   [containerStyle]="viewerContainerStyle"
+                   [serviceUrl]="serviceUrl"
+                   [reportSource]="{
+                   report: 'KaizenServer.Reports.PTPCollectionStage, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { PERIODID: PERIODID, Lookup01: Lookup01}
+                 }"
+                   [viewMode]="'INTERACTIVE'"
+                   [scaleMode]="'SPECIFIC'"
+                   [scale]="1.0"
+                   [ready]="ready"
+                   [viewerToolTipOpening]="viewerToolTipOpening"
+                   [enableAccessibility]="false">
+        </tr-viewer>
+      </div>
+
+    </div>
+  </div>
+

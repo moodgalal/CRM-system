@@ -1,0 +1,9 @@
+<ng-template #extra>
+  <button kendoButton [routerLink]="['/do_action', 1]">Add</button>
+  <button routerLink="/payment" kendoButton [primary]="true">Payment</button>
+  <button routerLink="/payment" kendoButton [primary]="true">Attachment</button>
+  <button routerLink="/payment" kendoButton [primary]="true">Do Action</button>
+  <button routerLink="/payment" kendoButton [primary]="true">Fee</button>
+</ng-template>
+
+<global-grid [extraButtons]="extra"></global-grid>

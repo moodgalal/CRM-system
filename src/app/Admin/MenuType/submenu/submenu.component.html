@@ -1,0 +1,77 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label >Module Id</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="Module Id" [(ngModel)]="Kaizen000.ModuleID">
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label >Module Name </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input kendoTextBox placeholder="Module Name " (keyup.enter)="onSave()" [(ngModel)]="Kaizen000.ModuleName">
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default small-panel" *ngIf="List.length>0">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">Module name </th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of List">
+              <td>
+                {{item.ModuleName}}
+              </td>
+              <td>
+                <button kendoButton (click)="Edit(item)">Edit</button>
+                <button kendoButton (click)="Delete(item)">Delete</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

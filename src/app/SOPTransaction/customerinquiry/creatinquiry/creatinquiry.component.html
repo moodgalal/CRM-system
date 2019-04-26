@@ -1,0 +1,402 @@
+<div class="buttons-container width-100">
+    <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-print"></i>button</button>
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-print"></i>button</button>
+
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-star"></i>button</button>
+
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-plus"></i>button</button>
+
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-cog"></i>button</button>
+
+    <button type="button" class="btn btn-outline-primary"><i class="fa fa-print"></i>button</button>
+
+
+    <button type="button" class="btn btn-danger" (click)="goBack()"><i class="fa fa-arrow-left"></i>Cancel</button>
+  </div>
+<div class="content-container width-100">
+        <div class="row">
+                <div class="col-md-9 col-xs-9 pad-r-5px row">
+                           <div class="col-md-7 col-xs-7">
+                                <div class="form-group row">
+                                    <div class="col-md-3 col-xs-3  ">
+                                        <label for="exampleFormControlInput3">Trans Type</label>
+                                    </div>
+                                    <div class="col-md-9 col-xs-9  ">
+                                            <kendo-dropdownlist [data]="testData">
+                                                </kendo-dropdownlist>
+                  
+                                    </div>
+                                </div>
+                            </div>
+                               <div class="col-md-5 col-xs-5">
+                                    <div class="form-group row">
+                                        <div class="col-md-3 col-xs-3  ">
+                                            <label for="exampleFormControlInput3">Date</label>
+                                        </div>
+                                        <div class="col-md-9 col-xs-9  ">
+                                         <kendo-datepicker [value]="value"></kendo-datepicker>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-xs-7">
+                                    <div class="form-group row">
+                                        <div class="col-md-3 col-xs-3  ">
+                                            <label for="exampleFormControlInput3">Qoute NO.</label>
+                                        </div>
+                                        <div class="col-md-9 col-xs-9  ">
+                                            <div class="input-group mb-2 mb-sm-0">
+                                                <input type="text" class="form-control col-xs-10" placeholder="QT/2017/9/00232">
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-search"></span></div>
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-cog"></span></div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                
+                                <div class="col-md-5 col-xs-5">
+                                    <div class="form-group row">
+        
+                                        <div class="col-md-3 col-xs-3  ">
+                                            <label for="exampleFormControlInput3">Currency </label>
+                                        </div>
+                                        <div class="col-md-9 col-xs-9  ">
+                                            <div class="input-group mb-2 mb-sm-0">
+                                                <input type="text" class="form-control col-xs-11" placeholder="BHD">
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-search"></span></div>
+                                                 </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-7 col-xs-7">
+                                    <div class="form-group row">
+                        
+                                        <div class="col-md-3 col-xs-3  ">
+                                            <label for="exampleFormControlInput3">Customer </label>
+                                        </div>
+                        
+                                        <div class="col-md-9 col-xs-9  ">
+                                            <div class="input-group mb-2 mb-sm-0">
+                                                <input type="text" class="form-control col-xs-10" placeholder="A.Aziz">
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-search"></span></div>
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-cog"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-5 col-xs-5">
+                                    <div class="form-group row">
+                        
+                                        <div class="col-md-3 col-xs-3  ">
+                                            <label for="exampleFormControlInput3">Batch </label>
+                                        </div>
+                        
+                                        <div class="col-md-9 col-xs-9  ">
+                                            <div class="input-group mb-2 mb-sm-0">
+                                                <input type="text" class="form-control col-xs-11" placeholder="">
+                                                <div class="input-group-addon col-xs-1"><span class="fa fa-search"></span></div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                   
+                                <div class="col-md-12 col-xs-12">
+                                        <div class="form-group row">
+                            
+                                            <div class="col-md-2 col-xs-2   col-16percent">
+                                                <label for="exampleFormControlInput3">Customer Name </label>
+                                            </div>
+                            
+                                            <div class="col-md-10 col-xs-10 p-l-0 pad-r-8px ">
+                                       <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="A.Aziz Ahmed">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-xs-7">
+                                            <div class="form-group row">
+                                
+                                                <div class="col-md-3 col-xs-3  ">
+                                                    <label for="exampleFormControlInput3">LOP No. </label>
+                                                </div>
+                                
+                                                <div class="col-md-9 col-xs-9  ">
+                                           <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="PRGIGDO30715">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-md-5 col-xs-5">
+                                            <div class="form-group row">
+                                
+                                                <div class="col-md-3 col-xs-3  ">
+                                                    <label for="exampleFormControlInput3">Project </label>
+                                                </div>
+                                
+                                                <div class="col-md-9 col-xs-9  ">
+                                                    <div class="input-group mb-2 mb-sm-0">
+                                                        <input type="text" class="form-control col-xs-11" placeholder="Project">
+                                                        <div class="input-group-addon col-xs-1"><span class="fa fa-search"></span></div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group row">
+                                    
+                                                    <div class="col-md-2 col-xs-2   col-16percent ">
+                                                        <label for="exampleFormControlInput3">Description </label>
+                                                    </div>
+                                    
+                                                    <div class="col-md-10 col-xs-10 p-l-0 pad-r-8px">
+                                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                  
+        
+        
+                </div> 
+                <div class="col-md-3 col-xs-3  ">
+                    
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-group row">
+                        <div class="col-md-4 col-xs-4 p-l-0">
+                            <label for="exampleFormControlInput7">Address</label>
+                        </div>
+                        <div class="col-md-8 col-xs-8   ">
+                            <kendo-dropdownlist [data]="testData">
+                            </kendo-dropdownlist>
+        
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 p-l-0 p-r-0">
+                    
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active pad-3 fon-14-5px" id="mobile-tab" data-toggle="tab" href="#mobile" role="tab" aria-controls="mobile" aria-expanded="true">Mobile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pad-3 fon-14-5px" id="phone-tab" data-toggle="tab" href="#phone" role="tab" aria-controls="phone">Phone</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pad-3 fon-14-5px" id="address-tab" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-expanded="true">Address</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pad-3 fon-14-5px" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other">Other</a>
+                            </li>
+                            
+                        </ul>
+                            <div class="tab-content pad-t-b-5px" id="myTabContent">
+                                <div class="tab-pane fade show active" id="mobile" role="tabpanel" aria-labelledby="mobile-tab">
+                                        <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class="col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Mobile</label>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8   ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Mobile</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Mobile</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Mobile</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                            
+                                </div>
+                                <div class="tab-pane fade" id="phone" role="tabpanel" aria-labelledby="phone-tab">
+                                        <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">phone</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">phone</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">phone</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">phone</label>
+                                                </div>
+                                                <div class=" col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                                        <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Address</label>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Address</label>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Address</label>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class=" col-md-4 col-xs-4 p-l-0">
+                                                    <label for="exampleFormControlInput7">Address</label>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                            
+                                </div>
+                                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+                                        <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class="col-md-5 col-xs-5 p-l-0">
+                                                    <label for="exampleFormControlInput7">EmployerName</label>
+                                                </div>
+                                                <div class="col-md-7 col-xs-7  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class="col-md-5 col-xs-5 p-l-0">
+                                                    <label for="exampleFormControlInput7">EmployerName</label>
+                                                </div>
+                                                <div class="col-md-7 col-xs-7  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group row">
+                                                <div class="col-md-5 col-xs-5 p-l-0">
+                                                    <label for="exampleFormControlInput7">EmployerName</label>
+                                                </div>
+                                                <div class="col-md-7 col-xs-7  ">
+                                                    <input type="text" class="form-control" placeholder="Agent ID">
+                                                </div>
+                                                </div>
+                                            </div>
+                            
+                            
+                                </div>
+                                
+                            </div>
+                    </div>
+                </div>
+        
+        
+            </div>
+           
+           
+            <div class="row">
+                <div class="table-container">
+                    <table class="table table-bordered table-hover" style="text-align:center;">
+                        <thead class="thead-inverse" style="text-align:center !important;">
+                            <tr>
+                                <th></th>
+                                <th>Code</th>
+                                <th style="width:35%;text-align:left !important;">Item</th>
+                                <th>QTY</th>
+                                <th>UOM</th>
+                                <th>Prise</th>
+                                <th>Discount</th>
+                                <th>Total </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th style="padding:0px !important;"><img src="../assets/img/product.png" style="width:50px; height:50px;"></th>
+                                <td style="text-align:left !important;">PRGIGDO30715</td>
+                                <td style="width:35%;text-align:left !important;">High Goals ivory Door 18X297x715</td>
+                                <td>100.200 </td>
+                                <td>PCS.</td>
+                                <td>100.200</td>
+                                <td>100.200 </td>
+                                <td>100.300 </td>
+                                <td style="padding:1px !important;"><button type="button" class="btn btn-outline-info mx-auto d-block" style="padding: 2px 7px;"><i class="fa fa-edit"></i> </button></td>
+                                <td style="padding:1px !important;"><button type="button" class="btn btn-outline-danger mx-auto d-block" style="padding: 2px 7px;"><i class="fa fa-trash"></i> </button></td>
+                            </tr>
+        
+                        </tbody>
+                    </table>
+                
+              </div>
+           
+         </div>
+
+</div>

@@ -1,0 +1,172 @@
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Save
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default margin-bottom-0 small-panel">
+  <div class="panel-body">
+    <form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group row">
+
+              <div class="col-md-3 col-xs-3 padding-col  ">
+                <label for="exampleFormControlInput3">Account Number</label>
+              </div>
+
+              <div class="col-md-9 col-xs-9  ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="000-121-000">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col  ">
+                <label for="exampleFormControlInput3">Is Active</label>
+              </div>
+              <div class="col-md-9 col-xs-9  ">
+                <kendo-switch [onLabel]="'yes'" name="check4" [offLabel]="'no'"></kendo-switch>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group row">
+
+              <div class="col-md-3 col-xs-3 padding-col  ">
+                <label for="exampleFormControlInput3">Account Name</label>
+              </div>
+
+              <div class="col-md-9 col-xs-9  ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Account Payable">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group row">
+              <div class="col-md-3 col-xs-3 padding-col  ">
+                <label for="exampleFormControlInput10">Categroy</label>
+              </div>
+              <div class="col-md-9 col-xs-9  ">
+                <kendo-dropdownlist [data]="testData">
+                </kendo-dropdownlist>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group row">
+
+              <div class="col-md-3 col-xs-3 padding-col  ">
+                <label for="exampleFormControlInput3">Account Alias</label>
+              </div>
+
+              <div class="col-md-9 col-xs-9  ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Account Payable">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-xs-12  k-form ">
+            <div class="row">
+              <div class=" col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <span class="title elipsis">
+                      <strong>Account setting</strong>
+                    </span>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-6 padding-col">
+                        <label for="exampleFormControlInput3">Is Profit & Loss</label>
+                      </div>
+                      <div class="col-md-6">
+                        <kendo-switch [onLabel]="'True'" name="check" [offLabel]="'False'"></kendo-switch>
+                      </div>
+
+                      <div class="col-md-6 padding-col">
+                        <label for="exampleFormControlInput3">Is Debit</label>
+                      </div>
+                      <div class="col-md-6">
+                        <kendo-switch [onLabel]="'yes'" name="check1" [offLabel]="'no'"></kendo-switch>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6 ">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <span class="title elipsis">
+                      <strong>Include</strong>
+                    </span>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch1b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch1b">In Inventory</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In Sales</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In Purchasing</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In POS</label>
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In Payroll</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In ManuFactoring</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In Expense Management</label>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                        <input class="k-checkbox " id="ch4b" type="checkbox">
+                        <label class="k-checkbox-label" for="ch4b">In Bank</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

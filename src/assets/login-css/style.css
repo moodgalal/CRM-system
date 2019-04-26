@@ -1,0 +1,190 @@
+
+body{ margin: auto; text-align: center; font-family:Arial;    font-size: 14px;
+background-color: #eee;
+}
+a,a:hover {text-decoration: none; color: #fff;}
+/*----------------------------------------------------------------------*/
+.logo{float: left; width: 150px; height: 30px;}
+
+/*----------------------------------------------------------------------*/
+.login,.choose-info,.recveraccount{position: relative; top: 40px;color: #888; border:1px solid #888;border-radius: 3px;
+box-shadow: 0px 4px 27px 0px rgba(0, 0, 0, 0.3), -0px -4px 27px 0px rgba(0, 0, 0, 0.3); background-color: #fff; }
+
+.login .headl,.choose-info .headl ,.recveraccount .headl{padding:  30px; margin: 0px; color: #eee;
+background: #1976D2; /* For browsers that do not support gradients */
+     background: -webkit-linear-gradient(#1976D2,#39f ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1976D2,#39f )  ; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1976D2,#39f ) ; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1976D2,#39f ) ;  /* Standard syntax */
+
+
+}
+.choose-info .headl{padding:  15px;}
+
+.recveraccount .headl{padding: 20px;}
+
+form{padding: 20px;}
+
+label{position: relative;width: 100%; font-weight: lighter;}
+
+.login .name,.login .password ,.email{
+  background-color: transparent;
+
+   width: 80%;border: 1px solid #ddd;
+	box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.3);
+
+ padding: 10px;
+ padding-left: 25px;
+ margin: 8px;
+ outline: none;
+ color: #000; }
+
+
+.login .fa-user,.fa-lock,.fa-envelope{
+  position: absolute;
+ top: 19px;
+  font-size: 18px;}
+
+.forgt-password{background-color: #999; color: #fff;padding: 3px; border-radius: 50%;position: absolute;
+
+box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.3);
+
+	width: 25px; height: 25px;transition: all 0.4s; }
+
+.forgt-password a,.forgt-password  a:hover{color: #fff; text-decoration: none;}
+
+.forgt-password:hover{background-color: #111;box-shadow: 0px 0.5px 15px 0px rgba(0, 0, 0, 0.5);}
+
+.fa-question{right: 0px;font-size: 17px;top: 16px; right: 60px;}
+
+
+.submit{background: #1976D2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#39f, #1976D2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#39f, #1976D2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#39f, #1976D2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#39f, #1976D2); /* Standard syntax */
+
+border: none;
+padding: 10px 20px;
+color: #fff;
+border-radius: 3px;
+box-shadow: 0px 2px 27px 0px rgba(0, 0, 0, 0.3);
+height: 45px;
+width:80%;
+margin: 20px;
+transition: 0.2s all;
+}
+.submit:hover{box-shadow: 0px 3px 27px 0px rgba(0, 0, 0, 0.9);
+}
+
+ /*---------------------------------------------------------*/
+.remember-check{text-align: left; margin-left: 50px;position: relative; }
+
+
+.remember-check .checkbox{position: absolute;opacity: 0;}
+ .remember-check span{border: 1.2px solid #39f;margin: 10px;width: 15px; height: 15px; border-radius: 3px; margin-top: 5px;
+ display: inline-block; vertical-align: middle;
+ position: relative;}
+  .remember-check .checkbox:checked +:after{
+   content: "✓";
+   display: block;
+  position: absolute;
+  top: -4px;
+  font-weight: bold;
+  left: 2px;
+  width: 9px;
+  height:9px;
+   color: #39f;
+  border-radius: 3px;}
+ .remember-check .checkbox:checked + span +b{color: #39f;}
+
+
+/*----------------------------------------------------------------*/
+ .choose-info{
+box-shadow: -20px 20px 47px 0px rgba(0, 0, 0, 0.3) ,20px 20px 47px 0px rgba(0, 0, 0, 0.3) ;
+}
+.info {margin: 0px; padding: 0px;}
+/*----------------------------------------------------------------*/
+.clientimg img{  border-radius: 2px;
+  box-shadow: 0px 10px 27px 0px rgba(0, 0, 0, 0.3)   }
+.clientinfo{text-align: left;}
+.iconinfo {margin-top: 20px;}
+
+.iconinfo a{background-color: #eee; color:#39f; text-decoration: none;
+ font-size: 25px; padding: 5px 7px;font-weight: lighter; padding-bottom: 4px;
+  margin: 10px 5px; border-radius: 3px; margin-bottom: 0px;
+box-shadow:0px 1px 27px 0px rgba(0, 0, 0, 0.3) ;
+
+}
+.iconinfo a:hover{box-shadow:0px 10px 27px 0px rgba(250, 250, 250, 0.3) ;
+}
+
+.btn{width:100%;border-radius: 3px; margin: 5px;
+box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.3);
+border: 1px solid #ccc;
+
+background: #ccc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient( #eee,#ccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#eee,#ccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#eee,#ccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#eee,#ccc); /* Standard syntax */
+
+
+}
+
+
+.dropdown-menu {width:100%;}
+
+.btn:hover{box-shadow: 0px 1px 15px 0px rgba(25,118,210, 0.3);border: 1px solid rgba(25,118,210, 0.3)}
+/*-----------------------media query-----------------------------------------*/
+
+
+@media (min-width:320px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:32px; }
+
+  .fa-question{right: 35px;}
+}
+
+@media (min-width:375px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:37px; }
+
+  .fa-question{right: 35px;}
+}
+
+@media (min-width:425px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:43px; }
+
+  .fa-question{right: 40px;}
+}
+
+@media (min-width:768px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:40px; }
+
+  .fa-question{right: 40px;}
+}
+@media (min-width:1024px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:56px; }
+
+.fa-question{right: 55px;}
+
+}
+
+@media (min-width:1440px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:58px; }
+
+}
+
+@media (min-width:2560px)
+{
+  .login .fa-user,.fa-lock,.fa-envelope{  left:62px; }
+
+}
+
+
+

@@ -1,0 +1,60 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+      <li (click)="onSave()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="col-md-6 col-sm-12">
+  <div class="form-group row">
+    <div class=" col-md-3 col-xs-3 padding-col">
+      <label for="PriorityColor">CUSTCLAS</label>
+    </div>
+    <div class=" col-md-9 col-xs-9  ">
+      <input id="CUSTCLAS" type="text" class="form-control" placeholder="CUSTCLAS" [(ngModel)]="SOP00010.CUSTCLAS">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class=" col-md-3 col-xs-3 padding-col">
+      <label for="PriorityColor">CUSTCLASNAME</label>
+    </div>
+    <div class=" col-md-9 col-xs-9  ">
+      <input id="CUSTCLASNAME" type="text" class="form-control" placeholder="CUSTCLASNAME" [(ngModel)]="SOP00010.CUSTCLASNAME">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class=" col-md-3 col-xs-3 padding-col">
+      <label for="PriorityColor">PrefixValue</label>
+    </div>
+    <div class=" col-md-9 col-xs-9  ">
+      <input id="PrefixValue" type="text" class="form-control" placeholder="CUSTCLASNAME" [(ngModel)]="SOP00010.PrefixValue">
+    </div>
+  </div><div class="form-group row">
+    <div class=" col-md-3 col-xs-3 padding-col">
+      <label for="PriorityColor">Prefixlengh</label>
+    </div>
+    <div class=" col-md-9 col-xs-9  ">
+      <input id="Prefixlengh" type="text" class="form-control" placeholder="Prefixlengh" [(ngModel)]="SOP00010.Prefixlengh">
+    </div>
+  </div><div class="form-group row">
+    <div class=" col-md-3 col-xs-3 padding-col">
+      <label for="PriorityColor">LastCustomerID</label>
+    </div>
+    <div class=" col-md-9 col-xs-9  ">
+      <input id="LastCustomerID" type="text" class="form-control" placeholder="LastCustomerID" [(ngModel)]="SOP00010.LastCustomerID">
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,134 @@
+﻿<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- right options -->
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="Setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back
+        </a>
+      </li>
+    </ul>
+    <!-- /right options -->
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Company</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="CompanyList" (valueChange)="CompanyID_Changed()" valueField="CompanyID" textField="CompanyName"
+                                [valuePrimitive]="true" [(ngModel)]="CompanyID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Module</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="ModuleList" (valueChange)="ModuleID_Changed()" valueField="ModuleID" textField="ModuleName" [valuePrimitive]="true"
+                                [(ngModel)]="ModuleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>screen</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="WindowSourceList" (valueChange)="WindowSource_Changed()" valueField="WindowSource" textField="WindowName"
+                                [valuePrimitive]="true" [(ngModel)]="WindowSource">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+     
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Data source</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist (valueChange)="sources_Change($event)" [data]="sources"
+                                [(ngModel)]="CM00056.TRXTypeID"
+                                [valuePrimitive]="true"
+                                textField="TrxTypeName"
+                                valueField="TRXTypeID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-2 padding-col">
+            <label>Roles</label>
+          </div>
+          <div class="col-md-10">
+            <kendo-dropdownlist [data]="companyRoles"
+                                [(ngModel)]="CM00056.RoleID"
+                                [valuePrimitive]="true"
+                                textField="RoleName"
+                                valueField="RoleID">
+            </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="rolesList">
+  <div class="panel-body ">
+    <div class="row ">
+    <div class="col-md-6">
+      <a class="btn btn-primary btn-lg" (click)="AddDataSourceRole()" >ADD</a>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" *ngIf="rolesList">
+  <div class="panel-body ">
+    <div class="row ">
+      <div class="table-container">
+        <table class="table table-bordered table-responsive">
+          <thead class="thead-inverse ">
+            <tr>
+
+              <th scope="col">RoleID</th>
+              <th scope="col">TRXTypeID</th>
+              <th scope="col">delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let col of rolesList">
+              <td>
+                {{col.RoleID}}
+              </td>
+              <td>
+                {{col.TRXTypeID}}
+              </td>
+              <td>
+                <button kendoButton (click)="delete(col)">delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

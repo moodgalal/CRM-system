@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="col-md-1  nopadding-y">
+      <kendo-dropdownlist [data]="SharedData.YearsList"
+                          [(ngModel)]="YearCode"
+                          textField="YearCode" [valuePrimitive]="true"
+                          valueField="YearCode"></kendo-dropdownlist>
+    </div>
+    <div class="col-md-4  nopadding-y">
+      <kendo-dropdownlist [data]="FilterType" textField="text" valueField="value"
+                          [valuePrimitive]="true" [(ngModel)]="TRXTypeID">
+      </kendo-dropdownlist>
+    </div>
+    <div class="col-md-2  nopadding-y">
+      <a class="btn btn-primary btn-sm white" (click)="ApplyShowReport()">
+        <i class="fa fa-file-pdf-o"></i>Report
+      </a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row" *ngIf="ShowReport">
+        <tr-viewer #viewer1
+                   [containerStyle]="viewerContainerStyle"
+                   [serviceUrl]="serviceUrl"
+                   [reportSource]="{
+                   report: 'KaizenServer.Reports.CM_provision, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+                   parameters: { TRXTypeID: TRXTypeID, YearCode: YearCode}
+                 }"
+                   [viewMode]="'INTERACTIVE'"
+                   [scaleMode]="'SPECIFIC'"
+                   [scale]="1.0"
+                   [ready]="ready"
+                   [viewerToolTipOpening]="viewerToolTipOpening"
+                   [enableAccessibility]="false">
+        </tr-viewer>
+      </div>
+
+    </div>
+  </div>
+

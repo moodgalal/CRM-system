@@ -1,0 +1,84 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white" (click)="setting.GoBack()">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+
+      <li (click)="UpdateDebtorClass()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Update</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="caseType"></label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label></label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="CUSTCLAS">Debtor Class</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="CUSTCLAS" type="text" class="form-control" readonly placeholder="Debtor Class" [(ngModel)]="CM00010.CUSTCLAS">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="CUSTCLASNAME">Debtor Class Name</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="CUSTCLASNAME" type="text" class="form-control" placeholder="Debtor Class Name" [(ngModel)]="CM00010.CUSTCLASNAME">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="PrefixValue">Prefix Value</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="PrefixValue" type="text" class="form-control" placeholder="Prefix Value" [(ngModel)]="CM00010.PrefixValue">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="Prefixlengh">Prefix lengh</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="Prefixlengh" type="number" class="form-control" placeholder="Prefix lengh" [(ngModel)]="CM00010.Prefixlengh">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

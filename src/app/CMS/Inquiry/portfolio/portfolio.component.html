@@ -1,0 +1,20 @@
+<ng-template #extra>
+  <div class="col-md-2 col-sm-6 padding-col">
+    <kendo-dropdownlist [data]="SharedData.YearsList" (valueChange)="YearCode_Change($event)"
+                        [(ngModel)]="YearCode"
+                        textField="YearCode"
+                        valueField="YearCode"
+                        [valuePrimitive]="true"></kendo-dropdownlist>
+  </div>
+  <div class="col-md-2 col-sm-6 padding-col">
+    <kendo-dropdownlist [data]="SharedData.PeriodList"
+                        [(ngModel)]="PERIODID"
+                        textField="PeriodName"
+                        valueField="PERIODID"
+                        [valuePrimitive]="true"></kendo-dropdownlist>
+  </div>
+
+
+</ng-template>
+
+<global-grid #grid [extraButtons]="extra"></global-grid>

@@ -1,0 +1,16 @@
+<tr-viewer #viewer1
+           [containerStyle]="viewerContainerStyle"
+           [serviceUrl]="serviceUrl"
+           [reportSource]="{
+       report: 'KaizenServer.Reports.GridViewDynamic, KaizenServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+         parameters: { ViewID: Setting.SelectedView.ViewID, CompanyID: CompanyProfile.CompanyID, UserFilter: '', MainGridFilter : '' , Smartfilter:Smartfilter }
+    }"
+           [viewMode]="'INTERACTIVE'"
+           [scaleMode]="'SPECIFIC'"
+           [scale]="1.0"
+           [ready]="ready"
+           [viewerToolTipOpening]="viewerToolTipOpening"
+           [enableAccessibility]="false">
+</tr-viewer>
+<!--<button (click)="viewer1.refreshReport()">Refresh</button>
+<button (click)="viewer1.commands.print.exec()">Print</button>-->

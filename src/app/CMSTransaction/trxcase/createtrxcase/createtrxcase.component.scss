@@ -1,0 +1,83 @@
+
+.viewCasePopup .modal-dialog {
+  max-width: 95%;
+}
+
+.dashboard {
+  padding: 5px !important;
+}
+
+.set-rad-side {
+  position: absolute;
+  left: 96.8%;
+  top: 5%;
+
+  .set-rad-container {
+    position: absolute; //   top: 2%;
+    // right: 5%;
+    top: -4.5%;
+    right: 102%;
+    transition: 1s;
+    width: 290px;
+    background: #fff;
+    margin: 0px;
+    height: 34px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px #888;
+  }
+}
+
+.panel-body {
+  overflow: auto;
+  padding: 8px 15px;
+}
+
+.col-md-12 label,
+.col-md-6 label {
+  margin: 5px 0;
+}
+
+.table-container {
+  position: relative;
+}
+
+div.tabs ul.nav-tabs a {
+  padding: 8px 15px;
+}
+
+.panel-body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.col-md-8,
+.col-md-10 {
+  padding-right: 15px !important;
+}
+
+.panel {
+  margin-bottom: 10px;
+}
+
+.padding-6 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+div.tabs {
+  margin: 0;
+}
+
+
+
+.bar-options > .panel-heading {
+  height: 51px !important;
+  padding: 10px !important;
+}
+
+.bar-options > .panel-heading ul.options {
+  margin-top: 0px !important;
+}
+
+.os-today-border {
+  border: 1px solid red;
+}

@@ -1,0 +1,284 @@
+<!-- Employee Basics Details-->
+<div class="buttons-container">
+  <button type="button" class="btn btn-dark" (click)="goBack()">
+    <i class="fa fa-arrow-left"></i>Back</button>
+  <button type="button" class="btn btn-primary">
+    <i class="fa fa-undo"></i>refresh</button>
+  <button type="button" class="btn btn-secondary">
+    <i class="fa fa-print"></i>print</button>
+  <button type="button" class="btn btn-success" (click)="save()">
+    <i class="fa fa-check"></i>Save</button>
+  <button type="button" class="btn btn-danger">
+    <i class="fa fa-ban"></i>Cancel</button>
+  <button type="button" class="btn btn-info">
+    <i class="fa fa-user"></i> Basics Details</button>
+  <button type="button" class="btn btn-info">
+    <i class="fa fa-briefcase"></i> Work Details</button>
+  <button type="button" class="btn btn-info">
+    <i class="fa fa-bookmark"></i> Payroll Details</button>
+</div>
+<div class="content-container">
+  <form>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="row">
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="dataSources">Data Sources</label>
+                </div>
+                <div class="col-md-9 col-xs-9 pad-l-0px">
+                  <div class="row">
+                    <div class="col-md-6 pad-r-0px">
+                      <kendo-dropdownlist id="dataSources"
+                                          [data]="dataSourcesTmp"
+                                          textField="TrxTypeName"
+                                          valueField="TRXTypeID">
+                  </kendo-dropdownlist>
+                </div>
+                    <div class="col-md-6 pad-l-4px">
+                  <input type="text" class="form-control">
+                </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <div class="row">
+                    <div class="col-md-6 pad-r-0px">
+                      <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="col-md-6 pad-l-4px">
+                      <kendo-dropdownlist [data]="testData">
+                      </kendo-dropdownlist>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="middleName">Middle Name</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="CPRCR Number">CPRCR Number</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <input type="text" class="form-control" id="CPRCR Number" placeholder="CPRCR Number">
+                </div>
+              </div>
+            </div>
+
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="BirthDate">Birth Date</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <kendo-datepicker id="BirthDate" [value]="value"></kendo-datepicker>
+                </div>
+              </div>
+            </div>
+
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="Nationality"> Nationality</label>
+                </div>
+                <div class=" col-md-9 col-xs-9 pad-l-0px ">
+                  <label class="sr-only" for="Nationality">Nationality</label>
+                  <div class="input-group mb-2 mb-sm-0">
+                    <input id="Nationality" type="text" class="form-control" placeholder="Nationality">
+                    <div class="input-group-addon">
+                      <span class="fa fa-search"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="Gender">Gender</label>
+                </div>
+                <div class="col-md-9 col-xs-9 pad-l-0px">
+                  <div class="row">
+                    <div class="col-md-6 pad-r-0px">
+                      <select id="Gender">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Others</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 pad-l-4px">
+                      <label>Is Active</label>
+                      <kendo-switch  [onLabel]="'True'" name="check2" [offLabel]="'False'" style="margin-bottom:3px;"></kendo-switch>
+                    </div>
+                  </div>
+
+                </div>
+
+          </div>
+        </div>
+
+                <div class="col-12 col-md-12 col-sm-12">
+                    <div class="form-group row">
+
+                        <div class=" col-md-3 col-xs-3  ">
+                            <label for="exampleFormControlInput6">Description</label>
+                        </div>
+
+                        <div class="col-md-9 col-xs-9 pad-l-0px">
+                            <textarea class="form-control" id="exampleFormControlInput6" placeholder="Lorem Ipsum is simply dummy text." rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="exampleFormControlInput6">Employee</label>
+                </div>
+
+                <div class="col-md-9 col-xs-9 pad-l-0px">
+                  <app-employee-lookup (getValue)="getValue($event)"></app-employee-lookup>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-sm-12">
+              <div class="form-group row">
+
+                <div class=" col-md-3 col-xs-3  ">
+                  <label for="exampleFormControlInput6">Nationality</label>
+                </div>
+
+                <div class="col-md-9 col-xs-9 pad-l-0px">
+                  <app-nationality-lookup (getValue)="getValue($event)"></app-nationality-lookup>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="id-info">
+            <div class=" col-md-12 col-sm-12 upload-img">
+              <div class="col-md-12 ">
+                <img class="img-profile-edit" src="../assets/img/avatar.jpg" />
+              </div>
+              <div class=" col-md-12 col-sm-12">
+                <label class="custom-file">
+                  <input type="file" id="file2" class="custom-file-input">
+                  <span class="custom-file-control"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-2 col-xs-2  ">
+                  <label>Location</label>
+                </div>
+                <div class="col-md-10 col-xs-10">
+                  <kendo-dropdownlist [data]="locationsList" textField="LocationName" valueField="LocationID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class="col-md-2 col-xs-2  ">
+                  <label>Marital Status</label>
+                </div>
+                <div class="col-md-10 col-xs-10 ">
+                  <kendo-dropdownlist [data]="maritalsList" textField="MaritalName" valueField="MaritalID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-2 col-xs-2  ">
+                  <label>Position</label>
+                </div>
+                <div class="col-md-10 col-xs-10">
+                  <kendo-dropdownlist [data]="positionsList" textField="PositionName" valueField="PositionID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class="col-md-2 col-xs-2  ">
+                  <label>Category</label>
+                </div>
+                <div class="col-md-10 col-xs-10 ">
+                  <kendo-dropdownlist [data]="categoriesList" textField="CategoryName" valueField="CategoryID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class=" col-md-2 col-xs-2  ">
+                  <label>Departments</label>
+                </div>
+                <div class="col-md-10 col-xs-10">
+                  <kendo-dropdownlist [data]="departmentsList" textField="DepartmentName" valueField="DepartmentID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="form-group row">
+                <div class="col-md-2 col-xs-2  ">
+                  <label>Division</label>
+                </div>
+                <div class="col-md-10 col-xs-10 ">
+                  <kendo-dropdownlist [data]="divisionsList" textField="DivisionName" valueField="DivisionID">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Employee Basics Details-->

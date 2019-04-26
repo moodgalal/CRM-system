@@ -1,0 +1,11 @@
+<ng-template #extra>
+  <div class="col-md-8">
+    <button routerLink="/Sys_create_role" kendoButton [primary]="true">Add</button>
+    <button routerLink="/Accesmenurole" kendoButton [primary]="true">Role Access</button>
+    <button routerLink="/Usercompany" kendoButton [primary]="true">company Access</button>
+  </div>
+</ng-template>
+<app-main-grid #grid [extraButtons]="extra"></app-main-grid>
+
+
+

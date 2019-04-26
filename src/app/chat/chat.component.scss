@@ -1,0 +1,105 @@
+.chat-container {
+  position: fixed;
+  z-index: 9999;
+  height: 38px;
+  bottom: 0;
+  width: 100%;
+  :focus {
+    box-shadow: none;
+  }
+  .chat-box:nth-child(2) {
+    right: 25%;
+  }
+  .chat-box:nth-child(3) {
+    right: 45%;
+  }
+  .chat-box:nth-child(4) {
+    right: 65%;
+  }
+  .chat-box {
+    width: 20%;
+    position: absolute;
+    float: left;
+    display: block;
+    bottom: 0;
+    right: 5%;
+    padding: 0 5px;
+    max-height: 350px;
+    .chat-header {
+      position: relative;
+      .close-chat {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        color: #fff;
+      }
+      .min-chat {
+        position: absolute;
+        top: 30%;
+        right: 15%;
+        color: #fff; // display: none;
+      }
+    }
+    .btn {
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #fff !important;
+      box-shadow: none;
+    }
+    .collapse {
+      width: 100%;
+    }
+    .card-body {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .chat-piece-sender {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+      p {
+        width: 85%;
+        display: inline-block;
+        float: right;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12px;
+        background-color: rgba(255, 99, 88, 0.1);
+      }
+    }
+    .chat-piece-receiver {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        float: right;
+      }
+      p {
+        width: 85%;
+        display: inline-block;
+        float: left;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12px;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+    .card-footer {
+      padding: 0;
+      .chat-input {
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        font-size: 12px;
+      }
+      .chat-input:focus {
+        border: 0;
+        outline: none;
+      }
+    }
+  }
+}

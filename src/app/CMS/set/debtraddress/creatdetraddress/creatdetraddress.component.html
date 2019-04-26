@@ -1,0 +1,49 @@
+﻿<div class="panel panel-default small-panel">
+  <div class="panel-heading">
+    <ul class="options pull-left relative list-unstyled">
+      <li>
+        <a class="btn btn-default btn-sm white">
+          <i class="fa fa-arrow-left"></i>Back</a>
+      </li>
+
+      <li (click)="saveDebtorAddress()">
+        <a class="btn btn-primary btn-sm white">
+          <i class="fa fa-plus"></i>Add</a>
+      </li>
+     </ul>
+  </div>
+</div>
+<div class="panel panel-default small-panel">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label >Address Code </label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+              <kendo-dropdownlist [data]="dropdownSource" 
+               [filterable]="true" (valueChange)="valueChange($event)"
+               [textField]="'AddressName'"
+                 [valueField]="'AddressCode'"
+                >
+              </kendo-dropdownlist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <div class=" col-md-3 col-xs-3 padding-col">
+            <label for="UserName">User Name</label>
+          </div>
+          <div class=" col-md-9 col-xs-9  ">
+            <input id="UserName" type="text" class="form-control" placeholder="User Name" [(ngModel)]="debtorAddress.UserName">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.head-nav{background-color: #1976D2; padding:5px; border-radius: 3px;text-align: center;}
+.head-nav .iconinfo .btn{ 
+color:  #1976D2;
+}
+ 
+.f-l-form{padding: 20px 0px;}
+
+.inputfields{padding: 5px 0px;}
+.f-l-form .lab{ padding: 8px; color: #39f;}
+
+.f-l-form .f-input{
+background-color: transparent; 
+border: 1px solid #ddd;
+box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.3);
+padding: 8px; 
+outline: none;
+color: #000;}
+ 
+.f-input-s input,.f-input-s .f-in-search,.f-input-s .f-in-date{border-radius: 0px; outline: none;
+box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.3); }
+
+.inputfields select{box-shadow: 0px 0.5px 15px 0px rgba(0, 0, 0, 0.3);
+border: 1px solid #ccc; 
+padding: 8px; outline: none;border-radius: 2px;
+background: #ccc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient( #eee,#ccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#eee,#ccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#eee,#ccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#eee,#ccc); /* Standard syntax */
+}
